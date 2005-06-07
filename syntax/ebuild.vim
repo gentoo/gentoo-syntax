@@ -71,7 +71,7 @@ syn keyword EbuildGCCKeyword gcc-minor-version gcc-micro-version gcc-libpath gcc
 syn keyword EbuildGCCKeyword gcc-libstdcxx-major-version gcc2-flags
 
 " libtool
-syn keyword EbuildLibtoolKeyword elibtoolize
+syn keyword EbuildLibtoolKeyword elibtoolize uclibctoolize darwintoolize
 
 " fixheadtails
 syn keyword EbuildFixHeadTailsKeyword ht_fix_file ht_fix_all
