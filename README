@@ -1,0 +1,26 @@
+INSTALL INSTRUCTIONS
+--------------------
+
+* Gentoo users: `emerge app-vim/gentoo-syntax`
+* Everyone else: `make PREFIX=~/.vim/ install`
+
+COPYRIGHT
+---------
+
+Copyright (c) 2004-2005 Ciaran McCreesh, Aaron Walker, Tom Martin. You may
+redistribute this package under the same terms as Vim itself.
+
+CONTACT
+-------
+
+Email:
+
+* Ciaran McCreesh `<ciaranm at gentoo dot org>`_
+* Aaron Walker    `<ka0ttic at gentoo dot org>`_
+* Tom Martin      `<slarti  at gentoo dot org>`_
+
+Bugs:
+
+* `<http://bugs.gentoo.org/>`_
+
+.. vim: set ft=glep tw=80 et :

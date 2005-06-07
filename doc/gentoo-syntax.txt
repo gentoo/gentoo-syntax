@@ -1,0 +1,565 @@
+*gentoo-syntax.txt*	Gentoo Syntax Plugin
+
+Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
+          Aaron Walker    <ka0ttic at gentoo dot org>
+          Tom Martin      <slarti  at gentoo dot org>
+
+==============================================================================
+1. Contents						       *gentoo-syntax*
+
+    1. Contents                                            |gentoo-syntax|
+
+    2. Plugin Information                         |gentoo-syntax-overview|
+	Detection Specifics                      |gentoo-syntax-detection|
+	Highlighting Specifics                |gentoo-syntax-highlighting|
+	    Common Syntax Rules                     |gentoo-common-syntax|
+	    Ebuild and Eclass Files                 |gentoo-ebuild-syntax|
+	    GLEP Files                                |gentoo-glep-syntax|
+	    ChangeLogs                           |gentoo-changelog-syntax|
+	    conf.d Files                            |gentoo-conf.d-syntax|
+	    cron.d Files                            |gentoo-cron.d-syntax|
+	    env.d Files                              |gentoo-env.d-syntax|
+	    GuideXML Syntax                       |gentoo-guidexml-syntax|
+	    init.d Files                            |gentoo-init.d-syntax|
+	    make.conf Files                      |gentoo-make-conf-syntax|
+	    metadata.xml Files                    |gentoo-metadata-syntax|
+	    package.(un)mask                  |gentoo-package-mask-syntax|
+	    package.keywords              |gentoo-package-keywords-syntax|
+	    package.use                        |gentoo-package-use-syntax|
+	    thirdpartymirrors                      |gentoo-mirrors-syntax|
+	    use.desc, use.local.desc              |gentoo-use-desc-syntax|
+	Settings Specifics                        |gentoo-syntax-settings|
+	Indent Specifics                          |gentoo-indent-settings|
+	Bug Summary                                          |:BugSummary|
+	New conf.d Files                                      |new-conf.d|
+	New Ebuilds                                          |new-ebuilds|
+	New init.d Files                                      |new-init.d|
+	New Metadata                                        |new-metadata|
+
+    3. ChangeLog                                 |gentoo-syntax-changelog|
+
+==============================================================================
+2. Plugin Information				      *gentoo-syntax-overview*
+
+	The gentoo-syntax package provides a collection of syntax, ftdetect,
+	ftplugin and indent files to help Gentoo developers and users work
+	with ebuilds, eclasses, GLEPs, Gentoo style ChangeLogs, init.d /
+	conf.d / env.d / cron.d entries, /etc/portage/ files and so on.
+
+    Detection Specifics				     *gentoo-syntax-detection*
+
+	Ebuilds are detected by an 'ebuild' extension. Eclasses are detected
+	by an 'eclass' extension. Both ebuild and eclass files are assigned
+	the 'ebuild' filetype.
+
+	GLEP files are detected by a 'txt' extension, followed by a check that
+	the first line of the file starts with "GLEP: ". They are assigned the
+	'glep' filetype.
+
+	Gentoo ChangeLogs are detected by the 'ChangeLog' filename and a
+	copyright header on the second line.
+
+	init.d scripts are detected by being in /etc/init.d/ . They are also
+	detected if they are under a files/ directory and include a
+	'#!/sbin/runscript' header.
+
+	conf.d, env.d and cron.d files are detected by being in the relevant
+	subdirectory in /etc.
+
+	package.mask, package.unmask, package.keywords, package.use and
+	thirdpartymirrors files are detected by filename.
+
+	make.conf files are detected by filename (make.globals is also
+	recognised).
+
+	metadata.xml files are detected by filename.
+
+	use.desc files are detected by filename (use.local.desc is also
+	recognised).
+
+    Highlighting Specifics			  *gentoo-syntax-highlighting*
+
+	Syntax highlighting is provided for ebuild/eclass, GLEP files,
+	Gentoo ChangeLogs and init.d / conf.d / env.d / cron.d scripts.
+
+							*gentoo-common-syntax*
+
+	Many of the syntax files are based upon gentoo-common.vim, which
+	provides basic syntax highlighting for header blocks and bug numbers.
+
+							*gentoo-ebuild-syntax*
+
+	The ebuild/eclass syntax file builds upon the vim-provided |sh.vim|
+	and adds in highlighting for:
+	    * ebuild.sh / portage keywords
+	    * functions from commonly used eclasses (eutils, flag-o-matic,
+	      gcc, libtool, fixheadtails, webapp, webapp-apache, versionator,
+	      cvs, fdo-mime, multilib, 64-bit, cron, games, toolchain-funcs,
+	      subversion, alternatives, rpm, python, check-kernel,
+	      perl-module, distutils)
+	    * common mistakes (assigning to read-only variables, misspellings,
+	      leading non-tab spaces, default WORKDIR assignment)
+
+				       *g:ebuild_error_on_trailing_whitespace*
+	Error highlighting for trailing whitespace is available but disabled
+	by default. To turn it on, add:
+>
+	    let g:ebuild_error_on_trailing_whitespace=1
+<
+	to your |vimrc| file.
+
+							  *gentoo-glep-syntax*
+
+	Syntax highlighting for GLEP files is based upon the vim-provided rst
+	syntax file. Additional highlighting is available for the headers at
+	the top of the file and for heading sections.
+
+						     *gentoo-changelog-syntax*
+
+	Syntax highlighting for Gentoo ChangeLogs is implemented from scratch
+	(some rules come from |gentoo-common-syntax|).
+
+							*gentoo-conf.d-syntax*
+
+	Syntax highlighting for conf.d files is based upon the vim-provided
+	|sh.vim|, with additional support for certain Gentooisms (some rules
+	come from |gentoo-common-syntax|).
+
+							*gentoo-cron.d-syntax*
+
+	Syntax highlighting for cron.d entries uses the vim-provided
+	crontab.vim file.
+
+							 *gentoo-env.d-syntax*
+
+	Syntax highlighting for env.d files is based upon the vim-provided
+	|sh.vim|, with additional support for certain Gentooisms (some rules
+	come from |gentoo-common-syntax|).
+
+						      *gentoo-guidexml-syntax*
+
+	Syntax highlighting for guidexml files is based upon the vim-provided
+	|xml.vim|.
+
+							*gentoo-init.d-syntax*
+
+	Syntax highlighting for init.d files is based upon the vim-provided
+	|sh.vim|, with additional support for certain Gentooisms (some rules
+	come from |gentoo-common-syntax|).
+
+						     *gentoo-make-conf-syntax*
+
+	Syntax highlighting for make.conf files is implemented from scratch
+	(some rules come from |gentoo-common-syntax|).
+
+						     *gentoo-metadata-syntax*
+
+	Syntax highlighting for metadata.xml files is based upon the
+	vim-provided |xml.vim|, with additional highlighting for recognised
+	elements.
+
+						  *gentoo-package-mask-syntax*
+
+	Syntax highlighting for package.mask and package.unmask files is
+	implemented from scratch (some rules come from
+	|gentoo-common-syntax|).
+
+					      *gentoo-package-keywords-syntax*
+
+	Syntax highlighting for package.keywords files is implemented from
+	scratch (some rules come from |gentoo-common-syntax|).
+
+						   *gentoo-package-use-syntax*
+
+	Syntax highlighting for package.use files is implemented from scratch
+	(some rules come from |gentoo-common-syntax|).
+
+						       *gentoo-mirrors-syntax*
+
+	Syntax highlighting for thirdpartymirrors files is implemented from
+	scratch (some rules come from |gentoo-common-syntax|).
+
+						      *gentoo-use-desc-syntax*
+	Syntax highlighting for use.desc and use.local.desc is implemented
+	from scratch (some rules come from |gentoo-common-syntax|).
+
+    Settings Specifics				      *gentoo-syntax-settings*
+
+	For ebuilds and eclasses, tabs (|'shiftwidth'| and |'tabstop'|) are
+	set to four spaces, tab to space conversion (|'expandtab'|) is disabled
+	and the text width (|'textwidth'|) is set to 80 columns. To allow
+	proper syntax highlighting for commands like 'strip-flags', the hyphen
+	character is added as a valid keyword character (|'iskeyword'|).
+
+	For ebuilds, eclasses and ChangeLogs, UTF-8 is used for fileencoding
+	as per GLEP 31.
+
+    Indent Specifics				      *gentoo-indent-settings*
+
+	Indent settings for ebuilds and eclasses are the same as for regular
+	bash files.
+
+    Bug Summary							 *:BugSummary*
+
+	To see a summary of a Gentoo bug, execute :BugSummary 12345.
+
+								 *:BugDetails*
+	The :BugDetails 12345 command is similar to :BugSummary, but will also
+	display a menu allowing the user to open the bug in a browser or
+	insert the bug details / number into the active document. In normal
+	mode, a map <Leader>bug (see |<Leader>|) is provided to call this
+	command on the bug number under the cursor.
+
+							*g:bugsummary_browser*
+	Before using the "browser" BugSummary option, you must let the plugin
+	know what browser you want to use. For example: >
+
+	    let g:bugsummary_browser="firefox '%s'"
+<
+	The %s sequence is replaced by the URL to load.
+
+    New conf.d Files				      *new-conf.d* *:NewConfd*
+
+	New conf.d files will automatically have a skeleton content created
+	for them.
+
+	The ':NewConfd' command can be used to manually create contents for a
+	new conf.d file.
+
+	Note: conf.d files may not be detected automatically. The |:NewConfd|
+	command will still work in these situations.
+
+    New Ebuilds					    *new-ebuilds* *:NewEbuild*
+
+	New ebuilds will automatically have content placed into them based
+	upon context (for example, the package category). Similarly, new
+	eclasses are created from a template. If the environment variable
+	'ECHANGELOG_USER' is set, it will be used for the author's name.
+	Otherwise, the 'USER' environment variable will be used.
+
+	The ':NewEbuild' command can be used to manually create contents for a
+	new ebuild or eclass file.
+
+    New init.d Files				      *new-init.d* *:NewInitd*
+
+	New init.d files will automatically have a skeleton content created
+	for them.
+
+	The ':NewInitd' command can be used to manually create contents for a
+	new init.d file.
+
+	Note: init.d files may not be detected automatically. The |:NewInitd|
+	command will still work in these situations.
+
+    New Metadata				 *new-metadata* *:NewMetadata*
+
+	New metadata.xml files will automatically have content placed into
+	them based upon context (for example, the package category). If the
+	environment variable 'ECHANGELOG_USER' is set, it will be used for the
+	author's name and email address.
+
+	The ':NewMetadata' command can be used to manually create contents for
+	a new metadata file.
+
+	Note: metadata.xml files may not be detected automatically. The
+	|:NewMetadata| command will still work in these situations.
+
+==============================================================================
+3. ChangeLog					     *gentoo-syntax-changelog*
+
+	20050515 beu
+	    * Testing, testing .. Fix a 'few' typo's in syntax/eclectic.vim.
+
+	20050515 ciaranm (Release)
+	    * Better indenting for eclectic modules.
+
+	20050514 beu
+	    * Add dev-perl specific inherit of perl-module.
+
+	20050514 ciaranm
+	    * Highlighting in make.conf for ccache and distcc variables.
+	      Gentoo bug 92238 <http://bugs.gentoo.org/show_bug.cgi?id=92238>
+
+	20050511 beu
+	    * Add minimal support for eclectic-module filetype and syntax
+	      highlighting.
+	    * Add goodness to create boiler-plate eclectic modules on a new
+	      buffer ('*.eclectic').
+	    * add in support for SVN_DATE
+
+	20050510 ciaranm
+	    * ${PN}-${PV} in ebuilds is an error, should be ${P} (requested by
+	      seemant).
+	    * Better heading highlighting for GLEPs.
+	    * Much smarter cat/pkg detection.
+
+	20050415 beu
+	    * Add support for apache-module and depend.apache eclass functions.
+	    * Add a default setup for apache-module ebuilds (ebuilds in
+	      www-apache/mod_name).
+
+	20050326 ciaranm
+	    * Add PORTAGE_TMPFS to make.conf highlighting.
+
+	20050325 ciaranm
+	    * Add ALSA_CARDS to make.conf highlighting.
+
+	20050325 ciaranm (Release)
+	    * Make this lot work properly with vim 6.3 again. Oops.
+
+	20050323 ciaranm
+	    * Better category / package distinction in new metadata creation
+	      plugin.
+
+	20050318 ciaranm (Release)
+	    * USERLAND in make.conf is an error. Recognise EXTRA_ECONF.
+
+	20050317 ciaranm
+	    * catmetadata support
+	    * Add in sanity checking. Check version and &compatible. Thanks to
+	      Rob Henderson in Gentoo bug #85425
+	      <http://bugs.gentoo.org/show_bug.cgi?id=85425>.
+
+	20050316 ka0ttic
+	    * Updated cron eclass functions.
+	    * Added support for distutils and perl-module eclasses.
+
+	20050305 ciaranm
+	    * x86-64, x86_64 in CFLAGS are errors.
+	    * -mvis in CFLAGS is an error.
+	    * on amd64, -Os -fPIC -fpic -DPIC in CFLAGS are errors.
+
+	20050303 ciaranm
+	    * dev.g.o in SRC_URI is wrong.
+
+	20050226 ciaranm
+	    * Make USE flags with _ in the name work properly.
+
+	20050221 ka0ttic
+	    * Removed useless newconfd plugin.
+	    * Fixed missing endif in ftdetect/gentoo.vim that caused some XML
+	      ftdetect funkyness.
+
+	20050216 ka0ttic
+	    * Updated cron and eutils eclass functions.
+
+	20050211 ciaranm (Release)
+
+	20050210 ciaranm
+	    * Move arch guessing code into gentoo-common.vim. Cache the
+	      results, since portageq is very slow. Changed the logic so that
+	      it should (probably) generate the correct values on non-Linux
+	      systems.
+	    * Fix detection of thirdpartymirrors file
+
+	20050207 ciaranm
+	    * Added ASFLAGS and ARCH to the make.conf error list.
+
+	20050202 ka0ttic
+	    * Added missing runscript shebang to init.d plugin.
+
+	20050201 ka0ttic
+	    * Updated bash-completion eclass functions.
+
+	20050130 ciaranm (Release)
+	    * Rewrite Makefile.
+	    * Update docs.
+	    * Improved init.d syntax highlighting.
+	    * Add in EXPORT_FUNCTIONS eclass highlighting.
+
+	20050128 ciaranm
+	    * Restructure plugins. Add in a gentoo-common.vim to reduce
+	      code duplication, and switch to using put ='' to insert text.
+	    * Updated years.
+
+	20050128 ka0ttic
+	    * Updated webapp eclass functions.
+	    * Added init.d/conf.d creation plugin.
+
+	20050125 ciaranm
+	    * Update versionator eclass functions.
+	    * Update eutils eclass functions.
+	    * Update flag-o-matic eclass functions.
+
+	20050125 ka0ttic
+	    * Added subversion eclass support.
+	    * Added alternatives eclass support.
+	    * Added rpm eclass support.
+	    * Added python eclass support.
+	    * Added check-kernel eclass support.
+
+	20050123 ciaranm
+	    * Add LINGUAS, INPUT_DEVICES, VIDEO_CARDS to make.conf
+	      highlighting.
+
+	20050122 ka0ttic
+	    * Added toolchain-funcs eclass support.
+	    * Added games eclass support.
+	    * Added cron eclass support.
+
+	20050122 tmartin
+	    * Added 64-bit eclass support.
+	    * Added multilib eclass support.
+
+	20050122 ciaranm
+	    * Added fdo-mime eclass support.
+
+	20050105 ciaranm
+	    * Add sandbox functions (addwrite etc) to the highlight list.
+
+	20041227 ciaranm (Release)
+	    * Make the arch detecting code work again with the new
+	      make.defaults setup.
+
+	20041220 ciaranm
+	    * An empty value for SLOT is an error in ebuilds. A * inside
+	      KEYWORDS is an error unless it is a -*.
+	    * -Wno* in CFLAGS is evil.
+	    * Initial attempt at folding for GLEPs.
+
+	20041218 ciaranm
+	    * Added games-* ebuild creation rules (requested by Michael
+	      Sterrett, dev-python (Bryan Oestergaard), dev-java (Thomas
+	      Matthijs).
+	    * Added 'set paste' whilst creating content, thanks to Thomas
+	      Matthijs for the bug report.
+	    * Make metadata syntax matching use the contained option, so that
+	      recognised words are only highlighted in the correct places.
+	    * Added guidexml syntax, thanks to Sven Vermeulen and Xavier Neys
+	      for information.
+
+	20041216 ciaranm
+	    * Improved glep syntax handling
+
+	20041205 ciaranm
+	    * metadata.xml support: recognise metadata.xml, set filetype
+	      settings, fancy syntax highlighting based upon xml.vim, auto
+	      create metadata.xml content for new files based upon context.
+
+	20041202 ciaranm (Release)
+	    * Make newebuild also support eclass creation.
+
+	20041130 ciaranm
+	    * Fix menu handler. Thanks to Georgi Georgiev in Gentoo bug 72888
+	      <http://bugs.gentoo.org/show_bug.cgi?id=72888>.
+
+	20041127 ciaranm
+	    * Add in newebuild plugin which intelligently creates template
+	      content for new ebuilds based upon context.
+
+	20041127 ciaranm (Release)
+	    * BugSummary now provides :BugSummary and :BugDetails, with the
+	      <Leader>bug nmap mapped to :BugDetails.
+	    * Override sh.vim's handling of function names to include extra
+	      characters. Thanks to Thomas Kirchner in Gentoo bug 72469
+	      <http://bugs.gentoo.org/show_bug.cgi?id=72469>.
+
+	20041125 ciaranm
+	    * BugSummary plugin: massively faster parsing, recognise double
+	      quotes in bug text properly, display a menu thing allowing the
+	      user to open the bug in a browser / insert bug details, coloured
+	      display.
+	    * Use g: variables for settings
+
+	20041124 ciaranm
+	    * Add in bash-completion, vim-plugin, vim-doc eclasses.
+	    * Use "hi def link" rather than "hi link".
+
+	20041123 ciaranm
+	    * Recognise /etc/portage/mirrors as a mirrors file. Thanks to
+	      Georgi Georgiev in Gentoo bug 72228
+	      <http://bugs.gentoo.org/show_bug.cgi?id=72228>.
+	    * Syntax highlighting for use.desc, use.local.desc
+	    * Handle fancy characters in BugSummary better
+
+	20041122 ciaranm
+	    * Add in -s and -DNDEBUG to the bad CFLAGS list at solar's
+	      request.
+	    * :BugSummary, not :ShowBugSummary. Thanks to TGL in Gentoo bug
+	      72001 <http://bugs.gentoo.org/show_bug.cgi?id=72001>.
+	    * LDFLAGS in make.conf is an error at vapier's request.
+
+	20041121 ciaranm (Release)
+	    * Handle * ~* in package.keywords
+	    * make.conf highlighting
+	    * Highlight stupid cat usage in ebuilds
+	    * Added bugsummary plugin -- either :BugSummary 12345 or move over
+	      a bug number and hit <Leader>bug in normal mode. Currently the
+	      code is rather messy and tied to Gentoo bugzilla.
+
+	20041114 ciaranm
+	    * Make ChangeLog highlighting less picky about entries where the
+	      developer hasn't quite got their ECHANGELOG_USER right (for
+	      example, if they just have an email address without the angle
+	      brackets). Thanks to Thomas Matthijs in Gentoo bug 71164
+	      <http://bugs.gentoo.org/show_bug.cgi?id=71164>.
+	    * Make ChangeLog highlighting recognise dates which don't have a
+	      leading zero.
+	    * Ebuilds shouldn't be touching EXTRA_ECONF, make this show up as
+	      an error.
+
+	20041113 ciaranm (Release)
+	    * As per GLEP 31, fileencoding should be utf-8 for ebuilds and
+	      ChangeLogs.
+	    * Highlight as errors functions declared as "foo () {" (extra
+	      space, should be "foo() {". Similarly, "foo(){" needs a space
+	      before the curly bracket, "foo() {". Requested by Michael
+	      Sterrett.
+	    * Added in some new keywords. Thanks to Tom Martin in Gentoo bug
+	      71065 <http://bugs.gentoo.org/show_bug.cgi?id=71065>.
+	    * Added in quiet and verbose variants for 'has' and 'use'.
+
+	20041107 ciaranm
+	    * Highlight TODO and FIXME items in GLEPs.
+
+	20041016 ciaranm
+	    * config is now called pkg_config. Thanks to Tom Martin in Gentoo
+	      bug 67807 <http://bugs.gentoo.org/show_bug.cgi?id=67807>.
+
+	20041009 ciaranm (Release)
+	    * Highlight src_unpack and similar recognised function names
+	      differently in ebuilds. Requested by Thomas Matthijs.
+
+	20041004 ciaranm
+	    * Better 'bug 1234' highlighting
+
+	20040919 ciaranm
+	    * Error on non GLEP 23 compliant LICENSEs
+	    * cvs.eclass support
+
+	20040911 ciaranm (Release)
+	    * Added versionator.eclass
+
+	20040908 ciaranm
+	    * Inherit from sh.vim in ftplugin/ebuild.vim
+
+	20040906 ciaranm (Release)
+	    * Update for recent eutils additions
+	    * Indenting for ebuilds / eclasses
+	    * Updated error highlighting
+
+	20040902 ciaranm
+	    * init.d, env.d, cron.d, conf.d highlighting.
+	    * package.mask, package.unmask, package.keywords, package.use,
+	      thirdpartymirrors highlighting.
+
+	20040901 ciaranm (Release)
+	    * ChangeLog support.
+	    * Use rst for GLEPs.
+	    * Added webapp.eclass, webapp-apache.eclass and fixheadtails.eclass
+	      syntax.
+
+	20040826 ciaranm
+	    * HOMEPAGE containing $ expressions is an error.
+
+	20040826 ciaranm (Release)
+	    * Massive rework. Far better file layouts, keyword support,
+	      filetype settings. Added a help doc.
+	    * Highlighting for errors in ebuilds.
+	    * Added gcc and libtool eclass support.
+
+	20040820 ciaranm
+	    * First usable release
+
+==============================================================================
+vim:tw=78:ts=8:ft=help
