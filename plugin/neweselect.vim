@@ -15,7 +15,7 @@ fun! EselectModuleHeader()
     let l:year = strftime("%Y")
     0 put ='# Copyright 1999-' . l:year . ' Gentoo Foundation'
     put ='# Distributed under the terms of the GNU General Public License v2'
-    put ='# $Header: $'
+    put ='# $Id: $'
     $
 endfun
 

@@ -271,6 +271,8 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 	    * s/eclectic/eselect/g
 	    * Use GentooGetUser() function for the local-part of MAINTAINER
 	      when creating a boiler-plate eselect module.
+	    * Use the 'Id' keyword instead of 'Header' in eselect module
+	      headers.
 
 	20050515 beu
 	    * Testing, testing .. Fix a 'few' typo's in syntax/eclectic.vim.
