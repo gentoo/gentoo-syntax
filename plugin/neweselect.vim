@@ -1,5 +1,5 @@
 " Vim plugin
-" Purpose:      Intelligently create content for new ebuild files
+" Purpose:      Intelligently create content for new eselect files
 " Author:       Ciaran McCreesh <ciaranm@gentoo.org>,
 "               Elfyn McBratney <beu@gentoo.org>
 " Copyright:    Copyright (c) 2004-2005 Ciaran McCreesh
@@ -11,7 +11,7 @@ if &compatible || v:version < 603
 endif
 
 " nicked from gentoo-common.vim
-fun! EclecticModuleHeader()
+fun! EselectModuleHeader()
     let l:year = strftime("%Y")
     0 put ='# Copyright 1999-' . l:year . ' Gentoo Foundation'
     put ='# Distributed under the terms of the GNU General Public License v2'
@@ -19,15 +19,15 @@ fun! EclecticModuleHeader()
     $
 endfun
 
-fun! <SID>MakeNewEclecticModule()
+fun! <SID>MakeNewEselectModule()
     let l:pastebackup = &paste
     set nopaste
 
-    call EclecticModuleHeader()
+    call EselectModuleHeader()
 
-    " {{{ boiler-plate eclectic module
+    " {{{ boiler-plate eselect module
     put ='DESCRIPTION=\"\"'
-    put ='MAINTAINER=\"you@gentoo.org\"'
+    put ='MAINTAINER=\"' . GentooGetUser() . '@gentoo.org\"'
     put =''
     call setline(line("."), 'SVN_DATE=' . "'" . '$Date: $' . "'")
     put ='VERSION=$(svn_date_to_version \"${SVN_DATE}\" )'
@@ -60,12 +60,12 @@ fun! <SID>MakeNewEclecticModule()
     endif
 endfun
 
-com! -nargs=0 MakeNewEclecticModule call <SID>MakeNewEclecticModule()
+com! -nargs=0 MakeNewEselectModule call <SID>MakeNewEselectModule()
 
-augroup MakeNewEclecticModule
+augroup MakeNewEselectModule
     au!
-    autocmd BufNewFile *.eclectic
-        \ call <SID>MakeNewEclecticModule()
+    autocmd BufNewFile *.eselect
+        \ call <SID>MakeNewEselectModule()
 augroup end
 
 " vim: sw=4 ts=4 et fdm=marker

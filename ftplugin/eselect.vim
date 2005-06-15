@@ -1,10 +1,10 @@
 " Vim filetype plugin file
-" Language:	 Eclectic Module (bash)
+" Language:	 Eselect Module (bash)
 " Author:	 Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright: Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	 You may redistribute this under the same terms as Vim itself
 "
-" This sets up filetype specific options for ectic modules.  These settings
+" This sets up filetype specific options for eselect modules.  These settings
 " were pwned from ebuild.vim, but they wfm ..
 "
 

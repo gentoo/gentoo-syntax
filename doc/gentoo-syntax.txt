@@ -267,6 +267,11 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
 
+	20050615 beu
+	    * s/eclectic/eselect/g
+	    * Use GentooGetUser() function for the local-part of MAINTAINER
+	      when creating a boiler-plate eselect module.
+
 	20050515 beu
 	    * Testing, testing .. Fix a 'few' typo's in syntax/eclectic.vim.
 

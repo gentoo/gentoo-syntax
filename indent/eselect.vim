@@ -1,11 +1,11 @@
 " Vim syntax file
-" Language:	 Eclectic Modules
+" Language:	 Eselect Modules
 " Author:	 Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright: Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	 You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Eclectic modules. Inherits from sh.vim and adds
-" in Eclectic-specific highlights for certain keywords and functions. Requires
+" Syntax highlighting for Eselect modules. Inherits from sh.vim and adds
+" in Eselect-specific highlights for certain keywords and functions. Requires
 " vim 6.3 or later.
 
 if &compatible || v:version < 603
