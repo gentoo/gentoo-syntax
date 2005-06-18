@@ -57,13 +57,14 @@ syn keyword EbuildEutilsKeyword cdrom_locate_file_on_cd strip-linguas epause ebe
 syn keyword EbuildEutilsKeyword make_session_desktop domenu doicon find_unpackable_file unpack_pdv
 syn keyword EbuildEutilsKeyword set_arch_to_kernel set_arch_to_portage preserve_old_lib
 syn keyword EbuildEutilsKeyword preserve_old_lib_notify built_with_use epunt_cxx dopamd newpamd
+syn keyword EbuildEutilsKeyword make_wrapper
 
 " flag-o-matic
 syn keyword EbuildFlagoKeyword setup-allowed-flags filter-flags filter-lfs-flags append-lfs-flags
 syn keyword EbuildFlagoKeyword append-flags replace-flags replace-cpu-flags is-flag filter-mfpmath
 syn keyword EbuildFlagoKeyword strip-flags test_flag test_version_info strip-unsupported-flags get-flag
-syn keyword EbuildFlagoKeyword has_hardened has_pic has_pie has_ssp has_m64 has_m32 replace-sparc64-flags
-syn keyword EbuildFlagoKeyword append-ldflags filter-ldflags etexec-flags fstack-flags gcc2-flags
+syn keyword EbuildFlagoKeyword has_hardened has_pic has_pie has_ssp_all has_ssp has_m64 has_m32
+syn keyword EbuildFlagoKeyword replace-sparc64-flags append-ldflags filter-ldflags fstack-flags gcc2-flags
 
 " gcc
 syn keyword EbuildGCCKeyword gcc-getCC gcc-getCXX gcc-fullversion gcc-version gcc-major-version
@@ -80,11 +81,12 @@ syn keyword EbuildFixHeadTailsKeyword ht_fix_file ht_fix_all
 syn keyword EbuildFdoMimeKeyword fdo-mime_desktop_database_update fdo-mime_mime_database_update
 
 " webapp
-syn keyword EbuildWebappKeyword webapp_configfile webapp_hook_script webapp_postinst_txt
-syn keyword EbuildWebappKeyword webapp_runbycgibin webapp_serverowned webapp_server_configfile
-syn keyword EbuildWebappKeyword webapp_sqlscript webapp_src_install webapp_pkg_setup
-syn keyword EbuildWebappKeyword webapp_getinstalltype webapp_src_preinst webapp_pkg_postinst
-syn keyword EbuildWebappKeyword webapp_pkg_prerm
+syn keyword EbuildWebappKeyword webapp_checkfileexists webapp_import_config webapp_strip_appdir
+syn keyword EbuildWebappKeyword webapp_strip_d webapp_strip_cwd webapp_configfile webapp_hook_script
+syn keyword EbuildWebappKeyword webapp_postinst_txt webapp_postupgrade_txt webapp_runbycgibin
+syn keyword EbuildWebappKeyword webapp_serverowned webapp_server_configfile webapp_sqlscript
+syn keyword EbuildWebappKeyword webapp_src_install webapp_pkg_postinst webapp_pkg_setup
+syn keyword EbuildWebappKeyword webapp_getinstalltype webapp_src_preinst webapp_pkg_prerm
 
 " versionator
 syn keyword EbuildVersionatorKeyword get_all_version_components version_is_at_least
@@ -94,7 +96,7 @@ syn keyword EbuildVersionatorKeyword replace_version_separator replace_all_versi
 syn keyword EbuildVersionatorKeyword delete_version_separator delete_all_version_separators
 
 " cvs
-syn keyword EbuildCVSKeyword cvs_src_unpack
+syn keyword EbuildCVSKeyword cvs_fetch cvs_src_unpack
 
 " bash-completion
 syn keyword EbuildBashCompKeyword dobashcompletion bash-completion_pkg_postinst
@@ -107,17 +109,21 @@ syn keyword EbuildVimPluginKeyword update_vim_afterscripts display_vim_plugin_he
 syn keyword EbuildVimDocKeyword update_vim_helptags
 
 " multilib
-syn keyword EbuildMultilibKeyword get_libdir get_multilibdir get_libdir_override get_all_libdirs
-syn keyword EbuildMultilibKeyword get_abi_var get_abi_CFLAGS get_abi_CDEFINE get_abi_LIBDIR get_abi_order
-syn keyword EbuildMultilibKeyword is_final_abi number_abis
-syn keyword EbuildMultilibKeyword prep_ml_includes create_ml_includes
+syn keyword EbuildMultilibKeyword has_multilib_profile get_libdir get_multilibdir get_libdir_override
+syn keyword EbuildMultilibKeyword get_abi_var get_abi_CFLAGS get_abi_LDFLAGS get_abi_CHOST
+syn keyword EbuildMultilibKeyword get_abi_FAKE_TARGETS get_abi_CDEFINE get_abi_LIBDIR get_install_abis
+syn keyword EbuildMultilibKeyword get_all_abis get_all_libdirs is_final_abi number_abis get_ml_incdir
+syn keyword EbuildMultilibKeyword prep_ml_includes create_ml_includes create_ml_includes-absolute
+syn keyword EbuildMultilibKeyword create_ml_includes-tidy_path create_ml_includes-listdirs
+syn keyword EbuildMultilibKeyword create_ml_includes-makedestdirs create_ml_includes-allfiles
+syn keyword EbuildMultilibKeyword create_ml_includes-sym_for_dir
 
 " 64-bit
 syn keyword Ebuild64bitKeyword 64-bit
 
 " toolchain-funcs
 syn keyword EbuildToolFuncsKeyword tc-getPROG tc-getAR tc-getAS tc-getCC tc-getCXX tc-getLD tc-getNM
-syn keyword EbuildToolFuncsKeyword tc-getRANLIB tc-getF77 tc-getGCJ tc-getBUILD_CC tc-export
+syn keyword EbuildToolFuncsKeyword tc-getRANLIB tc-getF77 tc-getGCJ tc-getBUILD_CC tc-export ninj
 syn keyword EbuildToolFuncsKeyword tc-is-cross-compiler tc-ninja_magic_to_arch tc-arch-kernel tc-arch
 syn keyword EbuildToolFuncsKeyword tc-endian gcc-fullversion gcc-version gcc-major-version
 syn keyword EbuildToolFuncsKeyword gcc-minor-version gcc-micro-version
@@ -127,7 +133,7 @@ syn keyword EbuildCronKeyword docrondir docron docrontab cron_pkg_postinst
 
 " games
 syn keyword EbuildGamesKeyword egamesconf egamesinstall gameswrapper dogamesbin dogamessbin dogameslib
-syn keyword EbuildGamesKeyword dogameslib.a dogameslib.so newgamesbin newgamessbin gamesowner gamesperms
+syn keyword EbuildGamesKeyword dogameslib.a dogameslib.so newgamesbin newgamessbin gamesowners gamesperms
 syn keyword EbuildGamesKeyword prepgamesdirs gamesenv games_pkg_setup games_src_compile games_pkg_postinst
 syn keyword EbuildGamesKeyword games_ut_unpack games_umod_unpack games_make_wrapper
 
@@ -165,7 +171,22 @@ syn keyword EbuildDependApacheKeyword need_apache need_apache1 need_apache2
 
 " apache-module
 syn keyword EbuildApacheModuleKeyword apache-module_pkg_setup apache-module_src_compile
-syn keyword EbuildApacheModuleKeyword apache-module_src_install apache-module_pkg_postinst
+syn keyword EbuildApacheModuleKeyword apache-module_src_install apache-module_pkg_postinst acache_cd_dir
+syn keyword EbuildApacheModuleKeyword apache_mod_file apache_doc_magic apache1_src_compile apache1_src_install
+syn keyword EbuildApacheModuleKeyword apache1_pkg_postinst apache2_pkg_setup apache2_src_compile
+syn keyword EbuildApacheModuleKeyword apache1_src_install apache2_pkg_postinst
+
+" pam
+syn keyword EbuildPamKeyword dopamd newpamd dopamsecurity newpamsecurity getpam_mod_dir
+syn keyword EbuildPamKeyword dopammod newpammod pamd_mimic_system
+
+" virtualx
+syn keyword EbuildVirtualXKeyword virtualmake Xmake Xemake Xeconf
+
+" gnome2
+syn keyword EbuildGnome2Keyword gnome2_src_configure gnome2_src_compile gnome2_src_install
+syn keyword EbuildGnome2Keyword gnome2_gconf_install gnome2_gconf_uninstal gnome2_omf_fix
+syn keyword EbuildGnome2Keyword gnome2_scrollkeeper_update gnome2_pkg_postinst gnome2_pkg_postrm
 
 " EXPORT_FUNCTIONS
 syn match EbuildExportFunctions /EXPORT_FUNCTIONS/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
@@ -221,7 +242,8 @@ syn cluster EbuildThings add=EbuildFdoMimeKeyword,EbuildMultilibKeyword,Ebuild64
 syn cluster EbuildThings add=EbuildCronKeyword,EbuildGamesKeyword,EbuildToolFuncsKeyword
 syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword,EbuildPythonKeyword
 syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword,EbuildDistutilsKeyword
-syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword
+syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword,EbuildPamKeyword
+syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword
 
 syn cluster shCommandSubList add=@EbuildThings
 syn cluster shCommentGroup add=GentooBug
@@ -257,6 +279,9 @@ hi def link EbuildPerlModuleKeyword	     Identifier
 hi def link EbuildDistutilsKeyword	     Identifier
 hi def link EbuildDependApacheKeyword        Identifier
 hi def link EbuildApacheModuleKeyword        Identifier
+hi def link EbuildPamKeyword		     Identifier
+hi def link EbuildVirtualXKeyword	     Identifier
+hi def link EbuildGnome2Keyword		     Identifier
 
 hi def link EbuildHomePageError              Error
 hi def link EbuildError                      Error
