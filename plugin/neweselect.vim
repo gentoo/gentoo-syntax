@@ -21,13 +21,14 @@ endfun
 
 fun! <SID>MakeNewEselectModule()
     let l:pastebackup = &paste
+    let l:maintainer = substitute(GentooGetUser(), "^.*<\\(.*\\)>", "\\1", "g")
     set nopaste
 
     call EselectModuleHeader()
 
     " {{{ boiler-plate eselect module
     put ='DESCRIPTION=\"\"'
-    put ='MAINTAINER=\"' . GentooGetUser() . '@gentoo.org\"'
+    put ='MAINTAINER=\"' . l:maintainer . '\"'
     put =''
     call setline(line("."), 'SVN_DATE=' . "'" . '$Date: $' . "'")
     put ='VERSION=$(svn_date_to_version \"${SVN_DATE}\" )'
