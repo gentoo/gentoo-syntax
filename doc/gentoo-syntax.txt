@@ -3,6 +3,7 @@
 Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
           Aaron Walker    <ka0ttic at gentoo dot org>
           Tom Martin      <slarti  at gentoo dot org>
+	  Elfyn McBratney <beu     at gentoo dot org>
 
 ==============================================================================
 1. Contents						       *gentoo-syntax*
@@ -266,6 +267,14 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
+
+	20050618 ka0ttic (Release)
+	    * Updated eutils, multilib, flag-o-matic, webapp, games eclass
+	      functions.
+	    * Added pam, virtualx, gnome2 eclass functions.
+	    * Fixed MakeNewEselectModule() to a) not print the errant
+	      '@gentoo.org' and b) to only use the maintainer's email address,
+	      not all of ECHANGELOG_USER.
 
 	20050615 beu
 	    * s/eclectic/eselect/g
