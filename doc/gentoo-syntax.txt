@@ -241,6 +241,10 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 	The ':NewEbuild' command can be used to manually create contents for a
 	new ebuild or eclass file.
 
+	To disable the autogenerate functionality place into your .vimrc file:
+
+	    let g:ebuild_create_on_empty = 0
+
     New init.d Files				      *new-init.d* *:NewInitd*
 
 	New init.d files will automatically have a skeleton content created
@@ -267,6 +271,10 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
+
+	20050622 rphillips
+	    * added g:ebuild_create_on_empty option to toggle new ebuild
+	      creation on/off on a new ebuild. Fixes #96659
 
 	20050618 ka0ttic (Release)
 	    * Updated eutils, multilib, flag-o-matic, webapp, games eclass

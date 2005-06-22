@@ -134,10 +134,17 @@ endfun
 
 com! -nargs=0 NewEbuild call <SID>MakeNewEbuild()
 
+if !exists("g:ebuild_create_on_empty")
+    " Enable autogeneration of ebuilds by default
+    let g:ebuild_create_on_empty = 1
+endif
+
 augroup NewEbuild
     au!
     autocmd BufNewFile *.e{build,class}
-                \ call <SID>MakeNewEbuild()
+                \ if g:ebuild_create_on_empty |
+                \    call <SID>MakeNewEbuild() |
+                \ endif
 augroup END
 
 " vim: set et foldmethod=marker : "
