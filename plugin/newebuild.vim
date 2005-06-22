@@ -139,6 +139,11 @@ if !exists("g:ebuild_create_on_empty")
     let g:ebuild_create_on_empty = 1
 endif
 
+" check to see if v:progname is vimdiff to disable new ebuild creation
+if v:progname =~ "vimdiff"
+    let g:ebuild_create_on_empty = 0
+endif
+
 augroup NewEbuild
     au!
     autocmd BufNewFile *.e{build,class}
