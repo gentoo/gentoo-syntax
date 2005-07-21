@@ -24,15 +24,16 @@ syn keyword guidexmlElement contained poster author abstract summary license
 syn keyword guidexmlElement contained glsaindex glsa-latest version date
 syn keyword guidexmlElement contained chapter section body figure fig img
 syn keyword guidexmlElement contained br note impo warn pre p table tcolumn
-syn keyword guidexmlElement contained tr th ti ul ol li b brite box c codenote
+syn keyword guidexmlElement contained tr th ti ul ol li b brite box c comment
 syn keyword guidexmlElement contained e i path mail uri
+syn keyword guidexmlElement contained book part include sections subsection
 
 syn cluster xmlAttribHook add=guidexmlAttr
 syn match guidexmlAttr contained /about\|articles\|author\|caption\|category\|changelog/
 syn match guidexmlAttr contained /contract\|docs\|gentoo\|graphics\|id\|irc\|lang\|link/
 syn match guidexmlAttr contained /linkto\|lists\|news\|newsletter\|packages\|performace/
 syn match guidexmlAttr contained /projects\|short\|shots\|sponsors\|src\|support\|title/
-syn match guidexmlAttr contained /type\|where\|width/
+syn match guidexmlAttr contained /type\|where\|width\|href/
 
 hi def link guidexmlElement Keyword
 hi def link guidexmlAttr    Keyword

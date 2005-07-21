@@ -80,15 +80,15 @@ au BufNewFile,BufRead metadata.xml
 
 " guidexml
 au BufNewFile,BufRead *.xml
-    \     if getline(1) =~ "<!DOCTYPE guide " ||
-    \        getline(2) =~ "<!DOCTYPE guide " ||
-    \        getline(3) =~ "<!DOCTYPE guide " ||
-    \        getline(4) =~ "<!DOCTYPE guide " ||
-    \        getline(5) =~ "<!DOCTYPE guide " ||
-    \        getline(6) =~ "<!DOCTYPE guide " ||
-    \        getline(7) =~ "<!DOCTYPE guide " ||
-    \        getline(8) =~ "<!DOCTYPE guide " ||
-    \        getline(9) =~ "<!DOCTYPE guide " |
+    \     if getline(1) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
+    \        getline(2) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
+    \        getline(3) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
+    \        getline(4) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
+    \        getline(5) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
+    \        getline(6) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
+    \        getline(7) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
+    \        getline(8) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
+    \        getline(9) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " |
     \     set filetype=guidexml		      |
     \	 endif
 
