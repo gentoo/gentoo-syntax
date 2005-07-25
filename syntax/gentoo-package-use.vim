@@ -28,7 +28,7 @@ syn match  GentooPackageUseAtom /^[^ \t\n#]\+-\S\+\/\S\+/
 	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
 syn match  GentooPackageUseUse contained /[a-zA-Z][a-zA-Z0-9\-_]*/
 	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
-syn match  GentooPackageUseUnuse contained /-[a-zA-Z][a-zA-Z0-9\-_]*/
+syn match  GentooPackageUseUnuse contained /-[a-zA-Z0-9][a-zA-Z0-9\-_]*/
 	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
 
 hi def link GentooPackageUseComment          Comment
