@@ -26,7 +26,7 @@ syn match  GentooPackageUseDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\
 
 syn match  GentooPackageUseAtom /^[^ \t\n#]\+-\S\+\/\S\+/
 	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
-syn match  GentooPackageUseUse contained /[a-zA-Z][a-zA-Z0-9\-_]*/
+syn match  GentooPackageUseUse contained /[a-zA-Z0-9][a-zA-Z0-9\-_]*/
 	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
 syn match  GentooPackageUseUnuse contained /-[a-zA-Z0-9][a-zA-Z0-9\-_]*/
 	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite

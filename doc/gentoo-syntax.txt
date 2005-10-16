@@ -272,6 +272,9 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
 
+	20051016 ciaranm
+	    * Fix package.use flags that start with a number.
+
 	20050622 rphillips
 	    * added g:ebuild_create_on_empty option to toggle new ebuild
 	      creation on/off. Fixes #96659
