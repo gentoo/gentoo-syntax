@@ -272,6 +272,9 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
 
+	20051221 ciaranm (Release)
+	    * INSTALL_MASK in make.conf.
+
 	20051016 ciaranm
 	    * Fix package.use flags that start with a number.
 
