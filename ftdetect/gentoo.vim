@@ -80,15 +80,15 @@ au BufNewFile,BufRead metadata.xml
 
 " guidexml
 au BufNewFile,BufRead *.xml
-    \     if getline(1) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
-    \        getline(2) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
-    \        getline(3) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
-    \        getline(4) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
-    \        getline(5) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
-    \        getline(6) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
-    \        getline(7) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
-    \        getline(8) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " ||
-    \        getline(9) =~ "<!DOCTYPE \\(guide\\|book\\|sections\\) " |
+    \     if getline(1) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
+    \        getline(2) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
+    \        getline(3) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
+    \        getline(4) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
+    \        getline(5) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
+    \        getline(6) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
+    \        getline(7) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
+    \        getline(8) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
+    \        getline(9) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " |
     \     set filetype=guidexml		      |
     \	 endif
 

@@ -274,6 +274,9 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 3. ChangeLog					     *gentoo-syntax-changelog*
 
 	20061105 pioto
+	    * Update GuideXML support. See Bug #145999
+
+	20061105 pioto
 	    * Make package.* files' syntax accept category names without a '-'
 	      in them. See Bug #122890
 
