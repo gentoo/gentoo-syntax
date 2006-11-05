@@ -75,8 +75,8 @@ fun! <SID>MakeNewMetadata()
             if l:name != ""
                 put ='<name>' . l:name . '</name>'
             endif
+	    put ='</maintainer>'
         endif
-        put ='</maintainer>'
         put ='<longdescription lang=\"en\">'
         put ='</longdescription>'
         put ='</pkgmetadata>'

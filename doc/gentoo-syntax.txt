@@ -3,7 +3,8 @@
 Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
           Aaron Walker    <ka0ttic at gentoo dot org>
           Tom Martin      <slarti  at gentoo dot org>
-	  Elfyn McBratney <beu     at gentoo dot org>
+          Elfyn McBratney <beu     at gentoo dot org>
+          Mike Kelly      <pioto   at gentoo dot org>
 
 ==============================================================================
 1. Contents						       *gentoo-syntax*
@@ -271,6 +272,10 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
+
+	20061105 pioto
+	    * Apply patch from tupone to fix newmetadata (Formerly known as
+	      the 20051221-r1 release).
 
 	20051221 ciaranm (Release)
 	    * INSTALL_MASK in make.conf.
