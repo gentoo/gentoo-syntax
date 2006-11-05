@@ -25,7 +25,7 @@ syn region GentooPackageMaskComment start=/#/ end=/$/
 syn match  GentooPackageMaskEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
 syn match  GentooPackageMaskDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
-syn match  GentooPackageMaskAtom /^[^ \t\n#]\+-\S\+\/\S\+/
+syn match  GentooPackageMaskAtom /^[^ \t\n#]\+\S\+\/\S\+/
 
 hi def link GentooPackageMaskComment          Comment
 hi def link GentooPackageMaskEmail            Special

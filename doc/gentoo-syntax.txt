@@ -274,6 +274,10 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 3. ChangeLog					     *gentoo-syntax-changelog*
 
 	20061105 pioto
+	    * Make package.* files' syntax accept category names without a '-'
+	      in them. See Bug #122890
+
+	20061105 pioto
 	    * Apply patch from tupone to fix newmetadata (Formerly known as
 	      the 20051221-r1 release).
 

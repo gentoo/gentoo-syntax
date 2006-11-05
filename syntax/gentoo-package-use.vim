@@ -24,7 +24,7 @@ syn region GentooPackageUseComment start=/#/ end=/$/
 syn match  GentooPackageUseEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
 syn match  GentooPackageUseDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
-syn match  GentooPackageUseAtom /^[^ \t\n#]\+-\S\+\/\S\+/
+syn match  GentooPackageUseAtom /^[^ \t\n#]\+\S\+\/\S\+/
 	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
 syn match  GentooPackageUseUse contained /[a-zA-Z0-9][a-zA-Z0-9\-_]*/
 	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
