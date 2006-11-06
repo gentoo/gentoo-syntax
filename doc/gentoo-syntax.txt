@@ -273,6 +273,9 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
 
+	20061106 pioto
+	    * Release new version.
+
 	20061105 pioto
 	    * Update GuideXML support. See Bug #145999
 
