@@ -37,7 +37,7 @@ syn keyword EbuildCoreKeyword newexe newins newman newsbin prepall prepalldocs p
 syn keyword EbuildCoreKeyword prepallman prepallstrip has unpack dopython dosed into
 syn keyword EbuildCoreKeyword doinitd doconfd doenvd dojar domo dodir ebegin eend
 syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.so
-syn keyword EbuildCoreKeyword hasq hasv useq usev
+syn keyword EbuildCoreKeyword hasq hasv useq usev elog
 
 " Sandbox
 syn keyword EbuildCoreKeyword addread addwrite adddeny addpredict
@@ -49,6 +49,8 @@ syn keyword EbuildFunctions pkg_preinst pkg_postinst pkg_prerm pkg_postrm pkg_co
 " Inherit
 syn keyword EbuildInherit inherit
 
+" autotools
+syn keyword EbuildAutoKeyword eautoreconf eaclocal _elibtoolize eautoconf eautoheader eautomake
 " eutils
 syn keyword EbuildEutilsKeyword gen_usr_ldscript draw_line epatch have_NPTL get_number_of_jobs egetent
 syn keyword EbuildEutilsKeyword emktemp enewuser enewgroup edos2unix make_desktop_entry unpack_pdv
@@ -243,7 +245,7 @@ syn cluster EbuildThings add=EbuildCronKeyword,EbuildGamesKeyword,EbuildToolFunc
 syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword,EbuildPythonKeyword
 syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword,EbuildDistutilsKeyword
 syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword,EbuildPamKeyword
-syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword
+syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
 
 syn cluster shCommandSubList add=@EbuildThings
 syn cluster shCommentGroup add=GentooBug
@@ -281,7 +283,8 @@ hi def link EbuildDependApacheKeyword        Identifier
 hi def link EbuildApacheModuleKeyword        Identifier
 hi def link EbuildPamKeyword		     Identifier
 hi def link EbuildVirtualXKeyword	     Identifier
-hi def link EbuildGnome2Keyword		     Identifier
+hi def link EbuildGnome2Keyword  	     Identifier
+hi def link EbuildAutoKeyword		     Identifier
 
 hi def link EbuildHomePageError              Error
 hi def link EbuildError                      Error
