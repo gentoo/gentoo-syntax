@@ -273,6 +273,14 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
 
+	20070212 pioto
+	    * Patch to update java ebuild template to use the new generation 2
+	      java eclasses. See Bug #164953.
+
+	20070130 pioto
+	    * Patch to add hilighting for elog and the autotools.eclass. See
+	      Bug #164312.
+
 	20061106 pioto
 	    * Release new version.
 

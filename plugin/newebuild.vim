@@ -77,6 +77,39 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='need_apache2'
             " }}}
+	elseif l:category ==# "dev-java"
+		" {{{ dev-java generation-2 default ant ebuild
+		put ='JAVA_PKG_IUSE=\"doc source\"'
+		put =''
+		put ='inherit java-pkg-2 java-ant-2'
+		put =''
+		put ='DESCRIPTION=\"\"'
+		put ='HOMEPAGE=\"\"'
+		put ='SRC_URI=\"${P}.zip\"'
+		put =''
+		put ='LICENSE=\"\"'
+		put ='SLOT=\"0\"'
+		put ='KEYWORDS=\"~' . l:arch .'\"'
+		put =''
+		put ='IUSE=\"\"'
+		put =''
+		put ='COMMON_DEP=\"\"'
+		put =''
+		put ='RDEPEND=\">=virtual/jre-1.4'
+		put ='	${COMMON_DEP}\"'
+		put ='DEPEND=\">=virtual/jdk-1.4'
+		put ='	app-arch/unzip'
+		put ='	${COMMON_DEP}\"'
+		put =''
+		put ='EANT_BUILD_TARGET=\"\"'
+		put ='EANT_DOC_TARGET=\"\"'
+		put =''
+		put ='src_install() {'
+		put ='	java-pkg_dojar \"${PN}.jar\"'
+		put ='	use doc && java-pkg_dojavadoc build/javadoc'
+		put ='	use source && java-pkg_dosrc src'
+		put ='}'
+		put =''
         else
             " {{{ standard default setup
             " {{{ extra inherits for some categories
@@ -85,9 +118,6 @@ fun! <SID>MakeNewEbuild()
                 put =''
             elseif l:category ==# "dev-python"
                 put ='inherit distutils'
-                put =''
-            elseif l:category ==# "dev-java"
-                put ='inherit java-pkg'
                 put =''
             elseif l:category ==# "dev-perl"
                 put ='inherit perl-module'
@@ -106,16 +136,9 @@ fun! <SID>MakeNewEbuild()
             put =''
 
             " {{{ extra deps for some categories
-            if l:category ==# "dev-java"
-                put ='DEPEND=\"virtual/jdk\"'
-                put ='RDEPEND=\"virtual/jre\"'
-                put =''
-            else
-                put ='DEPEND=\"\"'
-                put ='RDEPEND=\"\"'
-                put =''
-            endif
-            " }}}
+            put ='DEPEND=\"\"'
+            put ='RDEPEND=\"\"'
+            put =''
             " }}}
         endif
 
