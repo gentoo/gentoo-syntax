@@ -21,7 +21,7 @@ runtime syntax/gentoo-common.vim
 syn region GentooUseDescComment start=/#/ end=/$/
 	    \ contains=GentooBug
 
-syn match GentooUseDescPackage /^\(#\)\@!\([a-zA-Z0-9\-\_]\+\/[a-zA-Z0-9\-\_]\+\)\?/ nextgroup=GentooUseDescColon,GentooUseDescFlag skipwhite
+syn match GentooUseDescPackage /^\(#\)\@!\([a-zA-Z0-9\-\_+\.]\+\/[a-zA-Z0-9\-\_+]\+\)\?/ nextgroup=GentooUseDescColon,GentooUseDescFlag skipwhite
 syn match GentooUseDescColon /:/ contained nextgroup=GentooUseDescFlag
 syn match GentooUseDescFlag contained /[a-zA-Z0-9\-\_]\+/ nextgroup=GentooUseDescDash skipwhite
 syn match GentooUseDescDash /-\s*/ contained nextgroup=GentooUseDescDesc skipwhite
