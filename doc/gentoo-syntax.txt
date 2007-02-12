@@ -274,6 +274,10 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 3. ChangeLog					     *gentoo-syntax-changelog*
 
 	20070212 pioto
+	    * Patch to hilight on USE_EXPAND variables in make.conf. See
+	      Bug #164588.
+
+	20070212 pioto
 	    * Patch to update java ebuild template to use the new generation 2
 	      java eclasses. See Bug #164953.
 
