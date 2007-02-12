@@ -23,7 +23,7 @@ syn region GentooUseDescComment start=/#/ end=/$/
 
 syn match GentooUseDescPackage /^\(#\)\@!\([a-zA-Z0-9\-\_+\.]\+\/[a-zA-Z0-9\-\_+]\+\)\?/ nextgroup=GentooUseDescColon,GentooUseDescFlag skipwhite
 syn match GentooUseDescColon /:/ contained nextgroup=GentooUseDescFlag
-syn match GentooUseDescFlag contained /[a-zA-Z0-9\-\_]\+/ nextgroup=GentooUseDescDash skipwhite
+syn match GentooUseDescFlag contained /[a-zA-Z0-9\-\_+@:]\+/ nextgroup=GentooUseDescDash skipwhite
 syn match GentooUseDescDash /-\s*/ contained nextgroup=GentooUseDescDesc skipwhite
 syn region GentooUseDescDesc start=// end=/$/ contained skipwhite
 
