@@ -274,6 +274,9 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 3. ChangeLog					     *gentoo-syntax-changelog*
 
 	20070212 pioto
+	    * Release new version.
+
+	20070212 pioto
 	    * Make gentoo-use-desc.vim accept USE flags as specified by PMS.
 
 	20070212 pioto
