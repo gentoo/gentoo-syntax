@@ -227,6 +227,8 @@ endif
 syn match   EbuildErrorC /\$\?{\?EXTRA_ECONF}\?/
 " stupid cat usage
 syn match   EbuildErrorC /\(z\)\@<!cat \S\+\s\+|\s*\(sed\|[aef]\?grep\|sort\|cut\|head\|tail\|patch\)/
+" Use type -P instead of `which`
+syn match   EbuildErrorC /`which.*`\|$(which.*)/
 
 " Special homepage handling
 syn match EbuildHomePageError /^HOMEPAGE=.*\(\${[^}]*}\?\|\([^\\]\)\@<=\$[^{]\w*\).*$/
