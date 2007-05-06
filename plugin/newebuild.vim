@@ -31,9 +31,6 @@ fun! <SID>MakeNewEbuild()
         put ='# Purpose: '
         put ='#'
         put =''
-        put ='ECLASS=\"' . l:eclass . '\"'
-        put ='INHERITED=\"$INHERITED $ECLASS\"'
-        put =''
         " }}}
 
         " {{{ go to the first thing to edit
