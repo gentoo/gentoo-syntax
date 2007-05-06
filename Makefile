@@ -86,13 +86,8 @@ dist:
 	tar jcf "$(distpkg).tar.bz2" "$(distpkg)"
 	rm -fr "$(distpkg)/"
 
-dist-sign: dist
-	gpg --armour --detach-sign "$(distpkg).tar.bz2"
-	mv "$(distpkg).tar.bz2.asc" "$(distpkg).tar.bz2.signature"
-
-dist-upload: dist dist-sign
-	echo -ne "user anonymous gentoo-syntax\ncd incoming\nput $(distpkg).tar.bz2\nput $(distpkg).tar.bz2.signature\nbye" | \
-		ftp -n ftp.berlios.de
+dist-upload: dist
+	scp $(distpkg).tar.bz2 dev.gentoo.org:/space/distfiles-local/
 
 clean:
 	find . -name '*~' | xargs rm || true
