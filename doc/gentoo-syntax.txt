@@ -273,6 +273,15 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 ==============================================================================
 3. ChangeLog					     *gentoo-syntax-changelog*
 
+	20070506 pioto
+	    * Eclasses don't need to specify ECLASS or INHERITED anymore. See
+	      Bug #175135.
+	    * Split off eselect-specific stuff into the eselect-syntax
+	      package, and portage configuration stuff into portage-syntax.
+	    * Don't use GNU-specific date --iso in the Makefile, and be sure
+	      that the version stamp is always from UTC.
+	    * Release new version.
+
 	20070212 pioto
 	    * Release new version.
 

@@ -1,7 +1,7 @@
 # Makefile for gentoo-syntax
 
 distapp = gentoo-syntax
-distver := $(shell date --iso | sed -e 's~-~~g')
+distver := $(shell date -u +%Y%m%d)
 distpkg := $(distapp)-$(distver)
 
 PREFIX = ${HOME}/.vim/
