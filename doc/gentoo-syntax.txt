@@ -280,6 +280,8 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 	      package, and portage configuration stuff into portage-syntax.
 	    * Don't use GNU-specific date --iso in the Makefile, and be sure
 	      that the version stamp is always from UTC.
+	    * Hilight usage of the `which` command as an error. People should
+	      use the bash builtin type -P instead. See Bug #176218.
 	    * Release new version.
 
 	20070212 pioto
