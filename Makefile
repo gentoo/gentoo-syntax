@@ -19,26 +19,22 @@ files_doc = \
 
 files_ftdetect = \
 	ftdetect/gentoo.vim \
-	ftplugin/ebuild.vim \
-	ftdetect/eselect.vim
+	ftplugin/ebuild.vim
 
 files_ftplugin = \
 	ftplugin/gentoo-changelog.vim \
-	ftplugin/gentoo-metadata.vim \
-	ftplugin/eselect.vim
+	ftplugin/gentoo-metadata.vim
 
 files_indent = \
 	indent/ebuild.vim \
-	indent/gentoo-metadata.vim \
-	indent/eselect.vim
+	indent/gentoo-metadata.vim
 
 files_plugin = \
 	plugin/bugsummary.vim \
 	plugin/gentoo-common.vim \
 	plugin/newebuild.vim \
 	plugin/newmetadata.vim \
-	plugin/newinitd.vim \
-	plugin/neweselect.vim
+	plugin/newinitd.vim
 
 files_syntax = \
 	syntax/ebuild.vim \
@@ -55,8 +51,7 @@ files_syntax = \
 	syntax/gentoo-package-use.vim \
 	syntax/gentoo-use-desc.vim \
 	syntax/glep.vim \
-	syntax/guidexml.vim \
-	syntax/eselect.vim
+	syntax/guidexml.vim
 
 files = $(foreach f, $(files_vars), $($(f)) )
 
