@@ -4,9 +4,11 @@
 " Copyright:    Copyright (c) 2005 Ciaran McCreesh
 " Licence:      You may redistribute this under the same terms as Vim itself
 
-if &compatible || v:version < 603
+if &compatible || v:version < 603 || exists("g:loaded_gentoo_common")
     finish
 endif
+
+let g:loaded_gentoo_common=1
 
 fun! GentooGetUser()
     let l:result = expand("\$ECHANGELOG_USER")

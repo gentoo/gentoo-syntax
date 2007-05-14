@@ -4,9 +4,11 @@
 " Copyright:    Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:      You may redistribute this under the same terms as Vim itself
 
-if &compatible || v:version < 603
+if &compatible || v:version < 603 || exists("g:loaded_newebuild")
     finish
 endif
+
+let g:loaded_newebuild=1
 
 runtime! plugin/gentoo-common.vim
 
@@ -42,6 +44,7 @@ fun! <SID>MakeNewEbuild()
     else
         if l:category ==# "app-vim"
             " {{{ app-vim special setup
+            put ='#VIM_PLUGIN_VIM_VERSION=\"7.0\"'
             put ='inherit vim-plugin'
             put =''
             put ='DESCRIPTION=\"vim plugin: \"'
