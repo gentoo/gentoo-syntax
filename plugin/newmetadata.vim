@@ -4,9 +4,11 @@
 " Copyright:    Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:      You may redistribute this under the same terms as Vim itself
 
-if &compatible || v:version < 603
+if &compatible || v:version < 603 || exists("g:loaded_newmetadata")
     finish
 endif
+
+let g:loaded_newmetadata=1
 
 runtime! plugin/gentoo-common.vim
 

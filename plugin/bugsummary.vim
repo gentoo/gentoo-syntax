@@ -14,9 +14,11 @@
 " Configuration options:
 "   :let g:bugsummary_browser="firefox '%s'"
 
-if &compatible || v:version < 603
+if &compatible || v:version < 603 || exists("g:loaded_bugsummary")
     finish
 endif
+
+let g:loaded_bugsummary=1
 
 fun! <SID>strip(s)
     return substitute(a:s, "\\n", "", "g")

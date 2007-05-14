@@ -4,9 +4,11 @@
 " Copyright:	Copyright (c) 2005 Aaron Walker
 " License:	You may redistribute this under the same terms as Vim itself
 
-if &compatible || v:version < 603
+if &compatible || v:version < 603 || exists("g:loaded_newinitd")
     finish
 endif
+
+let g:loaded_newinitd=1
 
 runtime! plugin/gentoo-common.vim
 
