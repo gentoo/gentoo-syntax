@@ -165,8 +165,9 @@ syn keyword EbuildPerlModuleKeyword perl-module_pkg_postinst perl-module_pkg_pre
 syn keyword EbuildPerlModuleKeyword perlinfo fixlocalpod updatepod
 
 " distutils
-syn keyword EbuildDistutilsKeyword distutils_src_compile distutils_src_install distutils_pkg_postrm
-syn keyword EbuildDistutilsKeyword distutils_pkg_postinst distutils_python_version disutils_python_tkinter
+syn keyword EbuildDistutilsKeyword distutils_src_unpack distutils_src_compile distutils_src_install
+syn keyword EbuildDistutilsKeyword distutils_pkg_postrm distutils_pkg_postinst distutils_python_version
+syn keyword EbuildDistutilsKeyword distutils_python_tkinter
 
 " depend.apache
 syn keyword EbuildDependApacheKeyword need_apache need_apache1 need_apache2
