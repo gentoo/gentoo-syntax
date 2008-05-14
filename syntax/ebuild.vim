@@ -221,6 +221,9 @@ syn region  EbuildError start=/^ / end=/$/
 syn keyword EbuildError esleep
 " should be ${P}
 syn match   EbuildErrorC /\${PN}-\${PV}/
+" Variables that must be quoted.
+" TODO add ignored commands like elog,ewarn etc.
+syn match   EbuildError /"\@<!\${\?\(DISTDIR\|FILESDIR\|ROOT\|WORKDIR\|Ddir\|dir\|GAMES_PREFIX_OPT\|GAMES_DATADIR_BASE\|GAMES_DATADIR\|GAMES_SYSCONFDIR\|GAMES_STATEDIR\|GAMES_BINDIR\|GAMES_LOGDIR\|D\|S\|T\)}\?"\@!/
 
 " trailing space
 if exists("g:ebuild_error_on_trailing_whitespace")
