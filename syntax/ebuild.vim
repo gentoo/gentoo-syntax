@@ -196,6 +196,10 @@ syn match EbuildExportFunctions /EXPORT_FUNCTIONS/ skipwhite nextgroup=EbuildExp
 syn match EbuildExportFunctionsFunc contained /\S\+\(\s\|$\)\@=/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 syn match EbuildExportFunctionsFuncE contained /\S\+\(\s\|$\)\@=\(pkg_nofetch\|pkg_setup\|src_unpack\|src_compile\|src_test\|src_install\|pkg_preinst\|pkg_postinst\|pkg_prerm\|pkg_postrm\|pkg_config\)\@<!/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 
+" Eclass documentation
+syn match EclassDocumentation /@\(BLURB\|CODE\|DESCRIPTION\|ECLASS-VARIABLE\|ECLASS\|EXAMPLE\|FUNCTION\|MAINTAINER\|RETURN\|USAGE\|VARIABLE\):/ contained
+syn match EclassComment /^#.*$/ contains=EclassDocumentation
+
 " mistakes: misspelling
 syn keyword EbuildError LICENCE
 " non-GLEP 23
@@ -288,6 +292,9 @@ hi def link EbuildPamKeyword		     Identifier
 hi def link EbuildVirtualXKeyword	     Identifier
 hi def link EbuildGnome2Keyword  	     Identifier
 hi def link EbuildAutoKeyword		     Identifier
+
+hi def link EclassComment                    Comment
+hi def link EclassDocumentation              Identifier
 
 hi def link EbuildHomePageError              Error
 hi def link EbuildError                      Error
