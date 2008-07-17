@@ -165,8 +165,9 @@ syn keyword EbuildPerlModuleKeyword perl-module_pkg_postinst perl-module_pkg_pre
 syn keyword EbuildPerlModuleKeyword perlinfo fixlocalpod updatepod
 
 " distutils
-syn keyword EbuildDistutilsKeyword distutils_src_compile distutils_src_install distutils_pkg_postrm
-syn keyword EbuildDistutilsKeyword distutils_pkg_postinst distutils_python_version disutils_python_tkinter
+syn keyword EbuildDistutilsKeyword distutils_src_unpack distutils_src_compile distutils_src_install
+syn keyword EbuildDistutilsKeyword distutils_pkg_postrm distutils_pkg_postinst distutils_python_version
+syn keyword EbuildDistutilsKeyword distutils_python_tkinter
 
 " depend.apache
 syn keyword EbuildDependApacheKeyword need_apache need_apache1 need_apache2
@@ -194,6 +195,10 @@ syn keyword EbuildGnome2Keyword gnome2_scrollkeeper_update gnome2_pkg_postinst g
 syn match EbuildExportFunctions /EXPORT_FUNCTIONS/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 syn match EbuildExportFunctionsFunc contained /\S\+\(\s\|$\)\@=/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 syn match EbuildExportFunctionsFuncE contained /\S\+\(\s\|$\)\@=\(pkg_nofetch\|pkg_setup\|src_unpack\|src_compile\|src_test\|src_install\|pkg_preinst\|pkg_postinst\|pkg_prerm\|pkg_postrm\|pkg_config\)\@<!/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
+
+" Eclass documentation
+syn match EclassDocumentation /@\(BLURB\|CODE\|DESCRIPTION\|ECLASS-VARIABLE\|ECLASS\|EXAMPLE\|FUNCTION\|MAINTAINER\|RETURN\|USAGE\|VARIABLE\):/ contained
+syn match EclassComment /^#.*$/ contains=EclassDocumentation
 
 " mistakes: misspelling
 syn keyword EbuildError LICENCE
@@ -287,6 +292,9 @@ hi def link EbuildPamKeyword		     Identifier
 hi def link EbuildVirtualXKeyword	     Identifier
 hi def link EbuildGnome2Keyword  	     Identifier
 hi def link EbuildAutoKeyword		     Identifier
+
+hi def link EclassComment                    Comment
+hi def link EclassDocumentation              Identifier
 
 hi def link EbuildHomePageError              Error
 hi def link EbuildError                      Error

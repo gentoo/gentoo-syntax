@@ -51,15 +51,15 @@ au BufNewFile,BufRead /etc/cron.d/*
     \     set filetype=crontab
 
 " package.mask, package.unmask
-au BufNewFile,BufRead package.{mask,unmask}
+au BufNewFile,BufRead {package.{un,}mask,*/portage/package.{un,}mask/*}
     \     set filetype=gentoo-package-mask
 
 " package.keywords
-au BufNewFile,BufRead package.keywords
+au BufNewFile,BufRead {package.keywords,*/portage/package.keywords/*}
     \     set filetype=gentoo-package-keywords
 
 " package.use
-au BufNewFile,BufRead package.use
+au BufNewFile,BufRead {package.use,*/portage/package.use/*}
     \     set filetype=gentoo-package-use
 
 " thirdpartymirrors

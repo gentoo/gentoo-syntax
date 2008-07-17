@@ -29,6 +29,13 @@ syn match metadataElement contained 'name'
 syn match metadataElement contained 'description'
 syn match metadataElement contained 'longdescription'
 
+" Glep 56
+" TODO add support for required attributes
+syn match metadataElement contained 'use'
+syn match metadataElement contained 'flag'
+syn match metadataElement contained 'pkg'
+syn match metadataElement contained 'cat'
+
 hi def link metadataElement Keyword
 
 let b:current_syntax = "gentoo-metadata"
