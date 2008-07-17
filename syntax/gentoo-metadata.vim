@@ -20,8 +20,6 @@ unlet b:current_syntax
 
 syn cluster xmlTagHook add=metadataElement
 syn match metadataElement contained 'packages'
-syn match metadataElement contained 'catmetadata'
-syn match metadataElement contained 'pkgmetadata'
 syn match metadataElement contained 'herd'
 syn match metadataElement contained 'maintainer'
 syn match metadataElement contained 'email'
@@ -35,6 +33,9 @@ syn match metadataElement contained 'use'
 syn match metadataElement contained 'flag'
 syn match metadataElement contained 'pkg'
 syn match metadataElement contained 'cat'
+
+syn match metadataElement contained 'catmetadata'
+syn match metadataElement contained 'pkgmetadata'
 
 hi def link metadataElement Keyword
 
