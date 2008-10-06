@@ -141,7 +141,7 @@ syn keyword EbuildGamesKeyword prepgamesdirs gamesenv games_pkg_setup games_src_
 syn keyword EbuildGamesKeyword games_ut_unpack games_umod_unpack games_make_wrapper
 
 " subversion
-syn keyword EbuildSVNKeyword subversion_svn_fetch subversion_bootstrap subversion_src_unpack
+syn keyword EbuildSVNKeyword subversion_fetch subversion_bootstrap subversion_src_unpack
 
 " alternatives
 syn keyword EbuildAltKeyword alternatives_auto_makesym alternatives_makesym alternatives_pkg_postinst
