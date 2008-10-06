@@ -45,6 +45,7 @@ syn keyword EbuildCoreKeyword addread addwrite adddeny addpredict
 " Recognised functions
 syn keyword EbuildFunctions pkg_nofetch pkg_setup src_unpack src_compile src_test src_install
 syn keyword EbuildFunctions pkg_preinst pkg_postinst pkg_prerm pkg_postrm pkg_config
+syn keyword EbuildFunctions pkg_info src_prepare src_configure
 
 " Inherit
 syn keyword EbuildInherit inherit
