@@ -47,6 +47,11 @@ syn keyword EbuildFunctions pkg_nofetch pkg_setup src_unpack src_compile src_tes
 syn keyword EbuildFunctions pkg_preinst pkg_postinst pkg_prerm pkg_postrm pkg_config
 syn keyword EbuildFunctions pkg_info src_prepare src_configure
 
+" Default functions
+syn keyword EbuildFunctions default
+syn keyword EbuildFunctions default_pkg_nofetch default_src_unpack default_src_prepare
+syn keyword EbuildFunctions default_src_configure default_src_compile default_src_test
+
 " Inherit
 syn keyword EbuildInherit inherit
 
