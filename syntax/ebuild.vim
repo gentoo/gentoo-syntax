@@ -158,7 +158,7 @@ syn keyword EbuildRPMKeyword rpm_unpack rpm_src_unpack
 " python
 syn keyword EbuildPythonKeyword python_version python_tkinter_exists python_mod_exists python_mod_compile
 syn keyword EbuildPythonKeyword python_mod_optimize python_mod_cleanup python_makesym python_disable_pyc
-syn keyword EbuildPythonKeyword python_enable_pyc python_get_libdir python_get_sitedir
+syn keyword EbuildPythonKeyword python_enable_pyc python_get_libdir python_get_sitedir python_need_rebuild
 
 " check-kernel
 syn keyword EbuildCheckKernelKeyword check_version_h get_KV_info is_2_4_kernel is_2_5_kernel is_2_6_kernel
