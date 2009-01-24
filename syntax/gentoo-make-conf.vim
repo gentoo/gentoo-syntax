@@ -17,7 +17,7 @@ endif
 
 runtime syntax/gentoo-common.vim
 
-syn cluster GentooMakeConfEC add=GentooMakeConfEUse,GentooMakeConfEAK,GentooMakeConfECFLAGS,GentooMakeConfEMAKEOPTS,GentooMakeConfECHOST,GentooMakeConfEFEATURES,GentooMakeConfEMISC,GentooMakeConfEMISCK,GentooMakeConfEMISCKE,GentooMakeConfEMISCN
+syn cluster GentooMakeConfEC add=GentooMakeConfEUse,GentooMakeConfEAK,GentooMakeConfECFLAGS,GentooMakeConfELDFLAGS,GentooMakeConfEMAKEOPTS,GentooMakeConfECHOST,GentooMakeConfEFEATURES,GentooMakeConfEMISC,GentooMakeConfEMISCK,GentooMakeConfEMISCKE,GentooMakeConfEMISCN
 syn region  GentooMakeConfE start=/^/ end=/$/ contains=@GentooMakeConfEC,GentooMakeConfComment
 
 " MISC {{{
@@ -102,6 +102,20 @@ hi def link GentooMakeConfECFLAGSIB1    Error
 hi def link GentooMakeConfECFLAGSIB2    Error
 hi def link GentooMakeConfECFLAGSIB3    Error
 hi def link GentooMakeConfECFLAGSIX     Preproc
+" }}}
+
+" LDFLAGS {{{
+syn match   GentooMakeConfELDFLAGS /LDFLAGS/ contained nextgroup=GentooMakeConfELDFLAGSE skipwhite
+syn match   GentooMakeConfELDFLAGSE /=/ contained nextgroup=GentooMakeConfELDFLAGSV,GentooMakeConfELDFLAGSVNoQ skipwhite
+syn cluster GentooMakeConfELDFLAGSIC add=GentooMakeConfELDFLAGSIB1,GentooMakeConfELDFLAGSIB2,GentooMakeConfELDFLAGSIB3,GentooMakeConfELDFLAGSIX
+syn region  GentooMakeConfELDFLAGSV contained start=/"/ end=/"/ contains=@GentooMakeConfELDFLAGSIC
+syn match   GentooMakeConfELDFLAGSIX /\\.\|\$\({[^}]\+}\|[a-zA-Z0-9\-\_]\+\)/ contained
+syn region  GentooMakeConfELDFLAGSVNoQ contained start=/[^ "]/ end=/\s\|$/ contains=GentooMakeConfELDFLAGSIX
+
+hi def link GentooMakeConfELDFLAGS       Identifier
+hi def link GentooMakeConfELDFLAGSV      String
+hi def link GentooMakeConfELDFLAGSVNoQ   Constant
+hi def link GentooMakeConfELDFLAGSIX     Preproc
 " }}}
 
 " MAKEOPTS {{{
