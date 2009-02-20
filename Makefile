@@ -82,6 +82,8 @@ uninstall-file-%: $(subst _,/,$*)
 dist:
 	mkdir "$(distpkg)"
 	$(MAKE) PREFIX="$(distpkg)" install
+	svn2cl
+	mv ChangeLog "$(distpkg)/"
 	cp README "$(distpkg)/"
 	tar jcf "$(distpkg).tar.bz2" "$(distpkg)"
 	rm -fr "$(distpkg)/"
