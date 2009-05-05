@@ -233,6 +233,9 @@ if exists("g:ebuild_error_on_trailing_whitespace")
     syn match   EbuildError /^.*\s\+$/
 endif
 
+" prepalldocs is 'strongly discouraged'; decided by the Council
+syn keyword EbuildError prepalldocs
+
 " these can be contained within strings etc...
 " not to be used in an ebuild
 syn match   EbuildErrorC /\$\?{\?EXTRA_ECONF}\?/
