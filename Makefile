@@ -79,7 +79,14 @@ uninstall-files: $(foreach a, $(sort $(files)), \
 uninstall-file-%: $(subst _,/,$*)
 	[ ! -f "$(PREFIX)/$(subst _,/,$*)" ] || rm "$(PREFIX)/$(subst _,/,$*)"
 
-dist:
+tag:
+	svn up
+	svn cp ../gentoo-syntax ../../tags/gentoo-syntax/release-$(distver)
+	@echo
+	@echo "tag created remember to check it in"
+	@echo
+
+dist: tag
 	mkdir "$(distpkg)"
 	$(MAKE) PREFIX="$(distpkg)" install
 	svn2cl
