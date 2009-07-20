@@ -204,7 +204,9 @@ syn match EbuildExportFunctionsFuncE contained /\S\+\(\s\|$\)\@=\(pkg_nofetch\|p
 
 " Eclass documentation
 syn match EclassDocumentation /@\(BLURB\|CODE\|DESCRIPTION\|ECLASS-VARIABLE\|ECLASS\|EXAMPLE\|FUNCTION\|MAINTAINER\|RETURN\|USAGE\|VARIABLE\):/ contained
-syn match EclassComment /^#.*$/ contains=EclassDocumentation
+" use shComment (sh.vim), make it compatbile with other comment hightlights
+syn match      shComment        "^\s*\zs#.*$"   contains=EclassDocumentation
+syn match      shComment        "\s\zs#.*$"     contains=EclassDocumentation
 
 " mistakes: misspelling
 syn keyword EbuildError LICENCE
@@ -302,7 +304,6 @@ hi def link EbuildVirtualXKeyword	     Identifier
 hi def link EbuildGnome2Keyword  	     Identifier
 hi def link EbuildAutoKeyword		     Identifier
 
-hi def link EclassComment                    Comment
 hi def link EclassDocumentation              Identifier
 
 hi def link EbuildHomePageError              Error
