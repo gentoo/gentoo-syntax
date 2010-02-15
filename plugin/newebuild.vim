@@ -42,7 +42,7 @@ fun! <SID>MakeNewEbuild()
         nohls
         " }}}
     else
-        put ='EAPI=\"2\"'
+        put ='EAPI=3'
         put =''
         if l:category ==# "app-vim"
             " {{{ app-vim special setup
