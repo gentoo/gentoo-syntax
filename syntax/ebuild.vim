@@ -225,6 +225,8 @@ syn match   EbuildError /^[a-zA-Z0-9\-\_]\+ ()/
 syn match   EbuildError /^[a-zA-Z0-9\-\_]\+(){/
 " bad space
 syn region  EbuildError start=/^ / end=/$/
+" trailing whitespace
+syn match   EbuildError /\s\+$/
 " should be epause
 syn keyword EbuildError esleep
 " should be ${P}
