@@ -47,7 +47,9 @@ files_syntax = \
 	syntax/gentoo-metadata.vim \
 	syntax/gentoo-mirrors.vim \
 	syntax/gentoo-package-keywords.vim \
+	syntax/gentoo-package-license.vim \
 	syntax/gentoo-package-mask.vim \
+	syntax/gentoo-package-properties.vim \
 	syntax/gentoo-package-use.vim \
 	syntax/gentoo-use-desc.vim \
 	syntax/glep.vim \

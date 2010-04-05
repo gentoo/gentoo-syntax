@@ -62,6 +62,14 @@ au BufNewFile,BufRead {*/package.keywords,*/portage/package.keywords/*}
 au BufNewFile,BufRead {*/package.use,*/portage/package.use/*}
     \     set filetype=gentoo-package-use
 
+" package.license
+au BufNewFile,BufRead {*/package.license,*/portage/package.license/*}
+    \     set filetype=gentoo-package-license
+
+" package.properties
+au BufNewFile,BufRead {*/package.properties,*/portage/package.properties/*}
+    \     set filetype=gentoo-package-properties
+
 " thirdpartymirrors
 au BufNewFile,BufRead {*/thirdpartymirrors,*/portage/mirrors}
     \     set filetype=gentoo-mirrors
