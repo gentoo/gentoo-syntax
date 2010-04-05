@@ -17,7 +17,7 @@ endif
 
 runtime syntax/gentoo-common.vim
 
-syn cluster GentooMakeConfEC add=GentooMakeConfEUse,GentooMakeConfEAK,GentooMakeConfECFLAGS,GentooMakeConfELDFLAGS,GentooMakeConfEMAKEOPTS,GentooMakeConfECHOST,GentooMakeConfEFEATURES,GentooMakeConfEMISC,GentooMakeConfEMISCK,GentooMakeConfEMISCKE,GentooMakeConfEMISCN
+syn cluster GentooMakeConfEC add=GentooMakeConfEUse,GentooMakeConfEAK,GentooMakeConfEAL,GentooMakeConfEAP,GentooMakeConfECFLAGS,GentooMakeConfELDFLAGS,GentooMakeConfEMAKEOPTS,GentooMakeConfECHOST,GentooMakeConfEFEATURES,GentooMakeConfEMISC,GentooMakeConfEMISCK,GentooMakeConfEMISCKE,GentooMakeConfEMISCN
 syn region  GentooMakeConfE start=/^/ end=/$/ contains=@GentooMakeConfEC,GentooMakeConfComment
 
 " MISC {{{
@@ -82,6 +82,40 @@ hi def link GentooMakeConfEAKIS     Keyword
 hi def link GentooMakeConfEAKIU     Special
 hi def link GentooMakeConfEAKIB     Error
 hi def link GentooMakeConfEAKIX     Preproc
+" }}}
+
+" ACCEPT_LICENSE {{{
+syn match   GentooMakeConfEAL /ACCEPT_LICENSE/ contained nextgroup=GentooMakeConfEALE skipwhite
+syn match   GentooMakeConfEALE /=/ contained nextgroup=GentooMakeConfEALV skipwhite
+syn cluster GentooMakeConfEALIC add=GentooMakeConfEALIP,GentooMakeConfEALIS,GentooMakeConfEALIN,GentooMakeConfEALIX
+syn region  GentooMakeConfEALV contained start=/"/ end=/"/ contains=@GentooMakeConfEALIC
+syn match   GentooMakeConfEALIP /\*\|[a-zA-Z0-9\-_.+]\+/ contained
+syn match   GentooMakeConfEALIS /@[a-zA-Z0-9\-_.+]\+/ contained
+syn match   GentooMakeConfEALIN /-\*\|-@\?[a-zA-Z0-9\-_.+]\+/ contained
+syn match   GentooMakeConfEALIX /\\.\|\$\({[^}]\+}\|[a-zA-Z0-9\-\_]\+\)/ contained
+
+hi def link GentooMakeConfEAL       Identifier
+hi def link GentooMakeConfEALV      String
+hi def link GentooMakeConfEALIP     Keyword
+hi def link GentooMakeConfEALIS     Special
+hi def link GentooMakeConfEALIN     Error
+hi def link GentooMakeConfEALIX     Preproc
+" }}}
+
+" ACCEPT_PROPERTIES {{{
+syn match   GentooMakeConfEAP /ACCEPT_PROPERTIES/ contained nextgroup=GentooMakeConfEAPE skipwhite
+syn match   GentooMakeConfEAPE /=/ contained nextgroup=GentooMakeConfEAPV skipwhite
+syn cluster GentooMakeConfEAPIC add=GentooMakeConfEAPIP,GentooMakeConfEAPIN,GentooMakeConfEAPIX
+syn region  GentooMakeConfEAPV contained start=/"/ end=/"/ contains=@GentooMakeConfEAPIC
+syn match   GentooMakeConfEAPIP /\*\|[a-zA-Z0-9\-_]\+/ contained
+syn match   GentooMakeConfEAPIN /-\*\|-[a-zA-Z0-9\-_]\+/ contained
+syn match   GentooMakeConfEAPIX /\\.\|\$\({[^}]\+}\|[a-zA-Z0-9\-\_]\+\)/ contained
+
+hi def link GentooMakeConfEAP       Identifier
+hi def link GentooMakeConfEAPV      String
+hi def link GentooMakeConfEAPIP     Keyword
+hi def link GentooMakeConfEAPIN     Error
+hi def link GentooMakeConfEAPIX     Preproc
 " }}}
 
 " C*FLAGS {{{
