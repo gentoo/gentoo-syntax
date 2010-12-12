@@ -112,6 +112,23 @@ fun! <SID>MakeNewEbuild()
 		put ='	use source && java-pkg_dosrc src'
 		put ='}'
 		put =''
+        elseif l:category ==# "dev-perl" || l:category ==# "perl-core"
+            " {{{ perl modules default setup
+            put ='MODULE_AUTHOR=\"\"'
+            put ='inherit perl-module'
+            put =''
+            put ='DESCRIPTION=\"\"'
+            put =''
+            put ='#LICENSE=\"\|\| ( Artistic GPL-1 GPL-2 GPL-3 )\"'
+            put ='SLOT=\"0\"'
+            put ='KEYWORDS=\"~' . l:arch . '\"'
+            put ='IUSE=\"\"'
+            put =''
+            put ='RDEPEND=\"\"'
+            put ='DEPEND=\"${RDEPEND}\"'
+            put =''
+            put ='SRC_TEST=\"do\"'
+            " }}}
         else
             " {{{ standard default setup
             " {{{ extra inherits for some categories
@@ -120,9 +137,6 @@ fun! <SID>MakeNewEbuild()
                 put =''
             elseif l:category ==# "dev-python"
                 put ='inherit distutils'
-                put =''
-            elseif l:category ==# "dev-perl"
-                put ='inherit perl-module'
                 put =''
             endif
             " }}}
@@ -146,7 +160,7 @@ fun! <SID>MakeNewEbuild()
 
         " {{{ go to the first thing to edit
         0
-        /^DESCRIPTION=/
+        /^\(MODULE_AUTHOR\|DESCRIPTION\)=/
         exec "normal 2f\""
         nohls
         " }}}
