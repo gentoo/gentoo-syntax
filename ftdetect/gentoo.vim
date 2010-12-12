@@ -55,7 +55,7 @@ au BufNewFile,BufRead {*/package.{un,}mask,*/portage/package.{un,}mask/*}
     \     set filetype=gentoo-package-mask
 
 " package.keywords
-au BufNewFile,BufRead {*/package.keywords,*/portage/package.keywords/*}
+au BufNewFile,BufRead {*/package.{accept_,}keywords,*/portage/package.{accept_,}keywords/*}
     \     set filetype=gentoo-package-keywords
 
 " package.use
