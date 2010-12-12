@@ -50,7 +50,7 @@ fun! <SID>MakeNewMetadata()
     " {{{ pkgmetadata
 
         " {{{ herd
-        let l:herd = ""
+        let l:herd = "no-herd"
         if l:category ==# "app-vim"
             let l:herd = "vim"
         elseif l:category ==# "dev-perl"
