@@ -24,7 +24,7 @@ syn region GentooPackageKeywordsComment start=/#/ end=/$/
 syn match  GentooPackageKeywordsEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
 syn match  GentooPackageKeywordsDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
-syn match  GentooPackageKeywordsAtom /^[^ \t\n#]\+\S\+\/\S\+/
+syn match  GentooPackageKeywordsAtom /^[\ \t]*[^ \t\n#]\+\S\+\/\S\+/
 	    \ nextgroup=GentooPackageKeywordsKeyword skipwhite
 syn match  GentooPackageKeywordsKeyword contained /-\?[-~]\?\([a-z0-9\-]\+\|\*\)/
 	    \ nextgroup=GentooPackageKeywordsKeyword skipwhite
