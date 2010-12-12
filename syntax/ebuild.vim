@@ -34,7 +34,7 @@ syn keyword EbuildCoreKeyword dobin docinto dodoc doexe dohard dohtml doinfo  do
 syn keyword EbuildCoreKeyword dolib dolib.a dolib.so doman dosbin dosym emake exeinto
 syn keyword EbuildCoreKeyword exeopts fowners fperms insinto insopts into libopts newbin
 syn keyword EbuildCoreKeyword newexe newins newman newsbin prepall prepalldocs prepallinfo
-syn keyword EbuildCoreKeyword prepallman prepallstrip has unpack dopython dosed into
+syn keyword EbuildCoreKeyword prepallman prepallstrip has unpack dosed into
 syn keyword EbuildCoreKeyword doinitd doconfd doenvd dojar domo dodir ebegin eend
 syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.so
 syn keyword EbuildCoreKeyword hasq hasv useq usev elog
@@ -156,9 +156,15 @@ syn keyword EbuildAltKeyword alternatives_pkg_postrm
 syn keyword EbuildRPMKeyword rpm_unpack rpm_src_unpack
 
 " python
-syn keyword EbuildPythonKeyword python_version python_tkinter_exists python_mod_exists python_mod_compile
-syn keyword EbuildPythonKeyword python_mod_optimize python_mod_cleanup python_makesym python_disable_pyc
-syn keyword EbuildPythonKeyword python_enable_pyc python_get_libdir python_get_sitedir python_need_rebuild
+syn keyword EbuildPythonKeyword python_pkg_setup python_convert_shebangs python_clean_installation_image
+syn keyword EbuildPythonKeyword python_src_prepare python_src_configure python_src_compile python_src_test
+syn keyword EbuildPythonKeyword python_src_install python_execute_function python_copy_sources
+syn keyword EbuildPythonKeyword python_generate_wrapper_scripts python_set_active_version python_need_rebuild
+syn keyword EbuildPythonKeyword PYTHON python_get_implementation python_get_implementational_package
+syn keyword EbuildPythonKeyword python_get_includedir python_get_libdir python_get_sitedir python_get_library
+syn keyword EbuildPythonKeyword python_get_version python_execute_nosetests python_execute_py.test
+syn keyword EbuildPythonKeyword python_execute_trial python_enable_pyc python_disable_pyc python_mod_optimize
+syn keyword EbuildPythonKeyword python_mod_cleanup
 
 " check-kernel
 syn keyword EbuildCheckKernelKeyword check_version_h get_KV_info is_2_4_kernel is_2_5_kernel is_2_6_kernel
@@ -171,9 +177,9 @@ syn keyword EbuildPerlModuleKeyword perl-module_pkg_postinst perl-module_pkg_pre
 syn keyword EbuildPerlModuleKeyword perlinfo fixlocalpod updatepod
 
 " distutils
-syn keyword EbuildDistutilsKeyword distutils_src_unpack distutils_src_compile distutils_src_install
-syn keyword EbuildDistutilsKeyword distutils_pkg_postrm distutils_pkg_postinst distutils_python_version
-syn keyword EbuildDistutilsKeyword distutils_python_tkinter
+syn keyword EbuildDistutilsKeyword distutils_src_unpack distutils_src_prepare distutils_src_compile
+syn keyword EbuildDistutilsKeyword distutils_src_test distutils_src_install distutils_pkg_postinst
+syn keyword EbuildDistutilsKeyword distutils_pkg_postrm
 
 " depend.apache
 syn keyword EbuildDependApacheKeyword need_apache need_apache1 need_apache2
