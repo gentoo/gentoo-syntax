@@ -42,7 +42,7 @@ fun! <SID>MakeNewEbuild()
         nohls
         " }}}
     else
-        put ='EAPI=3'
+        put ='EAPI=4'
         put =''
         if l:category ==# "app-vim"
             " {{{ app-vim special setup
@@ -111,7 +111,6 @@ fun! <SID>MakeNewEbuild()
 		put ='	use doc && java-pkg_dojavadoc build/javadoc'
 		put ='	use source && java-pkg_dosrc src'
 		put ='}'
-		put =''
         elseif l:category ==# "dev-perl" || l:category ==# "perl-core"
             " {{{ perl modules default setup
             put ='MODULE_AUTHOR=\"\"'
