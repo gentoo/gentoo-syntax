@@ -25,10 +25,6 @@ fun! <SID>MakeNewInitd()
     put ='stop() {'
     put =''
     put ='}'
-    put =''
-    put ='restart() {'
-    put =''
-    put ='}'
     " }}}
 
     call GentooHeader()
