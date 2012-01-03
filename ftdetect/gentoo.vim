@@ -24,7 +24,7 @@ au BufNewFile,BufRead *.txt
     \ endif
 
 " ChangeLogs
-au BufNewFile,BufRead ChangeLog
+au BufNewFile,BufRead ChangeLog*
     \ if (getline(2) =~? "^# Copyright \\d\\+-\\d\\+ Gentoo Foundation") |
     \     set filetype=gentoo-changelog |
     \ endif
