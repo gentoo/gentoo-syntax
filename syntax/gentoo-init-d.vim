@@ -24,10 +24,21 @@ unlet b:current_syntax
 runtime syntax/gentoo-common.vim
 syn cluster shCommentGroup add=GentooBug
 
-syn keyword GentooInitDKeyword need use provide before after ebegin eend einfo
-syn keyword GentooInitDKeyword ewarn eerror
+syn keyword GentooInitDKeyword config need use before after provide keyword
+syn keyword GentooInitDKeyword ebegin vebegin eend veend ewend vewend
+syn keyword GentooInitDKeyword einfo veinfo ewarn vewarn eerror veerror
+syn keyword GentooInitDKeyword ewaitfile is_newer_than is_older_than
+syn keyword GentooInitDKeyword service_set_value service_get_value
+syn keyword GentooInitDKeyword service_started service_starting service_inactive
+syn keyword GentooInitDKeyword service_stopping service_stopped service_coldplugged
+syn keyword GentooInitDKeyword service_wasinactive service_started_daemon
+syn keyword GentooInitDKeyword mark_service_started mark_service_starting
+syn keyword GentooInitDKeyword mark_service_inactive mark_service_stopping
+syn keyword GentooInitDKeyword mark_service_stopped mark_service_coldplugged
+syn keyword GentooInitDKeyword mark_service_wasinactive checkpath yesno
 
-syn keyword GentooInitDFunc start stop reload restart usage zap depend
+syn keyword GentooInitDFunc describe start_pre start start_post stop_pre stop stop_post
+syn keyword GentooInitDFunc reload restart status usage zap depend
 
 syn cluster shCommandSubList add=GentooInitDKeyword
 
