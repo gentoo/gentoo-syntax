@@ -38,7 +38,7 @@ syn keyword GentooInitDKeyword mark_service_stopped mark_service_coldplugged
 syn keyword GentooInitDKeyword mark_service_wasinactive checkpath yesno
 
 syn keyword GentooInitDFunc describe start_pre start start_post stop_pre stop stop_post
-syn keyword GentooInitDFunc reload restart status usage zap depend
+syn keyword GentooInitDFunc reload restart status zap depend
 
 syn cluster shCommandSubList add=GentooInitDKeyword
 
