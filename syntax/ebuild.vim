@@ -236,7 +236,7 @@ syn match   EbuildErrorC /\${PN}-\${PV}/
 
 " trailing space
 if exists("g:ebuild_error_on_trailing_whitespace")
-    syn match   EbuildError /^.*\s\+$/
+	echohl WarningMsg | echo "g:ebuild_error_on_trailing_whitespace is deprecated, bad space highlight is enabled by default." | echohl None
 endif
 
 " prepalldocs is 'strongly discouraged'; decided by the Council
