@@ -1,6 +1,6 @@
-# Makefile for gentoo-syntax
+# Makefile for funtoo-syntax
 
-distapp = gentoo-syntax
+distapp = funtoo-syntax
 distver := $(shell date -u +%Y%m%d)
 distpkg := $(distapp)-$(distver)
 
@@ -15,43 +15,43 @@ files_vars = \
 	files_syntax
 
 files_doc = \
-	doc/gentoo-syntax.txt
+	doc/funtoo-syntax.txt
 
 files_ftdetect = \
-	ftdetect/gentoo.vim \
+	ftdetect/funtoo.vim \
 	ftplugin/ebuild.vim
 
 files_ftplugin = \
-	ftplugin/gentoo-changelog.vim \
-	ftplugin/gentoo-metadata.vim
+	ftplugin/funtoo-changelog.vim \
+	ftplugin/funtoo-metadata.vim
 
 files_indent = \
 	indent/ebuild.vim \
-	indent/gentoo-metadata.vim
+	indent/funtoo-metadata.vim
 
 files_plugin = \
 	plugin/bugsummary.vim \
-	plugin/gentoo-common.vim \
+	plugin/funtoo-common.vim \
 	plugin/newebuild.vim \
 	plugin/newmetadata.vim \
 	plugin/newinitd.vim
 
 files_syntax = \
 	syntax/ebuild.vim \
-	syntax/gentoo-changelog.vim \
-	syntax/gentoo-common.vim \
-	syntax/gentoo-conf-d.vim \
-	syntax/gentoo-env-d.vim \
-	syntax/gentoo-init-d.vim \
-	syntax/gentoo-make-conf.vim \
-	syntax/gentoo-metadata.vim \
-	syntax/gentoo-mirrors.vim \
-	syntax/gentoo-package-keywords.vim \
-	syntax/gentoo-package-license.vim \
-	syntax/gentoo-package-mask.vim \
-	syntax/gentoo-package-properties.vim \
-	syntax/gentoo-package-use.vim \
-	syntax/gentoo-use-desc.vim \
+	syntax/funtoo-changelog.vim \
+	syntax/funtoo-common.vim \
+	syntax/funtoo-conf-d.vim \
+	syntax/funtoo-env-d.vim \
+	syntax/funtoo-init-d.vim \
+	syntax/funtoo-make-conf.vim \
+	syntax/funtoo-metadata.vim \
+	syntax/funtoo-mirrors.vim \
+	syntax/funtoo-package-keywords.vim \
+	syntax/funtoo-package-license.vim \
+	syntax/funtoo-package-mask.vim \
+	syntax/funtoo-package-properties.vim \
+	syntax/funtoo-package-use.vim \
+	syntax/funtoo-use-desc.vim \
 	syntax/glep.vim \
 	syntax/guidexml.vim
 
@@ -82,24 +82,14 @@ uninstall-file-%: $(subst _,/,$*)
 	[ ! -f "$(PREFIX)/$(subst _,/,$*)" ] || rm "$(PREFIX)/$(subst _,/,$*)"
 
 tag:
-	svn up
-	svn cp ../gentoo-syntax ../../tags/gentoo-syntax/release-$(distver)
-	@echo
-	@echo "tag created remember to check it in"
-	@echo
+	git tag $(distver)
 
 dist: tag
 	mkdir "$(distpkg)"
 	$(MAKE) PREFIX="$(distpkg)" install
-	svn2cl
-	mv ChangeLog "$(distpkg)/"
 	cp README "$(distpkg)/"
 	tar jcf "$(distpkg).tar.bz2" "$(distpkg)"
 	rm -fr "$(distpkg)/"
-
-dist-upload: dist
-	scp $(distpkg).tar.bz2 dev.gentoo.org:/space/distfiles-local/
-	ssh dev.gentoo.org chmod ug+rw /space/distfiles-local/$(distpkg).tar.bz2
 
 clean:
 	find . -name '*~' | xargs rm || true
