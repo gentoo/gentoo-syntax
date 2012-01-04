@@ -100,14 +100,6 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 	    * common mistakes (assigning to read-only variables, misspellings,
 	      leading non-tab spaces, default WORKDIR assignment)
 
-				       *g:ebuild_error_on_trailing_whitespace*
-	Error highlighting for trailing whitespace is available but disabled
-	by default. To turn it on, add:
->
-	    let g:ebuild_error_on_trailing_whitespace=1
-<
-	to your |vimrc| file.
-
 							  *gentoo-glep-syntax*
 
 	Syntax highlighting for GLEP files is based upon the vim-provided rst
