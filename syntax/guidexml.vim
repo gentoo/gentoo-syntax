@@ -1,10 +1,12 @@
 " Vim syntax file
-" Language:	Gentoo guidexml
+" Language:	Funtoo guidexml
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
 " Syntax highlighting for guidexml.xml. Inherits from xml.vim.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -36,7 +38,7 @@ syn keyword guidexmlElement contained overview inserts insert docdate
 
 syn cluster xmlAttribHook add=guidexmlAttr
 syn match guidexmlAttr contained /author\|caption\|category\|test\|parent/
-syn match guidexmlAttr contained /gentoo\|id\|lang\|by\|linkto\|link/
+syn match guidexmlAttr contained /funtoo\|id\|lang\|by\|linkto\|link/
 syn match guidexmlAttr contained /short\|src\|title\|colspan\|rowspan/
 syn match guidexmlAttr contained /type\|disclaimer\|redirect\|width\|align/
 syn match guidexmlAttr contained /mail\|fullname\|vpart\|vchap\|stopper\|arch/

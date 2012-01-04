@@ -1,16 +1,19 @@
 " Vim plugin
-" Purpose:      Common functionality for gentoo-syntax plugins
+" Purpose:      Common functionality for Funtoo-syntax plugins
 " Author:       Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:    Copyright (c) 2005 Ciaran McCreesh
 " Licence:      You may redistribute this under the same terms as Vim itself
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
+"
 
-if &compatible || v:version < 603 || exists("g:loaded_gentoo_common")
+if &compatible || v:version < 603 || exists("g:loaded_funtoo_common")
     finish
 endif
 
-let g:loaded_gentoo_common=1
+let g:loaded_funtoo_common=1
 
-fun! GentooGetUser()
+fun! FuntooGetUser()
     let l:result = expand("\$ECHANGELOG_USER")
     if l:result ==# "\$ECHANGELOG_USER"
         let l:result = expand("\$USER")
@@ -21,17 +24,17 @@ fun! GentooGetUser()
     return l:result
 endfun
 
-fun! GentooHeader()
+fun! FuntooHeader()
     let l:year = strftime("%Y")
-    0 put ='# Copyright 1999-' . l:year . ' Gentoo Foundation'
+    0 put ='# Copyright 2008-' . l:year . ' Funtoo Technologies'
     put ='# Distributed under the terms of the GNU General Public License v2'
     put ='# $Header: $'
     $
 endfun
 
-fun! GentooGetArch()
-    if exists("g:gentooarch") && g:gentooarch != ""
-        return g:gentooarch
+fun! FuntooGetArch()
+    if exists("g:funtooarch") && g:funtooarch != ""
+        return g:funtooarch
     else
         let l:a = system("portageq envvar ACCEPT_KEYWORDS 2>/dev/null")
         let l:a = substitute(l:a, "[\\n~]", " ", "g")
@@ -40,8 +43,8 @@ fun! GentooGetArch()
         if l:a == ""
             let l:a = "x86"
         endif
-        let g:gentooarch = l:a
-        return g:gentooarch
+        let g:funtooarch = l:a
+        return g:funtooarch
     endif
 endfun
 

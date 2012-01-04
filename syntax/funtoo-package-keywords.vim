@@ -1,11 +1,13 @@
 " Vim syntax file
-" Language:	Gentoo package.keywords files
+" Language:	Funtoo package.keywords files
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo package.keywords files. Requires vim 6.3 or
+" Syntax highlighting for Funtoo package.keywords files. Requires vim 6.3 or
 " later.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -16,24 +18,24 @@ if exists("b:current_syntax")
   finish
 endif
 
-runtime syntax/gentoo-common.vim
+runtime syntax/funtoo-common.vim
 
-syn region GentooPackageKeywordsComment start=/#/ end=/$/
-	    \ contains=GentooPackageKeywordsEmail,GentooPackageKeywordsDate,GentooBug
+syn region FuntooPackageKeywordsComment start=/#/ end=/$/
+	    \ contains=FuntooPackageKeywordsEmail,FuntooPackageKeywordsDate,FuntooBug
 
-syn match  GentooPackageKeywordsEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
-syn match  GentooPackageKeywordsDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
+syn match  FuntooPackageKeywordsEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
+syn match  FuntooPackageKeywordsDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
-syn match  GentooPackageKeywordsAtom /^[\ \t]*[^ \t\n#]\+\S\+\/\S\+/
-	    \ nextgroup=GentooPackageKeywordsKeyword skipwhite
-syn match  GentooPackageKeywordsKeyword contained /-\?[-~]\?\([a-z0-9\-]\+\|\*\)/
-	    \ nextgroup=GentooPackageKeywordsKeyword skipwhite
+syn match  FuntooPackageKeywordsAtom /^[\ \t]*[^ \t\n#]\+\S\+\/\S\+/
+	    \ nextgroup=FuntooPackageKeywordsKeyword skipwhite
+syn match  FuntooPackageKeywordsKeyword contained /-\?[-~]\?\([a-z0-9\-]\+\|\*\)/
+	    \ nextgroup=FuntooPackageKeywordsKeyword skipwhite
 
-hi def link GentooPackageKeywordsComment          Comment
-hi def link GentooPackageKeywordsEmail            Special
-hi def link GentooPackageKeywordsDate             Number
-hi def link GentooPackageKeywordsAtom             Identifier
-hi def link GentooPackageKeywordsKeyword          Keyword
+hi def link FuntooPackageKeywordsComment          Comment
+hi def link FuntooPackageKeywordsEmail            Special
+hi def link FuntooPackageKeywordsDate             Number
+hi def link FuntooPackageKeywordsAtom             Identifier
+hi def link FuntooPackageKeywordsKeyword          Keyword
 
-let b:current_syntax = "gentoo-package-keywords"
+let b:current_syntax = "funtoo-package-keywords"
 

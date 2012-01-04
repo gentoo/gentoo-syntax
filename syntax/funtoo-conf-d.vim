@@ -1,12 +1,14 @@
 " Vim syntax file
-" Language:	Gentoo /etc/conf.d/ files
+" Language:	Funtoo /etc/conf.d/ files
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo /etc/conf.d/ files. Inherits from sh.vim
-" and adds in Gentoo-specific highlights for certain keywords and functions.
+" Syntax highlighting for Funtoo /etc/conf.d/ files. Inherits from sh.vim
+" and adds in Funtoo-specific highlights for certain keywords and functions.
 " Requires vim 6.3 or later.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -21,7 +23,7 @@ let is_bash=1
 runtime! syntax/sh.vim
 unlet b:current_syntax
 
-runtime syntax/gentoo-common.vim
-syn cluster shCommentGroup add=GentooBug
+runtime syntax/funtoo-common.vim
+syn cluster shCommentGroup add=FuntooBug
 
-let b:current_syntax = "gentoo-conf-d"
+let b:current_syntax = "funtoo-conf-d"

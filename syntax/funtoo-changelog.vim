@@ -1,10 +1,12 @@
 " Vim syntax file
-" Language:	Gentoo ChangeLogs
+" Language:	Funtoo ChangeLogs
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo ChangeLogs. Needs vim 6.3 or later.
+" Syntax highlighting for Funtoo ChangeLogs. Needs vim 6.3 or later.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -15,39 +17,39 @@ if exists("b:current_syntax")
   finish
 endif
 
-runtime syntax/gentoo-common.vim
+runtime syntax/funtoo-common.vim
 
 " Releases
-syn region GentooChangeLogRelease start=/^\*/ end=/$/ contains=GentooChangeLogReleaseDate
-syn match GentooChangeLogReleaseDate contained /(\d\d\s\w\+\s\d\{4\})/
+syn region FuntooChangeLogRelease start=/^\*/ end=/$/ contains=FuntooChangeLogReleaseDate
+syn match FuntooChangeLogReleaseDate contained /(\d\d\s\w\+\s\d\{4\})/
 
 " Entries
-syn region GentooChangeLogEntry start=/^\s\+/ end=/\n\n/
-	    \ contains=GentooChangeLogEntryDate,GentooBug
-syn region GentooChangeLogEntryDate contained start=/\d\?\d\s\w\+\s\d\{4\}/ end=/;/
-	    \ nextgroup=GentooChangeLogEntryAuthor,GentooChangeLogEntryEmail skipwhite skipnl
-syn region GentooChangeLogEntryAuthor contained start=/\S/ end=/\( <\)\@=/
-	    \ nextgroup=GentooChangeLogEntryEmail skipwhite skipnl
-syn match  GentooChangeLogEntryEmail contained /<\?[a-zA-Z0-9\.\-\_]\+@[a-zA-Z0-9\.\-\_]\+>\?/
-	    \ nextgroup=GentooChangeLogFiles skipwhite skipnl
-syn region GentooChangeLogFiles contained start=/\(\S\)\@=/ end=/:/
-	    \ contains=GentooChangeLogAddFile,GentooChangeLogDelFile,GentooChangeLogModFile
+syn region FuntooChangeLogEntry start=/^\s\+/ end=/\n\n/
+	    \ contains=FuntooChangeLogEntryDate,FuntooBug
+syn region FuntooChangeLogEntryDate contained start=/\d\?\d\s\w\+\s\d\{4\}/ end=/;/
+	    \ nextgroup=FuntooChangeLogEntryAuthor,FuntooChangeLogEntryEmail skipwhite skipnl
+syn region FuntooChangeLogEntryAuthor contained start=/\S/ end=/\( <\)\@=/
+	    \ nextgroup=FuntooChangeLogEntryEmail skipwhite skipnl
+syn match  FuntooChangeLogEntryEmail contained /<\?[a-zA-Z0-9\.\-\_]\+@[a-zA-Z0-9\.\-\_]\+>\?/
+	    \ nextgroup=FuntooChangeLogFiles skipwhite skipnl
+syn region FuntooChangeLogFiles contained start=/\(\S\)\@=/ end=/:/
+	    \ contains=FuntooChangeLogAddFile,FuntooChangeLogDelFile,FuntooChangeLogModFile
 
 " Add / delete / changed files
-syn region GentooChangeLogAddFile contained start=/+/ end=/\([,:]\)\@=/
-syn region GentooChangeLogDelFile contained start=/-/ end=/\([,:]\)\@=/
-syn region GentooChangeLogModFile contained start=/[a-zA-Z0-9]/ end=/\([,:]\)\@=/
+syn region FuntooChangeLogAddFile contained start=/+/ end=/\([,:]\)\@=/
+syn region FuntooChangeLogDelFile contained start=/-/ end=/\([,:]\)\@=/
+syn region FuntooChangeLogModFile contained start=/[a-zA-Z0-9]/ end=/\([,:]\)\@=/
 
 " Colours
-hi def link GentooChangeLogEntryDate        Number
-hi def link GentooChangeLogEntryAuthor      String
-hi def link GentooChangeLogEntryEmail       Special
-hi def link GentooChangeLogModFile          Identifier
-hi def link GentooChangeLogAddFile          DiffAdd
-hi def link GentooChangeLogDelFile          DiffDelete
+hi def link FuntooChangeLogEntryDate        Number
+hi def link FuntooChangeLogEntryAuthor      String
+hi def link FuntooChangeLogEntryEmail       Special
+hi def link FuntooChangeLogModFile          Identifier
+hi def link FuntooChangeLogAddFile          DiffAdd
+hi def link FuntooChangeLogDelFile          DiffDelete
 
-hi def link GentooChangeLogRelease          Title
-hi def link GentooChangeLogReleaseDate      Number
+hi def link FuntooChangeLogRelease          Title
+hi def link FuntooChangeLogReleaseDate      Number
 
-let b:current_syntax = "gentoo-changelog"
+let b:current_syntax = "funtoo-changelog"
 

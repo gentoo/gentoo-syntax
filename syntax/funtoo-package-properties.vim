@@ -1,11 +1,13 @@
 " Vim syntax file
-" Language:	Gentoo package.keywords files
+" Language:	Funtoo package.keywords files
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo package.keywords files. Requires vim 6.3 or
+" Syntax highlighting for Funtoo package.keywords files. Requires vim 6.3 or
 " later.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -16,24 +18,24 @@ if exists("b:current_syntax")
   finish
 endif
 
-runtime syntax/gentoo-common.vim
+runtime syntax/funtoo-common.vim
 
-syn region GentooPackagePropertiesComment start=/#/ end=/$/
-	    \ contains=GentooPackagePropertiesEmail,GentooPackagePropertiesDate,GentooBug
+syn region FuntooPackagePropertiesComment start=/#/ end=/$/
+	    \ contains=FuntooPackagePropertiesEmail,FuntooPackagePropertiesDate,FuntooBug
 
-syn match  GentooPackagePropertiesEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
-syn match  GentooPackagePropertiesDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
+syn match  FuntooPackagePropertiesEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
+syn match  FuntooPackagePropertiesDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
-syn match  GentooPackagePropertiesAtom /^[^ \t\n#]\+\S\+\/\S\+/
-	    \ nextgroup=GentooPackagePropertiesProperty skipwhite
-syn match  GentooPackagePropertiesProperty contained /-\?\([a-zA-Z0-9\-_]\+\|\*\)/
-	    \ nextgroup=GentooPackagePropertiesProperty skipwhite
+syn match  FuntooPackagePropertiesAtom /^[^ \t\n#]\+\S\+\/\S\+/
+	    \ nextgroup=FuntooPackagePropertiesProperty skipwhite
+syn match  FuntooPackagePropertiesProperty contained /-\?\([a-zA-Z0-9\-_]\+\|\*\)/
+	    \ nextgroup=FuntooPackagePropertiesProperty skipwhite
 
-hi def link GentooPackagePropertiesComment          Comment
-hi def link GentooPackagePropertiesEmail            Special
-hi def link GentooPackagePropertiesDate             Number
-hi def link GentooPackagePropertiesAtom             Identifier
-hi def link GentooPackagePropertiesProperty         Keyword
+hi def link FuntooPackagePropertiesComment          Comment
+hi def link FuntooPackagePropertiesEmail            Special
+hi def link FuntooPackagePropertiesDate             Number
+hi def link FuntooPackagePropertiesAtom             Identifier
+hi def link FuntooPackagePropertiesProperty         Keyword
 
-let b:current_syntax = "gentoo-package-properties"
+let b:current_syntax = "funtoo-package-properties"
 

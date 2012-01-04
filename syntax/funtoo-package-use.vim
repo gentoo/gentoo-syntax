@@ -1,11 +1,13 @@
 " Vim syntax file
-" Language:	Gentoo package.use files
+" Language:	Funtoo package.use files
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo package.use files. Requires vim 6.3 or
+" Syntax highlighting for Funtoo package.use files. Requires vim 6.3 or
 " later.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -16,27 +18,27 @@ if exists("b:current_syntax")
   finish
 endif
 
-runtime syntax/gentoo-common.vim
+runtime syntax/funtoo-common.vim
 
-syn region GentooPackageUseComment start=/#/ end=/$/
-	    \ contains=GentooPackageUseEmail,GentooPackageUseDate,GentooBug
+syn region FuntooPackageUseComment start=/#/ end=/$/
+	    \ contains=FuntooPackageUseEmail,FuntooPackageUseDate,FuntooBug
 
-syn match  GentooPackageUseEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
-syn match  GentooPackageUseDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
+syn match  FuntooPackageUseEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
+syn match  FuntooPackageUseDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
-syn match  GentooPackageUseAtom /^[^ \t\n#]\+\S\+\/\S\+/
-	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
-syn match  GentooPackageUseUse contained /[a-zA-Z0-9][a-zA-Z0-9\-_]*/
-	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
-syn match  GentooPackageUseUnuse contained /-[a-zA-Z0-9][a-zA-Z0-9\-_]*/
-	    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
+syn match  FuntooPackageUseAtom /^[^ \t\n#]\+\S\+\/\S\+/
+	    \ nextgroup=FuntooPackageUseUse,FuntooPackageUseUnuse skipwhite
+syn match  FuntooPackageUseUse contained /[a-zA-Z0-9][a-zA-Z0-9\-_]*/
+	    \ nextgroup=FuntooPackageUseUse,FuntooPackageUseUnuse skipwhite
+syn match  FuntooPackageUseUnuse contained /-[a-zA-Z0-9][a-zA-Z0-9\-_]*/
+	    \ nextgroup=FuntooPackageUseUse,FuntooPackageUseUnuse skipwhite
 
-hi def link GentooPackageUseComment          Comment
-hi def link GentooPackageUseEmail            Special
-hi def link GentooPackageUseDate             Number
-hi def link GentooPackageUseAtom             Identifier
-hi def link GentooPackageUseUse              Special
-hi def link GentooPackageUseUnuse            Keyword
+hi def link FuntooPackageUseComment          Comment
+hi def link FuntooPackageUseEmail            Special
+hi def link FuntooPackageUseDate             Number
+hi def link FuntooPackageUseAtom             Identifier
+hi def link FuntooPackageUseUse              Special
+hi def link FuntooPackageUseUnuse            Keyword
 
-let b:current_syntax = "gentoo-package-use"
+let b:current_syntax = "funtoo-package-use"
 

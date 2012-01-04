@@ -1,12 +1,14 @@
 " Vim syntax file
-" Language:	Gentoo Ebuilds/Eclasses
+" Language:	Funtoo Ebuilds/Eclasses
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
 " Syntax highlighting for ebuilds and eclasses. Inherits from sh.vim and adds
-" in Gentoo-specific highlights for certain keywords and functions. Requires
+" in Funtoo-specific highlights for certain keywords and functions. Requires
 " vim 6.3 or later.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -21,7 +23,7 @@ let is_bash=1
 runtime! syntax/sh.vim
 unlet b:current_syntax
 
-runtime syntax/gentoo-common.vim
+runtime syntax/funtoo-common.vim
 
 " function names can contain more characters than sh.vim allows. Override
 " this. See Gentoo bug 72469.
@@ -224,12 +226,17 @@ syn match   EbuildError /^\(P\|PN\|PV\|PR\|PVR\|PF\|A\)=/
 syn match   EbuildError ~^S="\?\${\?WORKDIR}\?/\${\?P}\?"\?\s*$~
 " not allowed
 syn match   EbuildError /SLOT\s*=\s*\(""\|''\|$\)/
-" not allowed
+
 " Funtoo allows * and ~* as package keywords
 " syn match   EbuildError /KEYWORDS\s*=\s*.*[^-]\*.*/
+
 " evil syntax, ask Mr_Bones_
 syn match   EbuildError /^[a-zA-Z0-9\-\_]\+ ()/
 syn match   EbuildError /^[a-zA-Z0-9\-\_]\+(){/
+" bad space
+syn region  EbuildError start=/^ / end=/$/
+" trailing whitespace
+syn match   EbuildError /\s\+$/
 " should be epause
 syn keyword EbuildError esleep
 " should be ${P}
@@ -237,7 +244,7 @@ syn match   EbuildErrorC /\${PN}-\${PV}/
 
 " trailing space
 if exists("g:ebuild_error_on_trailing_whitespace")
-	echohl WarningMsg | echo "g:ebuild_error_on_trailing_whitespace is deprecated, bad space highlight is enabled by default." | echohl None
+    syn match   EbuildError /^.*\s\+$/
 endif
 
 " prepalldocs is 'strongly discouraged'; decided by the Council
@@ -271,7 +278,7 @@ syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword
 syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
 
 syn cluster shCommandSubList add=@EbuildThings
-syn cluster shCommentGroup add=GentooBug
+syn cluster shCommentGroup add=FuntooBug
 syn cluster shDblQuoteList add=EbuildErrorC
 
 hi def link EbuildCoreKeyword                Keyword

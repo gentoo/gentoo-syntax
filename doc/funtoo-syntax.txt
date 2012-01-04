@@ -1,37 +1,39 @@
-*gentoo-syntax.txt*	Gentoo Syntax Plugin
+funtoo-syntax.txt*	Funtoo Syntax Plugin
 
-Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
-          Aaron Walker    <ka0ttic at gentoo dot org>
-          Tom Martin      <slarti  at gentoo dot org>
-          Elfyn McBratney <beu     at gentoo dot org>
-          Mike Kelly      <pioto   at gentoo dot org>
+Authors:  Ciaran McCreesh               <ciaranm at gentoo dot org>
+          Aaron Walker                  <ka0ttic at gentoo dot org>
+          Tom Martin                    <slarti  at gentoo dot org>
+          Elfyn McBratney               <beu     at gentoo dot org>
+          Mike Kelly                    <pioto   at gentoo dot org>
+          Martin 'golodhrim' Scholz     <golodhrim at funtoo dot org> *
+          * funtoo ported
 
 ==============================================================================
-1. Contents						       *gentoo-syntax*
+1. Contents						       funtoo-syntax*
 
-    1. Contents                                            |gentoo-syntax|
+    1. Contents                                            |funtoo-syntax|
 
-    2. Plugin Information                         |gentoo-syntax-overview|
-	Detection Specifics                      |gentoo-syntax-detection|
-	Highlighting Specifics                |gentoo-syntax-highlighting|
-	    Common Syntax Rules                     |gentoo-common-syntax|
-	    Ebuild and Eclass Files                 |gentoo-ebuild-syntax|
-	    GLEP Files                                |gentoo-glep-syntax|
-	    ChangeLogs                           |gentoo-changelog-syntax|
-	    conf.d Files                            |gentoo-conf.d-syntax|
-	    cron.d Files                            |gentoo-cron.d-syntax|
-	    env.d Files                              |gentoo-env.d-syntax|
-	    GuideXML Syntax                       |gentoo-guidexml-syntax|
-	    init.d Files                            |gentoo-init.d-syntax|
-	    make.conf Files                      |gentoo-make-conf-syntax|
-	    metadata.xml Files                    |gentoo-metadata-syntax|
-	    package.(un)mask                  |gentoo-package-mask-syntax|
-	    package.keywords              |gentoo-package-keywords-syntax|
-	    package.use                        |gentoo-package-use-syntax|
-	    thirdpartymirrors                      |gentoo-mirrors-syntax|
-	    use.desc, use.local.desc              |gentoo-use-desc-syntax|
-	Settings Specifics                        |gentoo-syntax-settings|
-	Indent Specifics                          |gentoo-indent-settings|
+    2. Plugin Information                         |funtoo-syntax-overview|
+	Detection Specifics                      |funtoo-syntax-detection|
+	Highlighting Specifics                |funtoo-syntax-highlighting|
+	    Common Syntax Rules                     |funtoo-common-syntax|
+	    Ebuild and Eclass Files                 |funtoo-ebuild-syntax|
+	    GLEP Files                                |funtoo-glep-syntax|
+	    ChangeLogs                           |funtoo-changelog-syntax|
+	    conf.d Files                            |funtoo-conf.d-syntax|
+	    cron.d Files                            |funtoo-cron.d-syntax|
+	    env.d Files                              |funtoo-env.d-syntax|
+	    GuideXML Syntax                       |funtoo-guidexml-syntax|
+	    init.d Files                            |funtoo-init.d-syntax|
+	    make.conf Files                      |funtoo-make-conf-syntax|
+	    metadata.xml Files                    |funtoo-metadata-syntax|
+	    package.(un)mask                  |funtoo-package-mask-syntax|
+	    package.keywords              |funtoo-package-keywords-syntax|
+	    package.use                        |funtoo-package-use-syntax|
+	    thirdpartymirrors                      |funtoo-mirrors-syntax|
+	    use.desc, use.local.desc              |funtoo-use-desc-syntax|
+	Settings Specifics                        |funtoo-syntax-settings|
+	Indent Specifics                          |funtoo-indent-settings|
 	Bug Summary                                          |:BugSummary|
 	New conf.d Files                                      |new-conf.d|
 	New Ebuilds                                          |new-ebuilds|
@@ -39,14 +41,14 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 	New Metadata                                        |new-metadata|
 
 ==============================================================================
-2. Plugin Information				      *gentoo-syntax-overview*
+2. Plugin Information				      *funtoo-syntax-overview*
 
-	The gentoo-syntax package provides a collection of syntax, ftdetect,
-	ftplugin and indent files to help Gentoo developers and users work
-	with ebuilds, eclasses, GLEPs, Gentoo style ChangeLogs, init.d /
+	The funtoo-syntax package provides a collection of syntax, ftdetect,
+	ftplugin and indent files to help funtoo developers and users work
+	with ebuilds, eclasses, GLEPs, funtoo style ChangeLogs, init.d /
 	conf.d / env.d / cron.d entries, /etc/portage/ files and so on.
 
-    Detection Specifics				     *gentoo-syntax-detection*
+    Detection Specifics				     *funtoo-syntax-detection*
 
 	Ebuilds are detected by an 'ebuild' extension. Eclasses are detected
 	by an 'eclass' extension. Both ebuild and eclass files are assigned
@@ -56,7 +58,7 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 	the first line of the file starts with "GLEP: ". They are assigned the
 	'glep' filetype.
 
-	Gentoo ChangeLogs are detected by the 'ChangeLog' filename and a
+	funtoo ChangeLogs are detected by the 'ChangeLog' filename and a
 	copyright header on the second line.
 
 	init.d scripts are detected by being in /etc/init.d/ . They are also
@@ -77,17 +79,17 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 	use.desc files are detected by filename (use.local.desc is also
 	recognised).
 
-    Highlighting Specifics			  *gentoo-syntax-highlighting*
+    Highlighting Specifics			  *funtoo-syntax-highlighting*
 
 	Syntax highlighting is provided for ebuild/eclass, GLEP files,
-	Gentoo ChangeLogs and init.d / conf.d / env.d / cron.d scripts.
+	funtoo ChangeLogs and init.d / conf.d / env.d / cron.d scripts.
 
-							*gentoo-common-syntax*
+							*funtoo-common-syntax*
 
-	Many of the syntax files are based upon gentoo-common.vim, which
+	Many of the syntax files are based upon funtoo-common.vim, which
 	provides basic syntax highlighting for header blocks and bug numbers.
 
-							*gentoo-ebuild-syntax*
+							*funtoo-ebuild-syntax*
 
 	The ebuild/eclass syntax file builds upon the vim-provided |sh.vim|
 	and adds in highlighting for:
@@ -100,100 +102,108 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 	    * common mistakes (assigning to read-only variables, misspellings,
 	      leading non-tab spaces, default WORKDIR assignment)
 
-							  *gentoo-glep-syntax*
+				       *g:ebuild_error_on_trailing_whitespace*
+	Error highlighting for trailing whitespace is available but disabled
+	by default. To turn it on, add:
+>
+	    let g:ebuild_error_on_trailing_whitespace=1
+<
+	to your |vimrc| file.
+
+							  *funtoo-glep-syntax*
 
 	Syntax highlighting for GLEP files is based upon the vim-provided rst
 	syntax file. Additional highlighting is available for the headers at
 	the top of the file and for heading sections.
 
-						     *gentoo-changelog-syntax*
+						     *funtoo-changelog-syntax*
 
-	Syntax highlighting for Gentoo ChangeLogs is implemented from scratch
-	(some rules come from |gentoo-common-syntax|).
+	Syntax highlighting for Funtoo ChangeLogs is implemented from scratch
+	(some rules come from |funtoo-common-syntax|).
 
-							*gentoo-conf.d-syntax*
+							*funtoo-conf.d-syntax*
 
 	Syntax highlighting for conf.d files is based upon the vim-provided
-	|sh.vim|, with additional support for certain Gentooisms (some rules
-	come from |gentoo-common-syntax|).
+	|sh.vim|, with additional support for certain funtooisms (some rules
+	come from |funtoo-common-syntax|).
 
-							*gentoo-cron.d-syntax*
+							*funtoo-cron.d-syntax*
 
 	Syntax highlighting for cron.d entries uses the vim-provided
 	crontab.vim file.
 
-							 *gentoo-env.d-syntax*
+							 *funtoo-env.d-syntax*
 
 	Syntax highlighting for env.d files is based upon the vim-provided
-	|sh.vim|, with additional support for certain Gentooisms (some rules
-	come from |gentoo-common-syntax|).
+	|sh.vim|, with additional support for certain funtooisms (some rules
+	come from |funtoo-common-syntax|).
 
-						      *gentoo-guidexml-syntax*
+						      *funtoo-guidexml-syntax*
 
 	Syntax highlighting for guidexml files is based upon the vim-provided
 	|xml.vim|.
 
-							*gentoo-init.d-syntax*
+							*funtoo-init.d-syntax*
 
 	Syntax highlighting for init.d files is based upon the vim-provided
-	|sh.vim|, with additional support for certain Gentooisms (some rules
-	come from |gentoo-common-syntax|).
+	|sh.vim|, with additional support for certain funtooisms (some rules
+	come from |funtoo-common-syntax|).
 
-						     *gentoo-make-conf-syntax*
+						     *funtoo-make-conf-syntax*
 
 	Syntax highlighting for make.conf files is implemented from scratch
-	(some rules come from |gentoo-common-syntax|).
+	(some rules come from |funtoo-common-syntax|).
 
-						     *gentoo-metadata-syntax*
+						     *funtoo-metadata-syntax*
 
 	Syntax highlighting for metadata.xml files is based upon the
 	vim-provided |xml.vim|, with additional highlighting for recognised
 	elements.
 
-						  *gentoo-package-mask-syntax*
+						  *funtoo-package-mask-syntax*
 
 	Syntax highlighting for package.mask and package.unmask files is
 	implemented from scratch (some rules come from
-	|gentoo-common-syntax|).
+	|funtoo-common-syntax|).
 
-					      *gentoo-package-keywords-syntax*
+					      *funtoo-package-keywords-syntax*
 
 	Syntax highlighting for package.keywords files is implemented from
-	scratch (some rules come from |gentoo-common-syntax|).
+	scratch (some rules come from |funtoo-common-syntax|).
 
-						   *gentoo-package-use-syntax*
+						   *funtoo-package-use-syntax*
 
 	Syntax highlighting for package.use files is implemented from scratch
-	(some rules come from |gentoo-common-syntax|).
+	(some rules come from |funtoo-common-syntax|).
 
-						       *gentoo-mirrors-syntax*
+						       *funtoo-mirrors-syntax*
 
 	Syntax highlighting for thirdpartymirrors files is implemented from
-	scratch (some rules come from |gentoo-common-syntax|).
+	scratch (some rules come from |funtoo-common-syntax|).
 
-						      *gentoo-use-desc-syntax*
+						      *funtoo-use-desc-syntax*
 	Syntax highlighting for use.desc and use.local.desc is implemented
-	from scratch (some rules come from |gentoo-common-syntax|).
+	from scratch (some rules come from |funtoo-common-syntax|).
 
-    Settings Specifics				      *gentoo-syntax-settings*
+    Settings Specifics				      *funtoo-syntax-settings*
 
 	For ebuilds and eclasses, tabs (|'shiftwidth'| and |'tabstop'|) are
-	set to four spaces, tab to space conversion (|'expandtab'|) is disabled
-	and the text width (|'textwidth'|) is set to 80 columns. To allow
+	set to four spaces, tab to space conversion (|'expandtab'|) is disabled.
+	The text width (|'textwidth'|) is no longer set to 80 columns. To allow
 	proper syntax highlighting for commands like 'strip-flags', the hyphen
 	character is added as a valid keyword character (|'iskeyword'|).
 
 	For ebuilds, eclasses and ChangeLogs, UTF-8 is used for fileencoding
 	as per GLEP 31.
 
-    Indent Specifics				      *gentoo-indent-settings*
+    Indent Specifics				      *funtoo-indent-settings*
 
 	Indent settings for ebuilds and eclasses are the same as for regular
 	bash files.
 
     Bug Summary							 *:BugSummary*
 
-	To see a summary of a Gentoo bug, execute :BugSummary 12345.
+	To see a summary of a funtoo bug, execute :BugSummary 12345.
 
 								 *:BugDetails*
 	The :BugDetails 12345 command is similar to :BugSummary, but will also

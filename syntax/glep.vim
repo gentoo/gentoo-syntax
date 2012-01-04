@@ -1,11 +1,13 @@
 " Vim syntax file
-" Language:	Gentoo GLEPs
+" Language:	Funtoo GLEPs
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo GLEPs. Needs vim 6.3 or later. Inherits from
+" Syntax highlighting for Funtoo GLEPs. Needs vim 6.3 or later. Inherits from
 " rst.vim and provides a few extras.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603

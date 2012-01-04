@@ -1,10 +1,12 @@
 " Vim syntax file
-" Language:	Gentoo metadata.xml
+" Language:	Funtoo metadata.xml
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
 " Syntax highlighting for metadata.xml. Inherits from xml.vim.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -39,5 +41,5 @@ syn match metadataElement contained 'pkgmetadata'
 
 hi def link metadataElement Keyword
 
-let b:current_syntax = "gentoo-metadata"
+let b:current_syntax = "funtoo-metadata"
 

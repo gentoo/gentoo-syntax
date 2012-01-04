@@ -1,11 +1,13 @@
 " Vim syntax file
-" Language:	Gentoo use.desc, use.local.desc files
+" Language:	Funtoo use.desc, use.local.desc files
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo package.keywords files. Requires vim 6.3 or
+" Syntax highlighting for Funtoo package.keywords files. Requires vim 6.3 or
 " later.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -16,21 +18,21 @@ if exists("b:current_syntax")
   finish
 endif
 
-runtime syntax/gentoo-common.vim
+runtime syntax/funtoo-common.vim
 
-syn region GentooUseDescComment start=/#/ end=/$/
-	    \ contains=GentooBug
+syn region FuntooUseDescComment start=/#/ end=/$/
+	    \ contains=FuntooBug
 
-syn match GentooUseDescPackage /^\(#\)\@!\([a-zA-Z0-9\-\_+\.]\+\/[a-zA-Z0-9\-\_+]\+\)\?/ nextgroup=GentooUseDescColon,GentooUseDescFlag skipwhite
-syn match GentooUseDescColon /:/ contained nextgroup=GentooUseDescFlag
-syn match GentooUseDescFlag contained /[a-zA-Z0-9\-\_+@:]\+/ nextgroup=GentooUseDescDash skipwhite
-syn match GentooUseDescDash /-\s*/ contained nextgroup=GentooUseDescDesc skipwhite
-syn region GentooUseDescDesc start=// end=/$/ contained skipwhite
+syn match FuntooUseDescPackage /^\(#\)\@!\([a-zA-Z0-9\-\_+\.]\+\/[a-zA-Z0-9\-\_+]\+\)\?/ nextgroup=FuntooUseDescColon,FuntooUseDescFlag skipwhite
+syn match FuntooUseDescColon /:/ contained nextgroup=FuntooUseDescFlag
+syn match FuntooUseDescFlag contained /[a-zA-Z0-9\-\_+@:]\+/ nextgroup=FuntooUseDescDash skipwhite
+syn match FuntooUseDescDash /-\s*/ contained nextgroup=FuntooUseDescDesc skipwhite
+syn region FuntooUseDescDesc start=// end=/$/ contained skipwhite
 
-hi def link GentooUseDescComment          Comment
-hi def link GentooUseDescPackage          Keyword
-hi def link GentooUseDescFlag             Identifier
-hi def link GentooUseDescDesc             String
+hi def link FuntooUseDescComment          Comment
+hi def link FuntooUseDescPackage          Keyword
+hi def link FuntooUseDescFlag             Identifier
+hi def link FuntooUseDescDesc             String
 
-let b:current_syntax = "gentoo-package-keywords"
+let b:current_syntax = "funtoo-package-keywords"
 

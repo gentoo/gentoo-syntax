@@ -1,15 +1,14 @@
 " Vim syntax file
-" Language:	Gentoo /etc/init.d/ scripts
-" Author:	Ciaran McCreesh <ciaranm@gentoo.org>
+" Language:	Funtoo /etc/init.d/ scripts
+" Author:	Ciaran McCreesh <ciaranm@funtoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo /etc/init.d/ scripts. Inherits from sh.vim
-" and adds in Gentoo-specific highlights for certain keywords and functions.
+" Syntax highlighting for Funtoo /etc/init.d/ scripts. Inherits from sh.vim
+" and adds in Funtoo-specific highlights for certain keywords and functions.
 " Requires vim 6.3 or later.
 "
-" TODO: Add highlights for description_$command
-"       Add start-stop-daemon highlighting incl. deprecated options
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -24,34 +23,33 @@ let is_bash=1
 runtime! syntax/sh.vim
 unlet b:current_syntax
 
-runtime syntax/gentoo-common.vim
-syn cluster shCommentGroup add=GentooBug
+runtime syntax/funtoo-common.vim
+syn cluster shCommentGroup add=FuntooBug
 
-syn keyword GentooInitDKeyword config need use before after provide keyword
-syn keyword GentooInitDKeyword ebegin vebegin eend veend ewend vewend
-syn keyword GentooInitDKeyword einfo veinfo ewarn vewarn eerror veerror
-syn keyword GentooInitDKeyword ewaitfile is_newer_than is_older_than
-syn keyword GentooInitDKeyword service_set_value service_get_value
-syn keyword GentooInitDKeyword service_started service_starting service_inactive
-syn keyword GentooInitDKeyword service_stopping service_stopped service_coldplugged
-syn keyword GentooInitDKeyword service_wasinactive service_started_daemon
-syn keyword GentooInitDKeyword mark_service_started mark_service_starting
-syn keyword GentooInitDKeyword mark_service_inactive mark_service_stopping
-syn keyword GentooInitDKeyword mark_service_stopped mark_service_coldplugged
-syn keyword GentooInitDKeyword mark_service_wasinactive checkpath yesno
+syn keyword FuntooInitDKeyword config need use before after provide keyword
+syn keyword FuntooInitDKeyword ebegin vebegin eend veend ewend vewend
+syn keyword FuntooInitDKeyword einfo veinfo ewarn vewarn eerror veerror
+syn keyword FuntooInitDKeyword ewaitfile is_newer_than is_older_than
+syn keyword FuntooInitDKeyword service_set_value service_get_value
+syn keyword FuntooInitDKeyword service_started service_starting service_inactive
+syn keyword FuntooInitDKeyword service_stopping service_stopped service_coldplugged
+syn keyword FuntooInitDKeyword service_wasinactive service_started_daemon
+syn keyword FuntooInitDKeyword mark_service_started mark_service_starting
+syn keyword FuntooInitDKeyword mark_service_inactive mark_service_stopping
+syn keyword FuntooInitDKeyword mark_service_stopped mark_service_coldplugged
+syn keyword FuntooInitDKeyword mark_service_wasinactive checkpath yesno
 
-syn keyword GentooInitSpecialVariables extra_commands extra_started_commands extra_stopped_commands description command command_args pidfile name
-syn keyword GentooInitDeprecated opts
+syn keyword FuntooInitSpecialVariables extra_commands extra_started_commands extra_stopped_commands description command command_args pidfile name
+syn keyword FuntooInitDeprecated opts
 
-syn keyword GentooInitDFunc describe start_pre start start_post stop_pre stop stop_post
-syn keyword GentooInitDFunc reload restart status zap depend
+syn keyword FuntooInitDFunc describe start_pre start start_post stop_pre stop stop_post
+syn keyword FuntooInitDFunc reload restart status zap depend
 
-syn cluster shCommandSubList add=GentooInitDKeyword
+syn cluster shCommandSubList add=FuntooInitDKeyword
 
-hi def link GentooInitDKeyword Keyword
-hi def link GentooInitDFunc    Special
-hi def link GentooInitSpecialVariables PreProc
-hi def link GentooInitDeprecated Error
+hi def link FuntooInitDKeyword Keyword
+hi def link FuntooInitDFunc    Special
+hi def link FuntooInitSpecialVariables PreProc
+hi def link FuntooInitDeprecated Error
 
-let b:current_syntax = "gentoo-init-d"
-
+let b:current_syntax = "funtoo-init-d"

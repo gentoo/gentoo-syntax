@@ -1,11 +1,13 @@
 " Vim filetype detection file
-" Language:	Gentoo Things
+" Language:	Funtoo Things
 " Author:	Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" This sets up syntax highlighting for Gentoo ebuilds, eclasses, GLEPs and
-" Gentoo style ChangeLogs.
+" This sets up syntax highlighting for Funtoo ebuilds, eclasses, GLEPs and
+" Funtoo style ChangeLogs.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -24,27 +26,27 @@ au BufNewFile,BufRead *.txt
     \ endif
 
 " ChangeLogs
-au BufNewFile,BufRead ChangeLog*
-    \ if (getline(2) =~? "^# Copyright \\d\\+-\\d\\+ Gentoo Foundation") |
-    \     set filetype=gentoo-changelog |
+au BufNewFile,BufRead ChangeLog
+    \ if (getline(2) =~? "^# Copyright \\d\\+-\\d\\+ Funtoo Technologies") |
+    \     set filetype=funtoo-changelog |
     \ endif
 
 " /etc/init.d/ scripts
 au BufNewFile,BufRead /etc/init.d/*
-    \     set filetype=gentoo-init-d |
+    \     set filetype=funtoo-init-d |
 
 au BufNewFile,BufRead /*/files/*
     \ if (getline(1) ==? "#!/sbin/runscript") |
-    \     set filetype=gentoo-init-d |
+    \     set filetype=funtoo-init-d |
     \ endif
 
 " /etc/conf.d/ scripts
 au BufNewFile,BufRead /etc/conf.d/*
-    \     set filetype=gentoo-conf-d
+    \     set filetype=funtoo-conf-d
 
 " /etc/env.d/ scripts
 au BufNewFile,BufRead /etc/env.d/*
-    \     set filetype=gentoo-env-d
+    \     set filetype=funtoo-env-d
 
 " /etc/cron.d/ scripts
 au BufNewFile,BufRead /etc/cron.d/*
@@ -52,39 +54,39 @@ au BufNewFile,BufRead /etc/cron.d/*
 
 " package.mask, package.unmask
 au BufNewFile,BufRead {*/package.{un,}mask,*/portage/package.{un,}mask/*}
-    \     set filetype=gentoo-package-mask
+    \     set filetype=funtoo-package-mask
 
 " package.keywords
 au BufNewFile,BufRead {*/package.{accept_,}keywords,*/portage/package.{accept_,}keywords/*}
-    \     set filetype=gentoo-package-keywords
+    \     set filetype=funtoo-package-keywords
 
 " package.use
 au BufNewFile,BufRead {*/package.use,*/portage/package.use/*}
-    \     set filetype=gentoo-package-use
+    \     set filetype=funtoo-package-use
 
 " package.license
 au BufNewFile,BufRead {*/package.license,*/portage/package.license/*}
-    \     set filetype=gentoo-package-license
+    \     set filetype=funtoo-package-license
 
 " package.properties
 au BufNewFile,BufRead {*/package.properties,*/portage/package.properties/*}
-    \     set filetype=gentoo-package-properties
+    \     set filetype=funtoo-package-properties
 
 " thirdpartymirrors
 au BufNewFile,BufRead {*/thirdpartymirrors,*/portage/mirrors}
-    \     set filetype=gentoo-mirrors
+    \     set filetype=funtoo-mirrors
 
 " make.conf
 au BufNewFile,BufRead make.{conf,globals}
-    \     set filetype=gentoo-make-conf
+    \     set filetype=funtoo-make-conf
 
 " use.desc
 au BufNewFile,BufRead use.{local.,}desc
-    \     set filetype=gentoo-use-desc
+    \     set filetype=funtoo-use-desc
 
 " metadata.xml
 au BufNewFile,BufRead metadata.xml
-    \     set filetype=gentoo-metadata
+    \     set filetype=funtoo-metadata
 
 " guidexml
 au BufNewFile,BufRead *.xml

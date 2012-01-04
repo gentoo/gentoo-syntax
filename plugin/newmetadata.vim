@@ -3,6 +3,9 @@
 " Author:       Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:    Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:      You may redistribute this under the same terms as Vim itself
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
+"
 
 if &compatible || v:version < 603 || exists("g:loaded_newmetadata")
     finish
@@ -10,7 +13,7 @@ endif
 
 let g:loaded_newmetadata=1
 
-runtime! plugin/gentoo-common.vim
+runtime! plugin/funtoo-common.vim
 
 fun! <SID>MakeNewMetadata()
     let l:pastebackup = &paste
@@ -28,7 +31,7 @@ fun! <SID>MakeNewMetadata()
         let l:category = substitute(l:filename,
                     \ "^.*/\\([^/]\\+\\)/[^/]\\+/metadata\\.xml", "\\1", "g")
         let l:iscatmetadata = 0
-        let l:user = GentooGetUser()
+        let l:user = FuntooGetUser()
         let l:email = matchstr(l:user, "\\(<\\)\\@<=[^>]\\+\\(>\\)\\@=")
         let l:name = matchstr(l:user, "^[^<]\\+\\( <\\)\\@=")
     endif
@@ -46,7 +49,7 @@ fun! <SID>MakeNewMetadata()
         exec "normal gg=G"
         " }}}
     " }}}
-    else
+else
     " {{{ pkgmetadata
 
         " {{{ herd

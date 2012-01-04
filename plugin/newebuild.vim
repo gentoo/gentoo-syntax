@@ -3,6 +3,9 @@
 " Author:       Ciaran McCreesh <ciaranm@gentoo.org>
 " Copyright:    Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:      You may redistribute this under the same terms as Vim itself
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
+"
 
 if &compatible || v:version < 603 || exists("g:loaded_newebuild")
     finish
@@ -10,26 +13,26 @@ endif
 
 let g:loaded_newebuild=1
 
-runtime! plugin/gentoo-common.vim
+runtime! plugin/funtoo-common.vim
 
 fun! <SID>MakeNewEbuild()
     let l:pastebackup = &paste
     set nopaste
 
     " {{{ variables
-    let l:arch = GentooGetArch()
+    let l:arch = FuntooGetArch()
     let l:filename = expand("%:p")
     let l:category = substitute(l:filename,
                 \ "^.*/\\([^/]\\+\\)/[^/]\\+/[^/]\\+\\.ebuild", "\\1", "g")
     " }}}
 
-    call GentooHeader()
+    call FuntooHeader()
 
     if expand("%:e") =~# "eclass\$"
         " {{{ eclass special setup
         let l:eclass=substitute(expand("%:t"), "\\.eclass\$", "", "")
         put ='#'
-        put ='# Original Author: ' . GentooGetUser()
+        put ='# Original Author: ' . FuntooGetUser()
         put ='# Purpose: '
         put ='#'
         put =''
@@ -79,7 +82,7 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='need_apache2'
             " }}}
-	elseif l:category ==# "dev-java"
+        elseif l:category ==# "dev-java"
 		" {{{ dev-java generation-2 default ant ebuild
 		put ='JAVA_PKG_IUSE=\"doc source\"'
 		put =''
@@ -111,6 +114,7 @@ fun! <SID>MakeNewEbuild()
 		put ='	use doc && java-pkg_dojavadoc build/javadoc'
 		put ='	use source && java-pkg_dosrc src'
 		put ='}'
+		put =''
         elseif l:category ==# "dev-perl" || l:category ==# "perl-core"
             " {{{ perl modules default setup
             put ='MODULE_AUTHOR=\"\"'

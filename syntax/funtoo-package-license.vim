@@ -1,11 +1,13 @@
 " Vim syntax file
-" Language:	Gentoo package.license files
-" Author:	Dror Levin <spatz@gentoo.org
+" Language:	Funtoo package.license files
+" Author:	Dror Levin <spatz@gentoo.org>
 " Copyright:	Copyright (c) 2010 Dror Levin
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" Syntax highlighting for Gentoo package.license files. Requires vim 6.3 or
+" Syntax highlighting for Funtoo package.license files. Requires vim 6.3 or
 " later.
+"
+" ported to Funtoo by Martin 'golodhrim' Scholz <golodhrim@funtoo.org>
 "
 
 if &compatible || v:version < 603
@@ -16,24 +18,24 @@ if exists("b:current_syntax")
   finish
 endif
 
-runtime syntax/gentoo-common.vim
+runtime syntax/funtoo-common.vim
 
-syn region GentooPackageLicenseComment start=/#/ end=/$/
-	    \ contains=GentooPackageLicenseEmail,GentooPackageLicenseDate,GentooBug
+syn region FuntooPackageLicenseComment start=/#/ end=/$/
+	    \ contains=FuntooPackageLicenseEmail,FuntooPackageLicenseDate,FuntooBug
 
-syn match  GentooPackageLicenseEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
-syn match  GentooPackageLicenseDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
+syn match  FuntooPackageLicenseEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
+syn match  FuntooPackageLicenseDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
-syn match  GentooPackageLicenseAtom /^[^ \t\n#]\+\S\+\/\S\+/
-	    \ nextgroup=GentooPackageLicenseLicense skipwhite
-syn match  GentooPackageLicenseLicense contained /-\?@\?\([a-zA-Z0-9\-_.+]\+\|\*\)/
-	    \ nextgroup=GentooPackageLicenseLicense skipwhite
+syn match  FuntooPackageLicenseAtom /^[^ \t\n#]\+\S\+\/\S\+/
+	    \ nextgroup=FuntooPackageLicenseLicense skipwhite
+syn match  FuntooPackageLicenseLicense contained /-\?@\?\([a-zA-Z0-9\-_.+]\+\|\*\)/
+	    \ nextgroup=FuntooPackageLicenseLicense skipwhite
 
-hi def link GentooPackageLicenseComment          Comment
-hi def link GentooPackageLicenseEmail            Special
-hi def link GentooPackageLicenseDate             Number
-hi def link GentooPackageLicenseAtom             Identifier
-hi def link GentooPackageLicenseLicense          Keyword
+hi def link FuntooPackageLicenseComment          Comment
+hi def link FuntooPackageLicenseEmail            Special
+hi def link FuntooPackageLicenseDate             Number
+hi def link FuntooPackageLicenseAtom             Identifier
+hi def link FuntooPackageLicenseLicense          Keyword
 
-let b:current_syntax = "gentoo-package-license"
+let b:current_syntax = "funtoo-package-license"
 
