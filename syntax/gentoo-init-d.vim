@@ -8,6 +8,9 @@
 " and adds in Gentoo-specific highlights for certain keywords and functions.
 " Requires vim 6.3 or later.
 "
+" TODO: Add highlights for description_$command
+"       Add start-stop-daemon highlighting incl. deprecated options
+"
 
 if &compatible || v:version < 603
     finish
@@ -37,6 +40,9 @@ syn keyword GentooInitDKeyword mark_service_inactive mark_service_stopping
 syn keyword GentooInitDKeyword mark_service_stopped mark_service_coldplugged
 syn keyword GentooInitDKeyword mark_service_wasinactive checkpath yesno
 
+syn keyword GentooInitSpecialVariables extra_commands extra_started_commands extra_stopped_commands description command command_args pidfile name
+syn keyword GentooInitDeprecated opts
+
 syn keyword GentooInitDFunc describe start_pre start start_post stop_pre stop stop_post
 syn keyword GentooInitDFunc reload restart status zap depend
 
@@ -44,6 +50,8 @@ syn cluster shCommandSubList add=GentooInitDKeyword
 
 hi def link GentooInitDKeyword Keyword
 hi def link GentooInitDFunc    Special
+hi def link GentooInitSpecialVariables PreProc
+hi def link GentooInitDeprecated Error
 
 let b:current_syntax = "gentoo-init-d"
 
