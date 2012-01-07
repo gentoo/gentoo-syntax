@@ -50,7 +50,7 @@ fun! <SID>MakeNewMetadata()
     " {{{ pkgmetadata
 
         " {{{ herd
-        let l:herd = "no-herd"
+        let l:herd = ""
         if l:category ==# "app-vim"
             let l:herd = "vim"
         elseif l:category ==# "dev-perl"
@@ -68,7 +68,9 @@ fun! <SID>MakeNewMetadata()
         0 put ='<?xml version=\"1.0\" encoding=\"UTF-8\"?>'
         put ='<!DOCTYPE pkgmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\">'
         put ='<pkgmetadata>'
-        put ='<herd>' . l:herd . '</herd>'
+        if l:herd != ""
+            put ='<herd>' . l:herd . '</herd>'
+        endif
         if l:email != "" || l:name != ""
             put ='<maintainer>'
             if l:email != ""
