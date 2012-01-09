@@ -139,7 +139,7 @@ fun! <SID>MakeNewEbuild()
                 put =''
             elseif l:category =~# "^xfce-"
                 put ='inherit xfconf'
-		put =''
+                put =''
             endif
             " }}}
 
