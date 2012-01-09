@@ -137,6 +137,9 @@ fun! <SID>MakeNewEbuild()
             elseif l:category ==# "dev-python"
                 put ='inherit distutils'
                 put =''
+            elseif l:category =~# "^xfce-"
+                put ='inherit xfconf'
+		put =''
             endif
             " }}}
 
