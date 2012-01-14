@@ -43,6 +43,7 @@ syn keyword GentooInitDKeyword mark_service_wasinactive checkpath yesno
 syn keyword GentooInitSpecialVariables extra_commands extra_started_commands
 syn keyword GentooInitSpecialVariables extra_stopped_commands description command
 syn keyword GentooInitSpecialVariables command_args pidfile name start_stop_daemon_args
+syn keyword GentooInitSpecialVariables retry
 syn keyword GentooInitDeprecated opts
 
 syn keyword GentooInitDFunc describe start_pre start start_post stop_pre stop stop_post
