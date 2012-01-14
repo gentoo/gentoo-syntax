@@ -40,7 +40,9 @@ syn keyword GentooInitDKeyword mark_service_inactive mark_service_stopping
 syn keyword GentooInitDKeyword mark_service_stopped mark_service_coldplugged
 syn keyword GentooInitDKeyword mark_service_wasinactive checkpath yesno
 
-syn keyword GentooInitSpecialVariables extra_commands extra_started_commands extra_stopped_commands description command command_args pidfile name
+syn keyword GentooInitSpecialVariables extra_commands extra_started_commands
+syn keyword GentooInitSpecialVariables extra_stopped_commands description command
+syn keyword GentooInitSpecialVariables command_args pidfile name
 syn keyword GentooInitDeprecated opts
 
 syn keyword GentooInitDFunc describe start_pre start start_post stop_pre stop stop_post
@@ -54,4 +56,3 @@ hi def link GentooInitSpecialVariables PreProc
 hi def link GentooInitDeprecated Error
 
 let b:current_syntax = "gentoo-init-d"
-
