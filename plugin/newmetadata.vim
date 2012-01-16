@@ -89,6 +89,12 @@ fun! <SID>MakeNewMetadata()
     endif
     " }}}
 
+    " Jump back to the first line
+    0
+
+    " Delete last/empty line
+    $ delete
+
     if pastebackup == 0
         set nopaste
     endif
