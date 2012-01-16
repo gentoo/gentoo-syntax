@@ -21,9 +21,18 @@ fun! GentooGetUser()
     return l:result
 endfun
 
-fun! GentooHeader()
+fun! GentooHeader(...)
+    " The shebang arg is optional
     let l:year = strftime("%Y")
-    0 put ='# Copyright 1999-' . l:year . ' Gentoo Foundation'
+    let l:copyright = '# Copyright 1999-' . l:year . ' Gentoo Foundation'
+
+    " Only one arg allowed (shebang only)
+    if a:0 == 1
+        0 put =a:1 " Insert shebang
+        put =l:copyright
+    else
+        0 put =l:copyright
+    endif
     put ='# Distributed under the terms of the GNU General Public License v2'
     put ='# $Header: $'
     $
