@@ -13,6 +13,8 @@ let g:loaded_newinitd=1
 runtime! plugin/gentoo-common.vim
 
 fun! <SID>MakeNewInitd()
+    call GentooHeader('#!/sbin/runscript')
+
     " {{{ default functions
     put ='depend() {'
     put =''
@@ -27,8 +29,8 @@ fun! <SID>MakeNewInitd()
     put ='}'
     " }}}
 
-    call GentooHeader()
-    0 put ='#!/sbin/runscript'
+    " Jump back to the first line
+    0
 endfun
 
 com! -nargs=0 NewInitd call <SID>MakeNewInitd() | set filetype=gentoo-init-d
