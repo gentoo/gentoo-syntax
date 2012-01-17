@@ -168,6 +168,9 @@ fun! <SID>MakeNewEbuild()
         " }}}
     endif
 
+    " Delete the empty line at the end of the file
+    $ delete
+
     if pastebackup == 0
         set nopaste
     endif
