@@ -82,20 +82,20 @@ uninstall-file-%: $(subst _,/,$*)
 	[ ! -f "$(PREFIX)/$(subst _,/,$*)" ] || rm "$(PREFIX)/$(subst _,/,$*)"
 
 tag:
-	svn up
-	svn cp ../gentoo-syntax ../../tags/gentoo-syntax/release-$(distver)
+	git pull
+	git tag $(distpkg)
 	@echo
-	@echo "tag created remember to check it in"
+	@echo "tag created remember to push it"
 	@echo
 
 dist: tag
-	mkdir "$(distpkg)"
-	$(MAKE) PREFIX="$(distpkg)" install
-	svn2cl
-	mv ChangeLog "$(distpkg)/"
-	cp README "$(distpkg)/"
-	tar jcf "$(distpkg).tar.bz2" "$(distpkg)"
-	rm -fr "$(distpkg)/"
+	git archive --prefix=$(distpkg)/ --format=tar -o $(distpkg).tar $(distpkg)
+	mkdir $(distpkg)/
+	git log > $(distpkg)/ChangeLog
+	tar vfr $(distpkg).tar $(distpkg)/ChangeLog
+	bzip2 $(distpkg).tar
+	rm -rf $(distpkg)/
+
 
 dist-upload: dist
 	scp $(distpkg).tar.bz2 dev.gentoo.org:/space/distfiles-local/
