@@ -62,7 +62,7 @@ syn keyword EbuildEutilsKeyword gen_usr_ldscript draw_line epatch have_NPTL get_
 syn keyword EbuildEutilsKeyword emktemp enewuser enewgroup edos2unix make_desktop_entry unpack_pdv
 syn keyword EbuildEutilsKeyword unpack_makeself check_license cdrom_get_cds cdrom_load_next
 syn keyword EbuildEutilsKeyword cdrom_locate_file_on_cd strip-linguas epause ebeep built_with_use
-syn keyword EbuildEutilsKeyword make_session_desktop domenu doicon find_unpackable_file unpack_pdv
+syn keyword EbuildEutilsKeyword make_session_desktop domenu doicon newicon find_unpackable_file unpack_pdv
 syn keyword EbuildEutilsKeyword set_arch_to_kernel set_arch_to_portage preserve_old_lib
 syn keyword EbuildEutilsKeyword preserve_old_lib_notify built_with_use epunt_cxx dopamd newpamd
 syn keyword EbuildEutilsKeyword make_wrapper
