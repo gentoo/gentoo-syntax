@@ -253,9 +253,6 @@ syn match   EbuildErrorC /`which.*`\|$(which.*)/
 " Special homepage handling
 syn match EbuildHomePageError /^HOMEPAGE=.*\(\${[^}]*}\?\|\([^\\]\)\@<=\$[^{]\w*\).*$/
 
-" no dev.g.o in SRC_URI
-syn match   EbuildErrorC /http:..dev.gentoo.org[^ "]*\(SRC_URI.*\)\@<=/
-
 " clusters
 syn cluster EbuildThings contains=EbuildCoreKeyword,EbuildFunctions,EbuildInherit,EbuildEutilsKeyword
 syn cluster EbuildThings add=EbuildLibtoolKeyword,EbuildFixHeadTailsKeyword,EbuildWebappKeyword
