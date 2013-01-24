@@ -177,11 +177,11 @@ Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
 
     Settings Specifics				      *gentoo-syntax-settings*
 
-	For ebuilds and eclasses, tabs (|'shiftwidth'| and |'tabstop'|) are
-	set to four spaces, tab to space conversion (|'expandtab'|) is disabled
-	and the text width (|'textwidth'|) is set to 80 columns. To allow
-	proper syntax highlighting for commands like 'strip-flags', the hyphen
-	character is added as a valid keyword character (|'iskeyword'|).
+	For ebuilds and eclasses, tabs (|'shiftwidth'| and |'tabstop'|) are set
+	to four spaces and tab to space conversion (|'expandtab'|) is disabled.
+	To allow proper syntax highlighting for commands like 'strip-flags',
+	the hyphen character is added as a valid keyword character
+	(|'iskeyword'|).
 
 	For ebuilds, eclasses and ChangeLogs, UTF-8 is used for fileencoding
 	as per GLEP 31.

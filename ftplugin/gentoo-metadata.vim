@@ -17,7 +17,6 @@ runtime! ftplugin/xml.vim
 setlocal tabstop=4
 setlocal shiftwidth=4
 setlocal noexpandtab
-setlocal textwidth=80
 
 " GLEP 31 settings
 setlocal fileencoding=utf-8
