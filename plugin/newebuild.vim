@@ -156,7 +156,6 @@ fun! <SID>MakeNewEbuild()
             " {{{ extra deps for some categories
             put ='DEPEND=\"\"'
             put ='RDEPEND=\"${DEPEND}\"'
-            put =''
             " }}}
         endif
 
@@ -167,9 +166,6 @@ fun! <SID>MakeNewEbuild()
         nohls
         " }}}
     endif
-
-    " Delete the empty line at the end of the file
-    $ delete
 
     if pastebackup == 0
         set nopaste
