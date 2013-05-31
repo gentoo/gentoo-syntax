@@ -30,14 +30,14 @@ syn match bkshFunction	"^\s*\<\h[0-9a-zA-Z_\-\.]*\>\s*()"	skipwhite skipnl conta
 " Default keywords
 syn keyword EbuildCoreKeyword use has_version best_version use_with use_enable check_KV
 syn keyword EbuildCoreKeyword keepdir econf die einstall einfo ewarn eerror diropts
-syn keyword EbuildCoreKeyword dobin docinto dodoc doexe dohard dohtml doinfo  doins
+syn keyword EbuildCoreKeyword dobin docinto dodoc doexe dohard doheader dohtml doinfo doins
 syn keyword EbuildCoreKeyword dolib dolib.a dolib.so doman dosbin dosym emake exeinto
 syn keyword EbuildCoreKeyword exeopts fowners fperms insinto insopts into libopts newbin
-syn keyword EbuildCoreKeyword newexe newins newman newsbin prepall prepalldocs prepallinfo
-syn keyword EbuildCoreKeyword prepallman prepallstrip has unpack dosed into
+syn keyword EbuildCoreKeyword newexe newheader newins newman newsbin prepall prepalldocs
+syn keyword EbuildCoreKeyword prepallinfo prepallman prepallstrip has unpack dosed into
 syn keyword EbuildCoreKeyword doinitd doconfd doenvd dojar domo dodir ebegin eend
 syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.so
-syn keyword EbuildCoreKeyword hasq hasv useq usev elog
+syn keyword EbuildCoreKeyword hasq hasv useq usev usex elog
 
 " Sandbox
 syn keyword EbuildCoreKeyword addread addwrite adddeny addpredict
