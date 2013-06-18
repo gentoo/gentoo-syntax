@@ -21,6 +21,14 @@ fun! <SID>MakeNewEbuild()
     let l:filename = expand("%:p")
     let l:category = substitute(l:filename,
                 \ "^.*/\\([^/]\\+\\)/[^/]\\+/[^/]\\+\\.ebuild", "\\1", "g")
+
+    " use empty keywords for live ebuilds
+    if l:filename =~# "-9999\\+.ebuild\$"
+        let l:keywords = ""
+    else
+        let l:keywords = "~" . l:arch
+    endif
+
     " }}}
 
     call GentooHeader()
@@ -52,7 +60,7 @@ fun! <SID>MakeNewEbuild()
             put ='DESCRIPTION=\"vim plugin: \"'
             put ='HOMEPAGE=\"http://www.vim.org/scripts/script.php?script_id=\"'
             put ='LICENSE=\"\"'
-            put ='KEYWORDS=\"~' . l:arch . '\"'
+            put ='KEYWORDS=\"' . l:keywords . '\"'
             put ='IUSE=\"\"'
             put =''
             put ='VIM_PLUGIN_HELPFILES=\"\"'
@@ -69,7 +77,7 @@ fun! <SID>MakeNewEbuild()
             put ='HOMEPAGE=\"\"'
             put ='LICENSE=\"\"'
             put =''
-            put ='KEYWORDS=\"~' . l:arch . '\"'
+            put ='KEYWORDS=\"' . l:keywords . '\"'
             put ='IUSE=\"\"'
             put ='SLOT=\"0\"'
             put =''
@@ -91,7 +99,7 @@ fun! <SID>MakeNewEbuild()
     		put =''
     		put ='LICENSE=\"\"'
     		put ='SLOT=\"0\"'
-    		put ='KEYWORDS=\"~' . l:arch .'\"'
+            put ='KEYWORDS=\"' . l:keywords . '\"'
     		put =''
     		put ='IUSE=\"\"'
     		put =''
@@ -120,7 +128,7 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='#LICENSE=\"\|\| ( Artistic GPL-1 GPL-2 GPL-3 )\"'
             put ='SLOT=\"0\"'
-            put ='KEYWORDS=\"~' . l:arch . '\"'
+            put ='KEYWORDS=\"' . l:keywords . '\"'
             put ='IUSE=\"\"'
             put =''
             put ='RDEPEND=\"\"'
@@ -149,7 +157,7 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='LICENSE=\"\"'
             put ='SLOT=\"0\"'
-            put ='KEYWORDS=\"~' . l:arch . '\"'
+            put ='KEYWORDS=\"' . l:keywords . '\"'
             put ='IUSE=\"\"'
             put =''
 
