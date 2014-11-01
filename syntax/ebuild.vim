@@ -224,8 +224,8 @@ syn match   EbuildError /^\(P\|PN\|PV\|PR\|PVR\|PF\|A\)=/
 syn match   EbuildError ~^S="\?\${\?WORKDIR}\?/\${\?P}\?"\?\s*$~
 " not allowed
 syn match   EbuildError /SLOT\s*=\s*\(""\|''\|$\)/
-" not allowed
-syn match   EbuildError /KEYWORDS\s*=\s*.*[^-]\*.*/
+" Don't be overly strict (Funtoo allows * and ~* as noarch ebuild keywords)
+" syn match   EbuildError /KEYWORDS\s*=\s*.*[^-]\*.*/
 " evil syntax, ask Mr_Bones_
 syn match   EbuildError /^[a-zA-Z0-9\-\_]\+ ()/
 syn match   EbuildError /^[a-zA-Z0-9\-\_]\+(){/
