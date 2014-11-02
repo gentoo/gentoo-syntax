@@ -1,10 +1,11 @@
 *gentoo-syntax.txt*	Gentoo Syntax Plugin
 
-Authors:  Ciaran McCreesh <ciaranm at gentoo dot org>
-          Aaron Walker    <ka0ttic at gentoo dot org>
-          Tom Martin      <slarti  at gentoo dot org>
-          Elfyn McBratney <beu     at gentoo dot org>
-          Mike Kelly      <pioto   at gentoo dot org>
+Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
+          Aaron Walker    <ka0ttic   at gentoo dot org>
+          Tom Martin      <slarti    at gentoo dot org>
+          Elfyn McBratney <beu       at gentoo dot org>
+          Mike Kelly      <pioto     at gentoo dot org>
+          Tim Harder      <radhermit at gentoo dot org>
 
 ==============================================================================
 1. Contents						       *gentoo-syntax*
