@@ -98,5 +98,4 @@ au BufNewFile,BufRead *.xml
     \        getline(8) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
     \        getline(9) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " |
     \     set filetype=guidexml		      |
-    \	 endif
-
+    \     endif

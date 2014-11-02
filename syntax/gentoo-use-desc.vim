@@ -13,13 +13,13 @@ if &compatible || v:version < 603
 endif
 
 if exists("b:current_syntax")
-  finish
+    finish
 endif
 
 runtime syntax/gentoo-common.vim
 
 syn region GentooUseDescComment start=/#/ end=/$/
-	    \ contains=GentooBug
+    \ contains=GentooBug
 
 syn match GentooUseDescPackage /^\(#\)\@!\([a-zA-Z0-9\-\_+\.]\+\/[a-zA-Z0-9\-\_+]\+\)\?/ nextgroup=GentooUseDescColon,GentooUseDescFlag skipwhite
 syn match GentooUseDescColon /:/ contained nextgroup=GentooUseDescFlag
@@ -33,4 +33,3 @@ hi def link GentooUseDescFlag             Identifier
 hi def link GentooUseDescDesc             String
 
 let b:current_syntax = "gentoo-package-keywords"
-

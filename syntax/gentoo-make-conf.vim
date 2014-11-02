@@ -12,7 +12,7 @@ if &compatible || v:version < 603
 endif
 
 if exists("b:current_syntax")
-  finish
+    finish
 endif
 
 runtime syntax/gentoo-common.vim

@@ -12,7 +12,7 @@ if &compatible || v:version < 603
 endif
 
 if exists("b:current_syntax")
-  finish
+    finish
 endif
 
 runtime syntax/gentoo-common.vim
@@ -23,15 +23,15 @@ syn match GentooChangeLogReleaseDate contained /(\d\d\s\w\+\s\d\{4\})/
 
 " Entries
 syn region GentooChangeLogEntry start=/^\s\+/ end=/\n\n/
-	    \ contains=GentooChangeLogEntryDate,GentooBug
+    \ contains=GentooChangeLogEntryDate,GentooBug
 syn region GentooChangeLogEntryDate contained start=/\d\?\d\s\w\+\s\d\{4\}/ end=/;/
-	    \ nextgroup=GentooChangeLogEntryAuthor,GentooChangeLogEntryEmail skipwhite skipnl
+    \ nextgroup=GentooChangeLogEntryAuthor,GentooChangeLogEntryEmail skipwhite skipnl
 syn region GentooChangeLogEntryAuthor contained start=/\S/ end=/\( <\)\@=/
-	    \ nextgroup=GentooChangeLogEntryEmail skipwhite skipnl
+    \ nextgroup=GentooChangeLogEntryEmail skipwhite skipnl
 syn match  GentooChangeLogEntryEmail contained /<\?[a-zA-Z0-9\.\-\_]\+@[a-zA-Z0-9\.\-\_]\+>\?/
-	    \ nextgroup=GentooChangeLogFiles skipwhite skipnl
+    \ nextgroup=GentooChangeLogFiles skipwhite skipnl
 syn region GentooChangeLogFiles contained start=/\(\S\)\@=/ end=/:/
-	    \ contains=GentooChangeLogAddFile,GentooChangeLogDelFile,GentooChangeLogModFile
+    \ contains=GentooChangeLogAddFile,GentooChangeLogDelFile,GentooChangeLogModFile
 
 " Add / delete / changed files
 syn region GentooChangeLogAddFile contained start=/+/ end=/\([,:]\)\@=/
@@ -50,4 +50,3 @@ hi def link GentooChangeLogRelease          Title
 hi def link GentooChangeLogReleaseDate      Number
 
 let b:current_syntax = "gentoo-changelog"
-

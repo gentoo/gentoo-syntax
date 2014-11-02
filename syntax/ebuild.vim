@@ -291,21 +291,21 @@ hi def link EbuildVimDocKeyword              Identifier
 hi def link EbuildMultilibKeyword            Identifier
 hi def link Ebuild64bitKeyword               Identifier
 hi def link EbuildCronKeyword                Identifier
-hi def link EbuildGamesKeyword		     Identifier
+hi def link EbuildGamesKeyword               Identifier
 hi def link EbuildToolFuncsKeyword           Identifier
-hi def link EbuildSVNKeyword		     Identifier
-hi def link EbuildAltKeyword		     Identifier
-hi def link EbuildRPMKeyword		     Identifier
-hi def link EbuildPythonKeyword		     Identifier
-hi def link EbuildCheckKernelKeyword	     Identifier
-hi def link EbuildPerlModuleKeyword	     Identifier
-hi def link EbuildDistutilsKeyword	     Identifier
+hi def link EbuildSVNKeyword                 Identifier
+hi def link EbuildAltKeyword                 Identifier
+hi def link EbuildRPMKeyword                 Identifier
+hi def link EbuildPythonKeyword              Identifier
+hi def link EbuildCheckKernelKeyword         Identifier
+hi def link EbuildPerlModuleKeyword          Identifier
+hi def link EbuildDistutilsKeyword           Identifier
 hi def link EbuildDependApacheKeyword        Identifier
 hi def link EbuildApacheModuleKeyword        Identifier
-hi def link EbuildPamKeyword		     Identifier
-hi def link EbuildVirtualXKeyword	     Identifier
-hi def link EbuildGnome2Keyword  	     Identifier
-hi def link EbuildAutoKeyword		     Identifier
+hi def link EbuildPamKeyword                 Identifier
+hi def link EbuildVirtualXKeyword            Identifier
+hi def link EbuildGnome2Keyword              Identifier
+hi def link EbuildAutoKeyword                Identifier
 
 hi def link EclassDocumentation              Identifier
 
@@ -318,4 +318,3 @@ hi def link EbuildExportFunctionsFunc        Identifier
 hi def link EbuildExportFunctionsFuncE       Error
 
 let b:current_syntax = "ebuild"
-

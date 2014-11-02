@@ -46,4 +46,3 @@ hi def link guidexmlElement Keyword
 hi def link guidexmlAttr    Keyword
 
 let b:current_syntax = "guidexml"
-

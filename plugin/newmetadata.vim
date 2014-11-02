@@ -79,7 +79,7 @@ fun! <SID>MakeNewMetadata()
             if l:name != ""
                 put ='<name>' . l:name . '</name>'
             endif
-	    put ='</maintainer>'
+        put ='</maintainer>'
         endif
         put ='<longdescription lang=\"en\">'
         put ='</longdescription>'
@@ -104,7 +104,7 @@ com! -nargs=0 NewMetadata call <SID>MakeNewMetadata()
 augroup NewMetadata
     au!
     autocmd BufNewFile metadata.xml
-                \ call <SID>MakeNewMetadata()
+        \ call <SID>MakeNewMetadata()
 augroup END
 
 " vim: set et foldmethod=marker : "

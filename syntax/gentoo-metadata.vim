@@ -40,4 +40,3 @@ syn match metadataElement contained 'pkgmetadata'
 hi def link metadataElement Keyword
 
 let b:current_syntax = "gentoo-metadata"
-

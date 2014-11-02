@@ -13,7 +13,7 @@ if &compatible || v:version < 603
 endif
 
 if exists("b:current_syntax")
-  finish
+    finish
 endif
 
 runtime! syntax/rst.vim
@@ -58,4 +58,3 @@ hi  link glepHeaderCVSVar   PreProc
 hi  link glepTODO           Todo
 
 let b:current_syntax = "glep"
-

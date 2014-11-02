@@ -13,4 +13,3 @@ endif
 
 " GLEP 31 settings
 setlocal fileencoding=utf-8
-
