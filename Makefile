@@ -96,11 +96,9 @@ dist: tag
 	bzip2 $(distpkg).tar
 	rm -rf $(distpkg)/
 
-
 dist-upload: dist
 	scp $(distpkg).tar.bz2 dev.gentoo.org:/space/distfiles-local/
 	ssh dev.gentoo.org chmod ug+rw /space/distfiles-local/$(distpkg).tar.bz2
 
 clean:
 	find . -name '*~' | xargs rm || true
-
