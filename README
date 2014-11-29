@@ -4,12 +4,6 @@ INSTALL INSTRUCTIONS
 * Gentoo users: `emerge app-vim/gentoo-syntax`
 * Everyone else: `make PREFIX=~/.vim/ install`
 
-COPYRIGHT
----------
-
-Copyright (c) 2004-2005 Ciaran McCreesh, Aaron Walker, Tom Martin. You may
-redistribute this package under the same terms as Vim itself.
-
 CONTACT
 -------
 
