@@ -19,6 +19,7 @@ runtime! syntax/xml.vim
 unlet b:current_syntax
 
 syn cluster xmlTagHook add=metadataElement
+
 syn match metadataElement contained 'packages'
 syn match metadataElement contained 'herd'
 syn match metadataElement contained 'maintainer'
@@ -26,6 +27,15 @@ syn match metadataElement contained 'email'
 syn match metadataElement contained 'name'
 syn match metadataElement contained 'description'
 syn match metadataElement contained 'longdescription'
+
+" upstream metadata info
+syn cluster xmlTagHook add=upstreamMetadata
+syn match upstreamMetadata contained 'upstream'
+syn match upstreamMetadata contained 'maintainer'
+syn match upstreamMetadata contained 'changelog'
+syn match upstreamMetadata contained 'doc'
+syn match upstreamMetadata contained 'bugs-to'
+syn match upstreamMetadata contained 'remote-id'
 
 " Glep 56
 " TODO add support for required attributes
@@ -38,5 +48,6 @@ syn match metadataElement contained 'catmetadata'
 syn match metadataElement contained 'pkgmetadata'
 
 hi def link metadataElement Keyword
+hi def link upstreamMetadata Keyword
 
 let b:current_syntax = "gentoo-metadata"
