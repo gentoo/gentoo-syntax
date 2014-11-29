@@ -8,10 +8,6 @@ if &compatible || v:version < 603
     finish
 endif
 
-syn region GentooHeaderBlock start=/\%^\(#\)\@=/ end=/^$/ contains=GentooHeader
-syn region GentooHeader contained start=/^#/ end=/$/ contains=GentooHeaderCVSVar
-syn region GentooHeaderCVSVar contained start=/\$\S\+:/ end=/\$/
-
 syn match  GentooBug contained /\(\([gG]entoo \|[dD]ebian \|[sS]ource[Ff]orge \)\?[Bb]ug \(#\s*\)\?\|#\)\d\{1,\}/
 
 " bad space
@@ -19,7 +15,5 @@ syn region  GentooError start=/^ / end=/$/
 " trailing whitespace
 syn match   GentooError /\s\+$/
 
-hi def link GentooHeader                 Comment
-hi def link GentooHeaderCVSVar           PreProc
 hi def link GentooBug                    Underlined
 hi def link GentooError                  Error
