@@ -210,7 +210,7 @@ syn match EbuildExportFunctionsFuncE contained /\S\+\(\s\|$\)\@=\(pkg_pretend\|p
 
 " Eclass documentation
 syn match EclassDocumentation /@\(BLURB\|CODE\|DESCRIPTION\|ECLASS-VARIABLE\|ECLASS\|EXAMPLE\|FUNCTION\|MAINTAINER\|RETURN\|USAGE\|VARIABLE\):/ contained
-" use shComment (sh.vim), make it compatbile with other comment hightlights
+" use shComment (sh.vim), make it compatible with other comment highlights
 syn match      shComment        "^\s*\zs#.*$"   contains=EclassDocumentation
 syn match      shComment        "\s\zs#.*$"     contains=EclassDocumentation
 
