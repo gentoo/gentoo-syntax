@@ -8,8 +8,8 @@ filetype, and indent settings.
 Installing
 ==========
 
-* Gentoo users: `emerge app-vim/gentoo-syntax`
-* Everyone else: `make PREFIX=~/.vim/ install`
+* Gentoo users: ``emerge app-vim/gentoo-syntax``
+* Everyone else: ``make PREFIX=~/.vim/ install``
 
 Bugs
 ====
