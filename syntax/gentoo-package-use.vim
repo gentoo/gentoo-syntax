@@ -21,15 +21,26 @@ runtime syntax/gentoo-common.vim
 syn region GentooPackageUseComment start=/#/ end=/$/
     \ contains=GentooPackageUseEmail,GentooPackageUseDate,GentooBug
 
-syn match  GentooPackageUseEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
-syn match  GentooPackageUseDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
+syn match  GentooPackageUseEmail contained
+    \ /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
+syn match  GentooPackageUseDate  contained
+    \ /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
 syn match  GentooPackageUseAtom /^[^ \t\n#]\+\S\+\/\S\+/
-    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
-syn match  GentooPackageUseUse contained /[a-zA-Z0-9][a-zA-Z0-9\-_]*/
-    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
-syn match  GentooPackageUseUnuse contained /-[a-zA-Z0-9][a-zA-Z0-9\-_]*/
-    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse skipwhite
+    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse,
+    \ GentooPackageUseExpand skipwhite
+syn match  GentooPackageUseUse contained
+    \ /[a-zA-Z0-9][a-zA-Z0-9\-_]*\(:\)\@!/
+    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse,
+    \ GentooPackageUseExpand skipwhite
+syn match  GentooPackageUseUnuse contained
+    \ /-[a-zA-Z0-9][a-zA-Z0-9\-_]*\(:\)\@!/
+    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse,
+    \ GentooPackageUseExpand skipwhite
+syn match  GentooPackageUseExpand contained
+    \ /[a-zA-Z0-9][a-zA-Z0-9\-_]*:/
+    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse
+    \ skipwhite
 
 hi def link GentooPackageUseComment          Comment
 hi def link GentooPackageUseEmail            Special
@@ -37,5 +48,6 @@ hi def link GentooPackageUseDate             Number
 hi def link GentooPackageUseAtom             Identifier
 hi def link GentooPackageUseUse              Special
 hi def link GentooPackageUseUnuse            Keyword
+hi def link GentooPackageUseExpand           Statement
 
 let b:current_syntax = "gentoo-package-use"
