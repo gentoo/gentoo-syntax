@@ -34,7 +34,7 @@ fun! GentooHeader(...)
         0 put =l:copyright
     endif
     put ='# Distributed under the terms of the GNU General Public License v2'
-    put ='# $Header: $'
+    put ='# $Id$'
     $
 endfun
 
