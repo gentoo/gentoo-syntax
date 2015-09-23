@@ -13,7 +13,7 @@ let g:loaded_newinitd=1
 runtime! plugin/gentoo-common.vim
 
 fun! <SID>MakeNewInitd()
-    call GentooHeader('#!/sbin/runscript')
+    call GentooHeader('#!/sbin/openrc-run')
 
     " {{{ default functions
     put ='depend() {'
