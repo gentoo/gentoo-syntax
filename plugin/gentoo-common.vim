@@ -47,7 +47,7 @@ fun! GentooGetArch()
         let l:a = substitute(l:a, "^\\s\\+", "", "")
         let l:a = substitute(l:a, "\\s.*", "", "")
         if l:a == ""
-            let l:a = "x86"
+            let l:a = "amd64"
         endif
         let g:gentooarch = l:a
         return g:gentooarch
