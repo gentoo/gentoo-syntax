@@ -72,7 +72,7 @@ fun! <SID>MakeNewMetadata()
             put ='<herd>' . l:herd . '</herd>'
         endif
         if l:email != "" || l:name != ""
-            put ='<maintainer>'
+            put ='<maintainer type=\"person\">'
             if l:email != ""
                 put ='<email>' . l:email . '</email>'
             endif
