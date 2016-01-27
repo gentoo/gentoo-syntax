@@ -129,7 +129,7 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='DESCRIPTION=\"\"'
             put =''
-            put ='#LICENSE=\"\|\| ( Artistic GPL-1 GPL-2 GPL-3 )\"'
+            put ='#LICENSE=\"\|\| ( Artistic GPL-1+ )\"'
             put ='SLOT=\"0\"'
             put ='KEYWORDS=\"' . l:keywords . '\"'
             put ='IUSE=\"\"'
