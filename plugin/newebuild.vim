@@ -141,6 +141,7 @@ fun! <SID>MakeNewEbuild()
             " {{{ standard default setup
             " {{{ extra inherits for some categories
             if l:category ==# "dev-python"
+                put ='PYTHON_COMPAT=( python2_7 python3_4 )'
                 put ='inherit distutils-r1'
                 put =''
             elseif l:category =~# "^xfce-"
