@@ -27,6 +27,9 @@ fun! <SID>MakeNewEbuild()
         let l:keywords = ""
     else
         let l:keywords = "~" . l:arch
+        if l:arch ==# "amd64"
+            let l:keywords = l:keywords . " ~x86"
+        endif
     endif
 
     " }}}
