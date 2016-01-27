@@ -58,7 +58,7 @@ fun! <SID>MakeNewMetadata()
         elseif l:category ==# "dev-ruby"
             let l:herd = "ruby"
         elseif l:category ==# "dev-tex"
-            let l:herd = "text-markup"
+            let l:herd = "tex"
         elseif l:category ==# "dev-java"
             let l:herd = "java"
         endif
