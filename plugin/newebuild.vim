@@ -136,8 +136,6 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='RDEPEND=\"\"'
             put ='DEPEND=\"${RDEPEND}\"'
-            put =''
-            put ='SRC_TEST=\"do\"'
             " }}}
         else
             " {{{ standard default setup
