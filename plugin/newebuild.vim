@@ -35,17 +35,20 @@ fun! <SID>MakeNewEbuild()
 
     if expand("%:e") =~# "eclass\$"
         " {{{ eclass special setup
-        let l:eclass=substitute(expand("%:t"), "\\.eclass\$", "", "")
-        put ='#'
-        put ='# Original Author: ' . GentooGetUser()
-        put ='# Purpose: '
-        put ='#'
+        let l:eclass=expand("%:t")
+        put ='# @ECLASS: ' . l:eclass
+        put ='# @MAINTAINER:'
+        put ='# ' . GentooGetUser()
+        put ='# @AUTHOR:'
+        put ='# ' . GentooGetUser()
+        put ='# @BLURB: '
+        put ='# @DESCRIPTION:'
         put =''
         " }}}
 
         " {{{ go to the first thing to edit
         0
-        /^# Purpose:/
+        /^# @BLURB:/
         normal $
         nohls
         " }}}
