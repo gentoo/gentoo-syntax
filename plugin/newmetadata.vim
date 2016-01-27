@@ -79,16 +79,12 @@ fun! <SID>MakeNewMetadata()
             put ='<email>' . l:project . '@gentoo.org</email>'
             put ='</maintainer>'
         endif
-        if l:email != "" || l:name != ""
-            put ='<maintainer type=\"person\">'
-            if l:email != ""
-                put ='<email>' . l:email . '</email>'
-            endif
-            if l:name != ""
-                put ='<name>' . l:name . '</name>'
-            endif
-            put ='</maintainer>'
+        put ='<maintainer type=\"person\">'
+        put ='<email>' . l:email . '</email>'
+        if l:name != ""
+            put ='<name>' . l:name . '</name>'
         endif
+        put ='</maintainer>'
         put ='<longdescription lang=\"en\">'
         put ='</longdescription>'
         put ='</pkgmetadata>'
