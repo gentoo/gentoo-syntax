@@ -79,7 +79,7 @@ fun! <SID>MakeNewMetadata()
             if l:name != ""
                 put ='<name>' . l:name . '</name>'
             endif
-        put ='</maintainer>'
+            put ='</maintainer>'
         endif
         put ='<longdescription lang=\"en\">'
         put ='</longdescription>'
