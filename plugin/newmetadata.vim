@@ -49,18 +49,18 @@ fun! <SID>MakeNewMetadata()
     else
     " {{{ pkgmetadata
 
-        " {{{ herd
-        let l:herd = ""
+        " {{{ project
+        let l:project = ""
         if l:category ==# "app-vim"
-            let l:herd = "vim"
+            let l:project = "vim"
         elseif l:category ==# "dev-perl"
-            let l:herd = "perl"
+            let l:project = "perl"
         elseif l:category ==# "dev-ruby"
-            let l:herd = "ruby"
+            let l:project = "ruby"
         elseif l:category ==# "dev-tex"
-            let l:herd = "tex"
+            let l:project = "tex"
         elseif l:category ==# "dev-java"
-            let l:herd = "java"
+            let l:project = "java"
         endif
         " }}}
 
@@ -68,8 +68,10 @@ fun! <SID>MakeNewMetadata()
         0 put ='<?xml version=\"1.0\" encoding=\"UTF-8\"?>'
         put ='<!DOCTYPE pkgmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\">'
         put ='<pkgmetadata>'
-        if l:herd != ""
-            put ='<herd>' . l:herd . '</herd>'
+        if l:project != ""
+            put ='<maintainer type=\"project\">'
+            put ='<email>' . l:project . '@gentoo.org</email>'
+            put ='</maintainer>'
         endif
         if l:email != "" || l:name != ""
             put ='<maintainer type=\"person\">'
