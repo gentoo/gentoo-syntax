@@ -140,10 +140,7 @@ fun! <SID>MakeNewEbuild()
         else
             " {{{ standard default setup
             " {{{ extra inherits for some categories
-            if l:category =~# "^games-"
-                put ='inherit games'
-                put =''
-            elseif l:category ==# "dev-python"
+            if l:category ==# "dev-python"
                 put ='inherit distutils-r1'
                 put =''
             elseif l:category =~# "^xfce-"
