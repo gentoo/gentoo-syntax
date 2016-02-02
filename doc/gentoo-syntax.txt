@@ -33,7 +33,6 @@ Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
 	    use.desc, use.local.desc              |gentoo-use-desc-syntax|
 	Settings Specifics                        |gentoo-syntax-settings|
 	Indent Specifics                          |gentoo-indent-settings|
-	Bug Summary                                          |:BugSummary|
 	New conf.d Files                                      |new-conf.d|
 	New Ebuilds                                          |new-ebuilds|
 	New init.d Files                                      |new-init.d|
@@ -191,25 +190,6 @@ Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
 
 	Indent settings for ebuilds and eclasses are the same as for regular
 	bash files.
-
-    Bug Summary							 *:BugSummary*
-
-	To see a summary of a Gentoo bug, execute :BugSummary 12345.
-
-								 *:BugDetails*
-	The :BugDetails 12345 command is similar to :BugSummary, but will also
-	display a menu allowing the user to open the bug in a browser or
-	insert the bug details / number into the active document. In normal
-	mode, a map <Leader>bug (see |<Leader>|) is provided to call this
-	command on the bug number under the cursor.
-
-							*g:bugsummary_browser*
-	Before using the "browser" BugSummary option, you must let the plugin
-	know what browser you want to use. For example: >
-
-	    let g:bugsummary_browser="firefox '%s'"
-<
-	The %s sequence is replaced by the URL to load.
 
     New conf.d Files				      *new-conf.d* *:NewConfd*
 
