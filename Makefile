@@ -18,12 +18,22 @@ files_doc = \
 	doc/gentoo-syntax.txt
 
 files_ftdetect = \
-	ftdetect/gentoo.vim \
-	ftplugin/ebuild.vim
+	ftdetect/gentoo.vim
 
 files_ftplugin = \
+	ftplugin/ebuild.vim \
 	ftplugin/gentoo-changelog.vim \
-	ftplugin/gentoo-metadata.vim
+	ftplugin/gentoo-conf-d.vim \
+	ftplugin/gentoo-env-d.vim \
+	ftplugin/gentoo-init-d.vim \
+	ftplugin/gentoo-make-conf.vim \
+	ftplugin/gentoo-metadata.vim \
+	ftplugin/gentoo-package-keywords.vim \
+	ftplugin/gentoo-package-license.vim \
+	ftplugin/gentoo-package-mask.vim \
+	ftplugin/gentoo-package-properties.vim \
+	ftplugin/gentoo-package-use.vim \
+	ftplugin/gentoo-package-use-desc.vim
 
 files_indent = \
 	indent/ebuild.vim \
