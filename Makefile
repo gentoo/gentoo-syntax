@@ -33,7 +33,7 @@ files_ftplugin = \
 	ftplugin/gentoo-package-mask.vim \
 	ftplugin/gentoo-package-properties.vim \
 	ftplugin/gentoo-package-use.vim \
-	ftplugin/gentoo-package-use-desc.vim
+	ftplugin/gentoo-use-desc.vim
 
 files_indent = \
 	indent/ebuild.vim \
