@@ -30,7 +30,6 @@ files_indent = \
 	indent/gentoo-metadata.vim
 
 files_plugin = \
-	plugin/bugsummary.vim \
 	plugin/gentoo-common.vim \
 	plugin/newebuild.vim \
 	plugin/newmetadata.vim \
