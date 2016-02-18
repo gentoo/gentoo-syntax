@@ -37,7 +37,8 @@ syn keyword EbuildCoreKeyword newexe newheader newins newman newsbin prepall pre
 syn keyword EbuildCoreKeyword prepallinfo prepallman prepallstrip has unpack dosed into
 syn keyword EbuildCoreKeyword doinitd doconfd doenvd dojar domo dodir ebegin eend
 syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.so
-syn keyword EbuildCoreKeyword hasq hasv useq usev usex elog
+syn keyword EbuildCoreKeyword hasq hasv useq usev usex elog eapply eapply_user
+syn keyword EbuildCoreKeyword einstalldocs in_iuse get_libdir
 
 " Sandbox
 syn keyword EbuildCoreKeyword addread addwrite adddeny addpredict
@@ -117,7 +118,7 @@ syn keyword EbuildVimPluginKeyword update_vim_afterscripts display_vim_plugin_he
 syn keyword EbuildVimDocKeyword update_vim_helptags
 
 " multilib
-syn keyword EbuildMultilibKeyword has_multilib_profile get_libdir get_multilibdir get_libdir_override
+syn keyword EbuildMultilibKeyword has_multilib_profile get_multilibdir get_libdir_override
 syn keyword EbuildMultilibKeyword get_abi_var get_abi_CFLAGS get_abi_LDFLAGS get_abi_CHOST
 syn keyword EbuildMultilibKeyword get_abi_FAKE_TARGETS get_abi_CDEFINE get_abi_LIBDIR get_install_abis
 syn keyword EbuildMultilibKeyword get_all_abis get_all_libdirs is_final_abi number_abis get_ml_incdir
