@@ -138,9 +138,6 @@ syn keyword EbuildMultilibKeyword create_ml_includes-tidy_path create_ml_include
 syn keyword EbuildMultilibKeyword create_ml_includes-makedestdirs create_ml_includes-allfiles
 syn keyword EbuildMultilibKeyword create_ml_includes-sym_for_dir
 
-" 64-bit
-syn keyword Ebuild64bitKeyword 64-bit
-
 " toolchain-funcs
 syn keyword EbuildToolFuncsKeyword tc-getPROG tc-getAR tc-getAS tc-getCC tc-getCXX tc-getLD tc-getNM
 syn keyword EbuildToolFuncsKeyword tc-getRANLIB tc-getF77 tc-getGCJ tc-getBUILD_CC tc-export ninj
@@ -283,7 +280,7 @@ syn cluster EbuildThings add=EbuildLibtoolKeyword,EbuildFixHeadTailsKeyword,Ebui
 syn cluster EbuildThings add=EbuildFlagoKeyword,EbuildError,EbuildGCCKeyword,EbuildVersionatorKeyword
 syn cluster EbuildThings add=EbuildLibtoolKeyword,EbuildHomePageError,EbuildErrorC,EbuildCVSKeyword
 syn cluster EbuildThings add=EbuildBashCompKeyword,EbuildVimPluginKeyword,EbuildVimDocKeyword
-syn cluster EbuildThings add=EbuildFdoMimeKeyword,EbuildMultilibKeyword,Ebuild64bitKeyword
+syn cluster EbuildThings add=EbuildFdoMimeKeyword,EbuildMultilibKeyword
 syn cluster EbuildThings add=EbuildCronKeyword,EbuildGamesKeyword,EbuildToolFuncsKeyword
 syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword,EbuildPythonKeyword
 syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword,EbuildDistutilsKeyword
@@ -314,7 +311,6 @@ hi def link EbuildBashCompKeyword            Identifier
 hi def link EbuildVimPluginKeyword           Identifier
 hi def link EbuildVimDocKeyword              Identifier
 hi def link EbuildMultilibKeyword            Identifier
-hi def link Ebuild64bitKeyword               Identifier
 hi def link EbuildCronKeyword                Identifier
 hi def link EbuildGamesKeyword               Identifier
 hi def link EbuildToolFuncsKeyword           Identifier
