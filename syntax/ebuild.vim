@@ -195,10 +195,24 @@ syn keyword EbuildPerlModuleKeyword perl-module_src_install perl-module_pkg_setu
 syn keyword EbuildPerlModuleKeyword perl-module_pkg_postinst perl-module_pkg_prerm perl-module_pkg_postrm
 syn keyword EbuildPerlModuleKeyword perlinfo fixlocalpod updatepod
 
-" distutils
-syn keyword EbuildDistutilsKeyword distutils_src_unpack distutils_src_prepare distutils_src_compile
-syn keyword EbuildDistutilsKeyword distutils_src_test distutils_src_install distutils_pkg_postinst
-syn keyword EbuildDistutilsKeyword distutils_pkg_postrm
+" distutils (deprecated)
+syn keyword EbuildDeprecatedKeyword distutils_src_unpack distutils_src_prepare distutils_src_compile
+syn keyword EbuildDeprecatedKeyword distutils_src_test distutils_src_install distutils_pkg_postinst
+syn keyword EbuildDeprecatedKeyword distutils_pkg_postrm
+
+" distutils-r1
+syn keyword EbuildDistutilsKeyword esetup.py distutils_install_for_testing
+syn keyword EbuildDistutilsKeyword distutils-r1_python_prepare_all
+syn keyword EbuildDistutilsKeyword distutils-r1_python_compile
+syn keyword EbuildDistutilsKeyword distutils-r1_python_install
+syn keyword EbuildDistutilsKeyword distutils-r1_python_install_all
+
+" distutils-r1 sub-phases
+syn keyword EbuildDistutilsFunction python_prepare python_prepare_all
+syn keyword EbuildDistutilsFunction python_configure python_configure_all
+syn keyword EbuildDistutilsFunction python_compile python_compile_all
+syn keyword EbuildDistutilsFunction python_test python_test_all
+syn keyword EbuildDistutilsFunction python_install python_install_all
 
 " depend.apache
 syn keyword EbuildDependApacheKeyword need_apache need_apache1 need_apache2
@@ -297,7 +311,7 @@ syn cluster EbuildThings add=EbuildPerlModuleKeyword,EbuildDistutilsKeyword
 syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword,EbuildPamKeyword
 syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
 syn cluster EbuildThings add=EbuildDeprecatedKeyword,EbuildUnpackerKeyword,EbuildUserKeyword
-syn cluster EbuildThings add=EbuildCDROMKeyword,EbuildLinuxInfoKeyword
+syn cluster EbuildThings add=EbuildCDROMKeyword,EbuildLinuxInfoKeyword,EbuildDistutilsFunction
 
 syn cluster shCommandSubList add=@EbuildThings
 syn cluster shCommentGroup add=GentooBug
@@ -338,6 +352,7 @@ hi def link EbuildCDROMKeyword               Identifier
 hi def link EbuildLinuxInfoKeyword           Identifier
 hi def link EbuildUnpackerKeyword            Identifier
 hi def link EbuildUserKeyword                Identifier
+hi def link EbuildDistutilsFunction          Special
 
 hi def link EclassDocumentation              Identifier
 
