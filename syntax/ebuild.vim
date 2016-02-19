@@ -56,6 +56,7 @@ syn keyword EbuildFunctions pkg_info src_prepare src_configure
 syn keyword EbuildFunctions default
 syn keyword EbuildFunctions default_pkg_nofetch default_src_unpack default_src_prepare
 syn keyword EbuildFunctions default_src_configure default_src_compile default_src_test
+syn keyword EbuildFunctions default_src_install
 
 " Inherit
 syn keyword EbuildInherit inherit
