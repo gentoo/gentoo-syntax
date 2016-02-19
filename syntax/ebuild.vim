@@ -143,11 +143,11 @@ syn keyword EbuildToolFuncsKeyword gcc-minor-version gcc-micro-version gen_usr_l
 " cron
 syn keyword EbuildCronKeyword docrondir docron docrontab cron_pkg_postinst
 
-" games
-syn keyword EbuildGamesKeyword egamesconf egamesinstall gameswrapper dogamesbin dogamessbin dogameslib
-syn keyword EbuildGamesKeyword dogameslib.a dogameslib.so newgamesbin newgamessbin gamesowners gamesperms
-syn keyword EbuildGamesKeyword prepgamesdirs gamesenv games_pkg_setup games_src_compile games_pkg_postinst
-syn keyword EbuildGamesKeyword games_ut_unpack games_umod_unpack games_make_wrapper
+" games (deprecated)
+syn keyword EbuildDeprecatedKeyword egamesconf egamesinstall gameswrapper dogamesbin dogamessbin dogameslib
+syn keyword EbuildDeprecatedKeyword dogameslib.a dogameslib.so newgamesbin newgamessbin gamesowners gamesperms
+syn keyword EbuildDeprecatedKeyword prepgamesdirs gamesenv games_pkg_setup games_src_compile games_pkg_postinst
+syn keyword EbuildDeprecatedKeyword games_ut_unpack games_umod_unpack games_make_wrapper
 
 " subversion
 syn keyword EbuildSVNKeyword subversion_fetch subversion_bootstrap subversion_src_unpack
@@ -276,7 +276,7 @@ syn cluster EbuildThings add=EbuildFlagoKeyword,EbuildError,EbuildVersionatorKey
 syn cluster EbuildThings add=EbuildLibtoolKeyword,EbuildHomePageError,EbuildErrorC,EbuildCVSKeyword
 syn cluster EbuildThings add=EbuildBashCompKeyword,EbuildVimPluginKeyword,EbuildVimDocKeyword
 syn cluster EbuildThings add=EbuildFdoMimeKeyword,EbuildMultilibKeyword
-syn cluster EbuildThings add=EbuildCronKeyword,EbuildGamesKeyword,EbuildToolFuncsKeyword
+syn cluster EbuildThings add=EbuildCronKeyword,EbuildToolFuncsKeyword
 syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword,EbuildPythonKeyword
 syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword,EbuildDistutilsKeyword
 syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword,EbuildPamKeyword
@@ -306,7 +306,6 @@ hi def link EbuildVimPluginKeyword           Identifier
 hi def link EbuildVimDocKeyword              Identifier
 hi def link EbuildMultilibKeyword            Identifier
 hi def link EbuildCronKeyword                Identifier
-hi def link EbuildGamesKeyword               Identifier
 hi def link EbuildToolFuncsKeyword           Identifier
 hi def link EbuildSVNKeyword                 Identifier
 hi def link EbuildAltKeyword                 Identifier
