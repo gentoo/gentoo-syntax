@@ -189,10 +189,6 @@ syn keyword EbuildPythonKeyword python-single-r1_pkg_setup python-any-r1_pkg_set
 " deprecated functions
 syn keyword EbuildDeprecatedKeyword python_parallel_foreach_impl python_export_best
 
-" check-kernel
-syn keyword EbuildCheckKernelKeyword check_version_h get_KV_info is_2_4_kernel is_2_5_kernel is_2_6_kernel
-syn keyword EbuildCheckKernelKeyword kernel_supports_modules
-
 " perl-module
 syn keyword EbuildPerlModuleKeyword perl-module_src_prep perl-module_src_compile perl-module_src_test
 syn keyword EbuildPerlModuleKeyword perl-module_src_install perl-module_pkg_setup perl-module_pkg_preinst
@@ -297,7 +293,7 @@ syn cluster EbuildThings add=EbuildBashCompKeyword,EbuildVimPluginKeyword,Ebuild
 syn cluster EbuildThings add=EbuildFdoMimeKeyword,EbuildMultilibKeyword
 syn cluster EbuildThings add=EbuildCronKeyword,EbuildToolFuncsKeyword
 syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword,EbuildPythonKeyword
-syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword,EbuildDistutilsKeyword
+syn cluster EbuildThings add=EbuildPerlModuleKeyword,EbuildDistutilsKeyword
 syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword,EbuildPamKeyword
 syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
 syn cluster EbuildThings add=EbuildDeprecatedKeyword,EbuildUnpackerKeyword,EbuildUserKeyword
@@ -330,7 +326,6 @@ hi def link EbuildSVNKeyword                 Identifier
 hi def link EbuildAltKeyword                 Identifier
 hi def link EbuildRPMKeyword                 Identifier
 hi def link EbuildPythonKeyword              Identifier
-hi def link EbuildCheckKernelKeyword         Identifier
 hi def link EbuildPerlModuleKeyword          Identifier
 hi def link EbuildDistutilsKeyword           Identifier
 hi def link EbuildDependApacheKeyword        Identifier
