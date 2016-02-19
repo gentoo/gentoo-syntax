@@ -63,15 +63,17 @@ syn keyword EbuildInherit inherit
 
 " autotools
 syn keyword EbuildAutoKeyword eautoreconf eaclocal _elibtoolize eautoconf eautoheader eautomake
+
 " eutils
-syn keyword EbuildEutilsKeyword gen_usr_ldscript draw_line epatch have_NPTL get_number_of_jobs egetent
-syn keyword EbuildEutilsKeyword emktemp enewuser enewgroup edos2unix make_desktop_entry unpack_pdv
-syn keyword EbuildEutilsKeyword unpack_makeself check_license cdrom_get_cds cdrom_load_next
-syn keyword EbuildEutilsKeyword cdrom_locate_file_on_cd strip-linguas epause ebeep built_with_use
-syn keyword EbuildEutilsKeyword make_session_desktop domenu doicon newicon find_unpackable_file unpack_pdv
-syn keyword EbuildEutilsKeyword set_arch_to_kernel set_arch_to_portage preserve_old_lib
-syn keyword EbuildEutilsKeyword preserve_old_lib_notify built_with_use epunt_cxx dopamd newpamd
+syn keyword EbuildEutilsKeyword draw_line epatch have_NPTL get_number_of_jobs
+syn keyword EbuildEutilsKeyword emktemp edos2unix make_desktop_entry strip-linguas
+syn keyword EbuildEutilsKeyword make_session_desktop domenu doicon newicon
+syn keyword EbuildEutilsKeyword preserve_old_lib preserve_old_lib_notify epunt_cxx
 syn keyword EbuildEutilsKeyword make_wrapper
+
+" deprecated & banned eutils functions
+syn keyword EbuildDeprecatedKeyword draw_line have_NPTL get_number_of_jobs check_license
+syn keyword EbuildDeprecatedKeyword ebeep epause built_with_use
 
 " flag-o-matic
 syn keyword EbuildFlagoKeyword setup-allowed-flags filter-flags filter-lfs-flags append-lfs-flags
@@ -140,7 +142,7 @@ syn keyword EbuildToolFuncsKeyword tc-getPROG tc-getAR tc-getAS tc-getCC tc-getC
 syn keyword EbuildToolFuncsKeyword tc-getRANLIB tc-getF77 tc-getGCJ tc-getBUILD_CC tc-export ninj
 syn keyword EbuildToolFuncsKeyword tc-is-cross-compiler tc-ninja_magic_to_arch tc-arch-kernel tc-arch
 syn keyword EbuildToolFuncsKeyword tc-endian gcc-fullversion gcc-version gcc-major-version
-syn keyword EbuildToolFuncsKeyword gcc-minor-version gcc-micro-version
+syn keyword EbuildToolFuncsKeyword gcc-minor-version gcc-micro-version gen_usr_ldscript
 
 " cron
 syn keyword EbuildCronKeyword docrondir docron docrontab cron_pkg_postinst
@@ -209,6 +211,18 @@ syn keyword EbuildGnome2Keyword gnome2_src_configure gnome2_src_compile gnome2_s
 syn keyword EbuildGnome2Keyword gnome2_gconf_install gnome2_gconf_uninstal gnome2_omf_fix
 syn keyword EbuildGnome2Keyword gnome2_scrollkeeper_update gnome2_pkg_postinst gnome2_pkg_postrm
 
+" cdrom
+syn keyword EbuildCDROMKeyword cdrom_get_cds cdrom_load_next
+
+" linux-info
+syn keyword EbuildLinuxInfoKeyword set_arch_to_kernel set_arch_to_portage
+
+" unpacker
+syn keyword EbuildUnpackerKeyword unpack_pdv unpack_makeself
+
+" user
+syn keyword EbuildUserKeyword egetent enewuser enewgroup
+
 " EXPORT_FUNCTIONS
 syn match EbuildExportFunctions /EXPORT_FUNCTIONS/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 syn match EbuildExportFunctionsFunc contained /\S\+\(\s\|$\)\@=/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
@@ -271,7 +285,8 @@ syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword,
 syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword,EbuildDistutilsKeyword
 syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword,EbuildPamKeyword
 syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
-syn cluster EbuildThings add=EbuildDeprecatedKeyword
+syn cluster EbuildThings add=EbuildDeprecatedKeyword,EbuildUnpackerKeyword,EbuildUserKeyword
+syn cluster EbuildThings add=EbuildCDROMKeyword,EbuildLinuxInfoKeyword
 
 syn cluster shCommandSubList add=@EbuildThings
 syn cluster shCommentGroup add=GentooBug
@@ -312,6 +327,10 @@ hi def link EbuildPamKeyword                 Identifier
 hi def link EbuildVirtualXKeyword            Identifier
 hi def link EbuildGnome2Keyword              Identifier
 hi def link EbuildAutoKeyword                Identifier
+hi def link EbuildCDROMKeyword               Identifier
+hi def link EbuildLinuxInfoKeyword           Identifier
+hi def link EbuildUnpackerKeyword            Identifier
+hi def link EbuildUserKeyword                Identifier
 
 hi def link EclassDocumentation              Identifier
 
