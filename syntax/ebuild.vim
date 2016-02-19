@@ -28,17 +28,21 @@ runtime syntax/gentoo-common.vim
 syn match bkshFunction	"^\s*\<\h[0-9a-zA-Z_\-\.]*\>\s*()"	skipwhite skipnl contains=bkshFunctionParen
 
 " Default keywords
-syn keyword EbuildCoreKeyword use has_version best_version use_with use_enable check_KV
+syn keyword EbuildCoreKeyword use has_version best_version use_with use_enable
 syn keyword EbuildCoreKeyword keepdir econf die einstall einfo ewarn eerror diropts
-syn keyword EbuildCoreKeyword dobin docinto dodoc doexe dohard doheader dohtml doinfo doins
+syn keyword EbuildCoreKeyword dobin docinto dodoc doexe doheader doinfo doins
 syn keyword EbuildCoreKeyword dolib dolib.a dolib.so doman dosbin dosym emake exeinto
 syn keyword EbuildCoreKeyword exeopts fowners fperms insinto insopts into libopts newbin
-syn keyword EbuildCoreKeyword newexe newheader newins newman newsbin prepall prepalldocs
-syn keyword EbuildCoreKeyword prepallinfo prepallman prepallstrip has unpack dosed into
-syn keyword EbuildCoreKeyword doinitd doconfd doenvd dojar domo dodir ebegin eend
+syn keyword EbuildCoreKeyword newexe newheader newins newman newsbin has unpack into
+syn keyword EbuildCoreKeyword doinitd doconfd doenvd domo dodir ebegin eend
 syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.so
-syn keyword EbuildCoreKeyword hasq hasv useq usev usex elog eapply eapply_user
+syn keyword EbuildCoreKeyword hasv usev usex elog eapply eapply_user
 syn keyword EbuildCoreKeyword einstalldocs in_iuse get_libdir
+
+" Deprecated and banned functions
+syn keyword EbuildDeprecatedKeyword check_KV dohard dohtml prepall prepalldocs
+syn keyword EbuildDeprecatedKeyword prepallinfo prepallman prepallstrip dosed
+syn keyword EbuildDeprecatedKeyword dojar hasq useq
 
 " Sandbox
 syn keyword EbuildCoreKeyword addread addwrite adddeny addpredict
@@ -266,12 +270,14 @@ syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword,
 syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword,EbuildDistutilsKeyword
 syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword,EbuildPamKeyword
 syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
+syn cluster EbuildThings add=EbuildDeprecatedKeyword
 
 syn cluster shCommandSubList add=@EbuildThings
 syn cluster shCommentGroup add=GentooBug
 syn cluster shDblQuoteList add=EbuildErrorC
 
 hi def link EbuildCoreKeyword                Keyword
+hi def link EbuildDeprecatedKeyword          Error
 hi def link EbuildFunctions                  Special
 hi def link EbuildInherit                    Include
 
