@@ -82,11 +82,6 @@ syn keyword EbuildFlagoKeyword strip-flags test_flag test_version_info strip-uns
 syn keyword EbuildFlagoKeyword has_hardened has_pic has_pie has_ssp_all has_ssp has_m64 has_m32
 syn keyword EbuildFlagoKeyword replace-sparc64-flags append-ldflags filter-ldflags fstack-flags gcc2-flags
 
-" gcc
-syn keyword EbuildGCCKeyword gcc-getCC gcc-getCXX gcc-fullversion gcc-version gcc-major-version
-syn keyword EbuildGCCKeyword gcc-minor-version gcc-micro-version gcc-libpath gcc-libstdcxx-version
-syn keyword EbuildGCCKeyword gcc-libstdcxx-major-version gcc2-flags
-
 " libtool
 syn keyword EbuildLibtoolKeyword elibtoolize uclibctoolize darwintoolize
 
@@ -277,7 +272,7 @@ syn match EbuildHomePageError /^HOMEPAGE=.*\(\${[^}]*}\?\|\([^\\]\)\@<=\$[^{]\w*
 " clusters
 syn cluster EbuildThings contains=EbuildCoreKeyword,EbuildFunctions,EbuildInherit,EbuildEutilsKeyword
 syn cluster EbuildThings add=EbuildLibtoolKeyword,EbuildFixHeadTailsKeyword,EbuildWebappKeyword
-syn cluster EbuildThings add=EbuildFlagoKeyword,EbuildError,EbuildGCCKeyword,EbuildVersionatorKeyword
+syn cluster EbuildThings add=EbuildFlagoKeyword,EbuildError,EbuildVersionatorKeyword
 syn cluster EbuildThings add=EbuildLibtoolKeyword,EbuildHomePageError,EbuildErrorC,EbuildCVSKeyword
 syn cluster EbuildThings add=EbuildBashCompKeyword,EbuildVimPluginKeyword,EbuildVimDocKeyword
 syn cluster EbuildThings add=EbuildFdoMimeKeyword,EbuildMultilibKeyword
@@ -300,7 +295,6 @@ hi def link EbuildInherit                    Include
 
 hi def link EbuildEutilsKeyword              Identifier
 hi def link EbuildFlagoKeyword               Identifier
-hi def link EbuildGCCKeyword                 Identifier
 hi def link EbuildLibtoolKeyword             Identifier
 hi def link EbuildFixHeadTailsKeyword        Identifier
 hi def link EbuildFdoMimeKeyword             Identifier
