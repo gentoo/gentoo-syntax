@@ -166,6 +166,14 @@ syn keyword EbuildPythonKeyword python_get_version python_execute_nosetests pyth
 syn keyword EbuildPythonKeyword python_execute_trial python_enable_pyc python_disable_pyc python_mod_optimize
 syn keyword EbuildPythonKeyword python_mod_cleanup
 
+" distutils-r1
+syn keyword EbuildDistutilsKeyword distutils-r1_python_prepare_all distutils-r1_python_compile
+syn keyword EbuildDistutilsKeyword distutils-r1_python_install distutils-r1_python_install_all
+syn keyword EbuildDistutilsKeyword esetup.py distutils_install_for_testing
+syn keyword EbuildDistutilsPhase python_prepare python_prepare_all python_configure
+syn keyword EbuildDistutilsPhase python_configure_all python_compile python_compile_all
+syn keyword EbuildDistutilsPhase python_test python_test_all python_install python_install_all
+
 " check-kernel
 syn keyword EbuildCheckKernelKeyword check_version_h get_KV_info is_2_4_kernel is_2_5_kernel is_2_6_kernel
 syn keyword EbuildCheckKernelKeyword kernel_supports_modules
@@ -261,8 +269,9 @@ syn cluster EbuildThings add=EbuildLibtoolKeyword,EbuildHomePageError,EbuildErro
 syn cluster EbuildThings add=EbuildBashCompKeyword,EbuildVimPluginKeyword,EbuildVimDocKeyword
 syn cluster EbuildThings add=EbuildFdoMimeKeyword,EbuildMultilibKeyword,Ebuild64bitKeyword
 syn cluster EbuildThings add=EbuildCronKeyword,EbuildGamesKeyword,EbuildToolFuncsKeyword
-syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword,EbuildPythonKeyword
-syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword,EbuildDistutilsKeyword
+syn cluster EbuildThings add=EbuildSVNKeyword,EbuildAltKeyword,EbuildRPMKeyword
+syn cluster EbuildThings add=EbuildPythonKeyword,EbuildDistutilsKeyword,EbuildDistutilsPhase
+syn cluster EbuildThings add=EbuildCheckKernelKeyword,EbuildPerlModuleKeyword
 syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword,EbuildPamKeyword
 syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
 
@@ -295,9 +304,10 @@ hi def link EbuildSVNKeyword                 Identifier
 hi def link EbuildAltKeyword                 Identifier
 hi def link EbuildRPMKeyword                 Identifier
 hi def link EbuildPythonKeyword              Identifier
+hi def link EbuildDistutilsKeyword           Identifier
+hi def link EbuildDistutilsPhase             Special
 hi def link EbuildCheckKernelKeyword         Identifier
 hi def link EbuildPerlModuleKeyword          Identifier
-hi def link EbuildDistutilsKeyword           Identifier
 hi def link EbuildDependApacheKeyword        Identifier
 hi def link EbuildApacheModuleKeyword        Identifier
 hi def link EbuildPamKeyword                 Identifier
