@@ -201,11 +201,12 @@ syn keyword EbuildDeprecatedKeyword distutils_src_test distutils_src_install dis
 syn keyword EbuildDeprecatedKeyword distutils_pkg_postrm
 
 " distutils-r1
-syn keyword EbuildDistutilsKeyword esetup.py distutils_install_for_testing
+syn keyword EbuildDistutilsKeyword distutils_install_for_testing
 syn keyword EbuildDistutilsKeyword distutils-r1_python_prepare_all
 syn keyword EbuildDistutilsKeyword distutils-r1_python_compile
 syn keyword EbuildDistutilsKeyword distutils-r1_python_install
 syn keyword EbuildDistutilsKeyword distutils-r1_python_install_all
+syn match EbuildDistutilsKeyword "esetup\.py"
 
 " distutils-r1 sub-phases
 syn keyword EbuildDistutilsFunction python_prepare python_prepare_all
