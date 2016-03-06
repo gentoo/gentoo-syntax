@@ -92,9 +92,7 @@ uninstall-file-%: $(subst _,/,$*)
 
 tag:
 	git tag $(distpkg)
-	@echo
-	@echo "tag created remember to push it"
-	@echo
+	@echo "tag created, remember to push it"
 
 clean:
 	find . -name '*~' | xargs rm || true
