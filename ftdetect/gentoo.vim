@@ -34,7 +34,7 @@ au BufNewFile,BufRead /etc/init.d/*
     \     set filetype=gentoo-init-d |
 
 au BufNewFile,BufRead /*/files/*
-    \ if (getline(1) ==? "#!/sbin/runscript") |
+    \ if (getline(1) =~? "#!/sbin/\\(runscript\\|openrc-run\\)") |
     \     set filetype=gentoo-init-d |
     \ endif
 
