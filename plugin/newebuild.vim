@@ -127,7 +127,7 @@ fun! <SID>MakeNewEbuild()
             put ='}'
         elseif l:category ==# "dev-perl" || l:category ==# "perl-core"
             " {{{ perl modules default setup
-            put ='MODULE_AUTHOR=\"\"'
+            put ='DIST_AUTHOR=\"\"'
             put ='inherit perl-module'
             put =''
             put ='DESCRIPTION=\"\"'
@@ -171,7 +171,7 @@ fun! <SID>MakeNewEbuild()
 
         " {{{ go to the first thing to edit
         0
-        /^\(MODULE_AUTHOR\|DESCRIPTION\)=/
+        /^\(DIST_AUTHOR\|DESCRIPTION\)=/
         exec "normal 2f\""
         nohls
         " }}}
