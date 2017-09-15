@@ -19,7 +19,7 @@ au BufNewFile,BufRead *.e{build,class}
 
 " GLEPs
 au BufNewFile,BufRead *.txt,*.rst
-    \ if (getline(1) =~? "^GLEP: ") |
+    \ if (getline(1) =~? "^GLEP: " || getline(2) =~? "^GLEP: ") |
     \     set filetype=glep |
     \ endif
 
