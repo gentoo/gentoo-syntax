@@ -34,7 +34,7 @@ syn region glepFoldH4 start=/^\S.\+\n'\{2,\}$/ end=/\(\n\n\S.\+\n[-=']\{2,\}\)\@
 " Headers at the top of a GLEP
 syn region glepHeaders start=/\%^\(.*:\)\@=/ end=/^$/ contains=glepHeaderKey
 syn region glepHeaderKey contained start=/^[A-Za-z0-9]/ end=/:/ nextgroup=glepHeaderValue skipwhite
-syn region glepHeaderValue contained start=/\S/ end=/$/ contains=glepHeaderEmail,glepHeaderCVSVar
+syn region glepHeaderValue contained start=/\S/ end=/^\S\|^$/me=e-1 contains=glepHeaderEmail,glepHeaderCVSVar
 syn match  glepHeaderEmail contained /<[-a-zA-Z0-9\_\.]\+@[-a-zA-Z0-9\_\.]\+>/
 syn region glepHeaderCVSVar contained start=/\$\S\+:/ end=/\$/
 syn keyword glepTODO TODO FIXME
