@@ -18,8 +18,8 @@ au BufNewFile,BufRead *.e{build,class}
     \     set filetype=ebuild
 
 " GLEPs
-au BufNewFile,BufRead *.txt
-    \ if (getline(1) =~? "^GLEP: ") |
+au BufNewFile,BufRead *.txt,*.rst
+    \ if (getline(1) =~? "^GLEP: " || getline(2) =~? "^GLEP: ") |
     \     set filetype=glep |
     \ endif
 
