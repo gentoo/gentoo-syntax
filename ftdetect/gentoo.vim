@@ -33,7 +33,7 @@ au BufNewFile,BufRead ChangeLog*
 au BufNewFile,BufRead /etc/init.d/*
     \     set filetype=gentoo-init-d |
 
-au BufNewFile,BufRead /*/files/*
+au BufNewFile,BufRead *
     \ if (getline(1) =~? "#!/sbin/\\(runscript\\|openrc-run\\)") |
     \     set filetype=gentoo-init-d |
     \ endif
