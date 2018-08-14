@@ -147,9 +147,6 @@ fun! <SID>MakeNewEbuild()
                 put ='PYTHON_COMPAT=( ' . GentooGetPythonTargets() . ' )'
                 put ='inherit distutils-r1'
                 put =''
-            elseif l:category =~# "^xfce-"
-                put ='inherit xfconf'
-                put =''
             endif
             " }}}
 
