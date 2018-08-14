@@ -56,7 +56,7 @@ fun! <SID>MakeNewEbuild()
         nohls
         " }}}
     else
-        put ='EAPI=6'
+        put ='EAPI=7'
         put =''
         if l:category ==# "app-vim"
             " {{{ app-vim special setup
@@ -161,8 +161,9 @@ fun! <SID>MakeNewEbuild()
             put =''
 
             " {{{ extra deps for some categories
-            put ='RDEPEND=\"\"'
-            put ='DEPEND=\"${RDEPEND}\"'
+            put ='DEPEND=\"\"'
+            put ='RDEPEND=\"${DEPEND}\"'
+            put ='BDEPEND=\"\"'
             " }}}
         endif
 
