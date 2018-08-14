@@ -164,8 +164,8 @@ fun! <SID>MakeNewEbuild()
             put =''
 
             " {{{ extra deps for some categories
-            put ='DEPEND=\"\"'
-            put ='RDEPEND=\"${DEPEND}\"'
+            put ='RDEPEND=\"\"'
+            put ='DEPEND=\"${RDEPEND}\"'
             " }}}
         endif
 
