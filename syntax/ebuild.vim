@@ -255,7 +255,7 @@ syn match EbuildExportFunctionsFunc contained /\S\+\(\s\|$\)\@=/ skipwhite nextg
 syn match EbuildExportFunctionsFuncE contained /\S\+\(\s\|$\)\@=\(\${\S\+}\|pkg_pretend\|pkg_nofetch\|pkg_setup\|src_unpack\|src_prepare\|src_configure\|src_compile\|src_test\|src_install\|pkg_preinst\|pkg_postinst\|pkg_prerm\|pkg_postrm\|pkg_config\|pkg_info\)\@<!/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 
 " Eclass documentation
-syn match EclassDocumentation /@\(BLURB\|CODE\|DESCRIPTION\|ECLASS-VARIABLE\|ECLASS\|EXAMPLE\|FUNCTION\|MAINTAINER\|RETURN\|USAGE\|VARIABLE\):/ contained
+syn match EclassDocumentation /@\(AUTHOR\|BLURB\|BUGREPORTS\|CODE\|DEAD\|DESCRIPTION\|DEFAULT_UNSET\|ECLASS-VARIABLE\|ECLASS\|EXAMPLE\|FUNCTION\|INTERNAL\|MAINTAINER\|OUTPUT_VARIABLE\|PRE_INHERIT\|RETURN\|REQUIRED\|ROFF\|SUPPORTED_EAPIS\|USAGE\|USER_VARIABLE\|VARIABLE\|VCSURL\):/ contained
 " use shComment (sh.vim), make it compatible with other comment highlights
 syn match      shComment        "^\s*\zs#.*$"   contains=EclassDocumentation
 syn match      shComment        "\s\zs#.*$"     contains=EclassDocumentation
