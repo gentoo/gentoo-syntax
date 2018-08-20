@@ -320,6 +320,7 @@ syn cluster EbuildThings add=EbuildCDROMKeyword,EbuildLinuxInfoKeyword,EbuildDis
 syn cluster shCommandSubList add=@EbuildThings
 syn cluster shCommentGroup add=GentooBug
 syn cluster shDblQuoteList add=EbuildErrorC
+syn cluster shExprList2 add=GentooError
 
 hi def link EbuildCoreKeyword                Keyword
 hi def link EbuildDeprecatedKeyword          Error
