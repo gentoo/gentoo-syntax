@@ -299,6 +299,9 @@ syn match   EbuildErrorC /`which.*`\|$(which.*)/
 " Special homepage handling
 syn match EbuildHomePageError /^HOMEPAGE=.*\(\${[^}]*}\?\|\([^\\]\)\@<=\$[^{]\w*\).*$/
 
+" Too long descriptions
+syn match   EbuildErrorC /^DESCRIPTION=['"].\{81,\}['"]$/
+
 " clusters
 syn cluster EbuildThings contains=EbuildCoreKeyword,EbuildFunctions,EbuildInherit,EbuildEutilsKeyword
 syn cluster EbuildThings add=EbuildLibtoolKeyword,EbuildFixHeadTailsKeyword,EbuildWebappKeyword
