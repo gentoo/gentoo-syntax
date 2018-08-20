@@ -15,16 +15,20 @@ runtime! plugin/gentoo-common.vim
 fun! <SID>MakeNewInitd()
     call GentooHeader('#!/sbin/openrc-run')
 
-    " {{{ default functions
+    " {{{ variables
+    let l:scriptname = expand("%:t:r")
+    " }}}
+    "
+    " {{{ common metadata
+    put ='name=\"' . l:scriptname . ' daemon\"'
+    put ='description=\"\"'
+    put ='command=/usr/bin/' . l:scriptname
+    put ='command_args=\"${' . l:scriptname . '_args}\"'
+    " }}}
+
+    " {{{ functions
+    put =''
     put ='depend() {'
-    put =''
-    put ='}'
-    put =''
-    put ='start() {'
-    put =''
-    put ='}'
-    put =''
-    put ='stop() {'
     put =''
     put ='}'
     " }}}
