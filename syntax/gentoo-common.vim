@@ -14,6 +14,8 @@ syn match  GentooBug contained /\(\([gG]entoo \|[dD]ebian \|[sS]ource[Ff]orge \)
 syn region  GentooError start=/^ / end=/$/
 " trailing whitespace
 syn match   GentooError /\s\+$/
+" mixed tab and space indentation
+syn match   GentooError /\s*\(\t \| \t\)\s*/
 
 hi def link GentooBug                    Underlined
 hi def link GentooError                  Error
