@@ -35,6 +35,6 @@ syn cluster GentooPackagePostAtom contains=GentooPackageUseUse,
 
 hi def link GentooPackageUseUse              Special
 hi def link GentooPackageUseUnuse            Keyword
-hi def link GentooPackageUseExpand           Statement
+hi def link GentooPackageUseExpand           Type
 
 let b:current_syntax = "gentoo-package-use"
