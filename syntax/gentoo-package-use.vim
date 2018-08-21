@@ -16,15 +16,7 @@ if exists("b:current_syntax")
     finish
 endif
 
-runtime syntax/gentoo-common.vim
-
-syn region GentooPackageUseComment start=/#/ end=/$/
-    \ contains=GentooPackageUseEmail,GentooPackageUseDate,GentooBug
-
-syn match  GentooPackageUseEmail contained
-    \ /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
-syn match  GentooPackageUseDate  contained
-    \ /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
+runtime syntax/gentoo-package-common.vim
 
 syn match  GentooPackageUseAtom /^[^ \t\n#]\+\S\+\/\S\+/
     \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse,
@@ -42,9 +34,6 @@ syn match  GentooPackageUseExpand contained
     \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse
     \ skipwhite
 
-hi def link GentooPackageUseComment          Comment
-hi def link GentooPackageUseEmail            Special
-hi def link GentooPackageUseDate             Number
 hi def link GentooPackageUseAtom             Identifier
 hi def link GentooPackageUseUse              Special
 hi def link GentooPackageUseUnuse            Keyword

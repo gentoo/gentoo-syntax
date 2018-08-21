@@ -16,10 +16,7 @@ if exists("b:current_syntax")
     finish
 endif
 
-runtime syntax/gentoo-common.vim
-
-syn region GentooUseDescComment start=/#/ end=/$/
-    \ contains=GentooBug
+runtime syntax/gentoo-package-common.vim
 
 syn match GentooUseDescPackage /^\(#\)\@!\([a-zA-Z0-9\-\_+\.]\+\/[a-zA-Z0-9\-\_+]\+\)\?/ nextgroup=GentooUseDescColon,GentooUseDescFlag skipwhite
 syn match GentooUseDescColon /:/ contained nextgroup=GentooUseDescFlag
@@ -27,7 +24,6 @@ syn match GentooUseDescFlag contained /[a-zA-Z0-9\-\_+@:]\+/ nextgroup=GentooUse
 syn match GentooUseDescDash /-\s*/ contained nextgroup=GentooUseDescDesc skipwhite
 syn region GentooUseDescDesc start=// end=/$/ contained skipwhite
 
-hi def link GentooUseDescComment          Comment
 hi def link GentooUseDescPackage          Keyword
 hi def link GentooUseDescFlag             Identifier
 hi def link GentooUseDescDesc             String
