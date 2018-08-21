@@ -18,8 +18,4 @@ endif
 
 runtime syntax/gentoo-package-common.vim
 
-syn match  GentooPackageMaskAtom /^[^ \t\n#]\+\S\+\/\S\+/
-
-hi def link GentooPackageMaskAtom             Identifier
-
 let b:current_syntax = "gentoo-package-mask"

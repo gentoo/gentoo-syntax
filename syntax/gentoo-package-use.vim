@@ -18,9 +18,6 @@ endif
 
 runtime syntax/gentoo-package-common.vim
 
-syn match  GentooPackageUseAtom /^[^ \t\n#]\+\S\+\/\S\+/
-    \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse,
-    \ GentooPackageUseExpand skipwhite
 syn match  GentooPackageUseUse contained
     \ /[a-zA-Z0-9][a-zA-Z0-9\-_]*\(:\)\@!/
     \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse,
@@ -33,8 +30,9 @@ syn match  GentooPackageUseExpand contained
     \ /[a-zA-Z0-9][a-zA-Z0-9\-_]*:/
     \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse
     \ skipwhite
+syn cluster GentooPackagePostAtom contains=GentooPackageUseUse,
+    \ GentooPackageUseUnuse,GentooPackageUseExpand
 
-hi def link GentooPackageUseAtom             Identifier
 hi def link GentooPackageUseUse              Special
 hi def link GentooPackageUseUnuse            Keyword
 hi def link GentooPackageUseExpand           Statement

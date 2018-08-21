@@ -16,6 +16,10 @@ syn region GentooPackageComment start=/#/ end=/$/
 syn match  GentooPackageEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
 syn match  GentooPackageDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
+syn match  GentooPackageAtom /^[\ \t]*[^ \t\n#]\+\S\+\/\S\+/
+    \ nextgroup=@GentooPackagePostAtom skipwhite
+
 hi def link GentooPackageComment          Comment
 hi def link GentooPackageEmail            Special
 hi def link GentooPackageDate             Number
+hi def link GentooPackageAtom             Identifier

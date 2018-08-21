@@ -18,12 +18,10 @@ endif
 
 runtime syntax/gentoo-package-common.vim
 
-syn match  GentooPackagePropertiesAtom /^[^ \t\n#]\+\S\+\/\S\+/
-    \ nextgroup=GentooPackagePropertiesProperty skipwhite
 syn match  GentooPackagePropertiesProperty contained /-\?\([a-zA-Z0-9\-_]\+\|\*\)/
     \ nextgroup=GentooPackagePropertiesProperty skipwhite
+syn cluster GentooPackagePostAtom contains=GentooPackagePropertiesProperty
 
-hi def link GentooPackagePropertiesAtom             Identifier
 hi def link GentooPackagePropertiesProperty         Keyword
 
 let b:current_syntax = "gentoo-package-properties"

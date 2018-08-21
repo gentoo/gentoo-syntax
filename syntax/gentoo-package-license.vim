@@ -18,12 +18,10 @@ endif
 
 runtime syntax/gentoo-package-common.vim
 
-syn match  GentooPackageLicenseAtom /^[^ \t\n#]\+\S\+\/\S\+/
-    \ nextgroup=GentooPackageLicenseLicense skipwhite
 syn match  GentooPackageLicenseLicense contained /-\?@\?\([a-zA-Z0-9\-_.+]\+\|\*\)/
     \ nextgroup=GentooPackageLicenseLicense skipwhite
+syn cluster GentooPackagePostAtom contains=GentooPackageLicenseLicense
 
-hi def link GentooPackageLicenseAtom             Identifier
 hi def link GentooPackageLicenseLicense          Keyword
 
 let b:current_syntax = "gentoo-package-license"
