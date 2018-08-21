@@ -18,10 +18,17 @@ endif
 
 runtime syntax/gentoo-package-common.vim
 
-syn match  GentooPackageKeywordsKeyword contained /-\?[-~]\?\([a-z0-9\-]\+\|\*\)/
-    \ nextgroup=GentooPackageKeywordsKeyword skipwhite
-syn cluster GentooPackagePostAtom contains=GentooPackageKeywordsKeyword
+syn match  GentooPackageKeywordsStableKeyword contained /-\?\([a-z0-9\-]\+\|\*\)/
+    \ nextgroup=@GentooPackagePostAtom skipwhite
+syn match  GentooPackageKeywordsKeyword contained /-\?\~\([a-z0-9\-]\+\|\*\)/
+    \ nextgroup=@GentooPackagePostAtom skipwhite
+syn match  GentooPackageKeywordsAllKeyword contained /-\?\*\*/
+    \ nextgroup=@GentooPackagePostAtom skipwhite
+syn cluster GentooPackagePostAtom contains=GentooPackageKeywordsKeyword,
+    \ GentooPackageKeywordsStableKeyword,GentooPackageKeywordsAllKeyword
 
 hi def link GentooPackageKeywordsKeyword          Keyword
+hi def link GentooPackageKeywordsStableKeyword    Special
+hi def link GentooPackageKeywordsAllKeyword       Type
 
 let b:current_syntax = "gentoo-package-keywords"
