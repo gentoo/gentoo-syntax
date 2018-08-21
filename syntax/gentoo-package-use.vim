@@ -19,11 +19,11 @@ endif
 runtime syntax/gentoo-package-common.vim
 
 syn match  GentooPackageUseUse contained
-    \ /[a-zA-Z0-9][a-zA-Z0-9\-_]*\(:\)\@!/
+    \ /\([a-zA-Z0-9][a-zA-Z0-9\-_]*\|\*\)\(:\)\@!/
     \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse,
     \ GentooPackageUseExpand skipwhite
 syn match  GentooPackageUseUnuse contained
-    \ /-[a-zA-Z0-9][a-zA-Z0-9\-_]*\(:\)\@!/
+    \ /-\([a-zA-Z0-9][a-zA-Z0-9\-_]*\|\*\)\(:\)\@!/
     \ nextgroup=GentooPackageUseUse,GentooPackageUseUnuse,
     \ GentooPackageUseExpand skipwhite
 syn match  GentooPackageUseExpand contained
