@@ -94,10 +94,10 @@ fun! <SID>MakeNewEbuild()
             put ='need_apache2'
             " }}}
         elseif l:category ==# "dev-java"
-            " {{{ dev-java generation-2 default ant ebuild
+            " {{{ dev-java generation-2 default java-pkg-simple ebuild
             put ='JAVA_PKG_IUSE=\"doc source\"'
             put =''
-            put ='inherit java-pkg-2 java-ant-2'
+            put ='inherit java-pkg-2 java-pkg-simple'
             put =''
             put ='DESCRIPTION=\"\"'
             put ='HOMEPAGE=\"\"'
@@ -109,22 +109,12 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='IUSE=\"\"'
             put =''
-            put ='COMMON_DEP=\"\"'
+            put ='CP_DEPEND=\"\"'
             put =''
-            put ='RDEPEND=\">=virtual/jre-1.5'
-            put ='  ${COMMON_DEP}\"'
-            put ='DEPEND=\">=virtual/jdk-1.5'
-            put ='  app-arch/unzip'
-            put ='  ${COMMON_DEP}\"'
-            put =''
-            put ='EANT_BUILD_TARGET=\"\"'
-            put ='EANT_DOC_TARGET=\"\"'
-            put =''
-            put ='src_install() {'
-            put ='  java-pkg_dojar \"${PN}.jar\"'
-            put ='  use doc && java-pkg_dojavadoc build/javadoc'
-            put ='  use source && java-pkg_dosrc src'
-            put ='}'
+            put ='RDEPEND=\">=virtual/jre-1.8'
+            put ='  ${CP_DEPEND}\"'
+            put ='DEPEND=\">=virtual/jdk-1.8'
+            put ='  ${CP_DEPEND}\"'
         elseif l:category ==# "dev-perl" || l:category ==# "perl-core"
             " {{{ perl modules default setup
             put ='DIST_AUTHOR=\"\"'
