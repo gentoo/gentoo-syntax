@@ -78,9 +78,13 @@ syn keyword EbuildDeprecatedKeyword ebeep epause built_with_use
 " flag-o-matic
 syn keyword EbuildFlagoKeyword setup-allowed-flags filter-flags filter-lfs-flags append-lfs-flags
 syn keyword EbuildFlagoKeyword append-flags replace-flags replace-cpu-flags is-flag filter-mfpmath
-syn keyword EbuildFlagoKeyword strip-flags test_flag test_version_info strip-unsupported-flags get-flag
-syn keyword EbuildFlagoKeyword has_hardened has_pic has_pie has_ssp_all has_ssp has_m64 has_m32
-syn keyword EbuildFlagoKeyword replace-sparc64-flags append-ldflags filter-ldflags fstack-flags gcc2-flags
+syn keyword EbuildFlagoKeyword strip-flags test-flag test_version_info strip-unsupported-flags get-flag
+syn keyword EbuildFlagoKeyword replace-sparc64-flags append-ldflags filter-ldflags
+syn keyword EbuildFlagoKeyword append-cflags append-cppflags append-cxxflags append-fflags
+syn keyword EbuildFlagoKeyword is-flagq is-ldflagq is-ldflag test-flag-CC test-flag-CXX
+syn keyword EbuildFlagoKeyword test-flag-F77 test-flag-FC test-flags-CC test-flags-CXX
+syn keyword EbuildFlagoKeyword test-flags-F77 test-flags-FC test-flags append-libs
+syn keyword EbuildFlagoKeyword raw-ldflags no-as-needed
 
 " libtool
 syn keyword EbuildLibtoolKeyword elibtoolize uclibctoolize darwintoolize
