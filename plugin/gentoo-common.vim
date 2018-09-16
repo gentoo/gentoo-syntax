@@ -24,7 +24,7 @@ endfun
 fun! GentooHeader(...)
     " The shebang arg is optional
     let l:year = strftime("%Y")
-    let l:copyright = '# Copyright 1999-' . l:year . ' Gentoo Foundation'
+    let l:copyright = '# Copyright ' . l:year . ' Gentoo Authors'
 
     " Only one arg allowed (shebang only)
     if a:0 == 1
