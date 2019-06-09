@@ -65,7 +65,7 @@ fun! <SID>MakeNewGLEP()
     " copyright
     put ='This work is licensed under the Creative Commons Attribution-ShareAlike 3.0'
     put ='Unported License. To view a copy of this license, visit'
-    put ='http://creativecommons.org/licenses/by-sa/3.0/.'
+    put ='https://creativecommons.org/licenses/by-sa/3.0/.'
     " }}}
 
     " {{{ go to the first thing to edit
