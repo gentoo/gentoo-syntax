@@ -58,7 +58,25 @@ fun! <SID>MakeNewEbuild()
     else
         put ='EAPI=7'
         put =''
-        if l:category ==# "app-vim"
+        if l:category ==# "acct-group"
+            " {{{ acct-group special setup
+            put ='inherit acct-group'
+            put =''
+            put ='ACCT_GROUP_ID='
+            " }}}
+        elseif l:category ==# "acct-user"
+            " {{{ acct-user special setup
+            let l:username=substitute(expand("%:t:r"),
+                    \ "\\(.*\\)-[0-9]*.*", "\\1", "")
+            put ='inherit acct-user'
+            put =''
+            put ='DESCRIPTION=\"\"'
+            put ='ACCT_USER_ID='
+            put ='ACCT_USER_GROUPS=( ' . l:username . ' )'
+            put =''
+            put ='acct-user_add_deps'
+            " }}}
+        elseif l:category ==# "app-vim"
             " {{{ app-vim special setup
             put ='#VIM_PLUGIN_VIM_VERSION=\"7.0\"'
             put ='inherit vim-plugin'
@@ -159,8 +177,8 @@ fun! <SID>MakeNewEbuild()
 
         " {{{ go to the first thing to edit
         0
-        /^\(DIST_AUTHOR\|DESCRIPTION\)=/
-        exec "normal 2f\""
+        /^\(ACCT_GROUP_ID\|DIST_AUTHOR\|DESCRIPTION\)=/
+        exec "normal f=ll"
         nohls
         " }}}
     endif
