@@ -19,11 +19,17 @@ endif
 runtime syntax/gentoo-package-common.vim
 
 syn match  GentooMirrorsAtom /^[^# \t]\+/
-    \ nextgroup=GentooMirrorsUrl skipwhite
-syn region GentooMirrorsUrl contained start=/\(http\|ftp\):\/\// end=/\(\s\)\@=\|$/
-    \ nextgroup=GentooMirrorsUrl skipwhite
+    \ nextgroup=GentooMirrorsHttpUrl,GentooMirrorsHttpsUrl,GentooMirrorsFtpUrl skipwhite
+syn region GentooMirrorsHttpUrl contained start=/http:\/\// end=/\(\s\)\@=\|$/
+    \ nextgroup=GentooMirrorsHttpUrl,GentooMirrorsHttpsUrl,GentooMirrorsFtpUrl skipwhite
+syn region GentooMirrorsHttpsUrl contained start=/https:\/\// end=/\(\s\)\@=\|$/
+    \ nextgroup=GentooMirrorsHttpUrl,GentooMirrorsHttpsUrl,GentooMirrorsFtpUrl skipwhite
+syn region GentooMirrorsFtpUrl contained start=/ftp:\/\// end=/\(\s\)\@=\|$/
+    \ nextgroup=GentooMirrorsHttpUrl,GentooMirrorsHttpsUrl,GentooMirrorsFtpUrl skipwhite
 
 hi def link GentooMirrorsAtom             Identifier
-hi def link GentooMirrorsUrl              String
+hi def link GentooMirrorsHttpUrl          String
+hi def link GentooMirrorsHttpsUrl         Keyword
+hi def link GentooMirrorsFtpUrl           Special
 
 let b:current_syntax = "gentoo-mirrors"
