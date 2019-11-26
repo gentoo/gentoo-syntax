@@ -182,7 +182,8 @@ syn keyword EbuildPythonKeyword python_optimize python_scriptinto python_doexe
 syn keyword EbuildPythonKeyword python_newexe python_doscript python_newscript
 syn keyword EbuildPythonKeyword python_moduleinto python_domodule python_doheader
 syn keyword EbuildPythonKeyword python_wrapper_setup python_is_python3 python_is_installed
-syn keyword EbuildPythonKeyword python_fix_shebang python_export_utf8_locale
+syn keyword EbuildPythonKeyword python_fix_shebang python_export_utf8_locale build_sphinx
+
 
 " python-r1, python-single-r1 and python-any-r1
 syn keyword EbuildPythonKeyword python_gen_usedep python_gen_useflags python_gen_cond_dep
@@ -212,10 +213,15 @@ syn keyword EbuildDistutilsKeyword distutils-r1_python_install
 syn keyword EbuildDistutilsKeyword distutils-r1_python_install_all
 syn match EbuildDistutilsKeyword "esetup\.py"
 
+" distutils-r1 global helpers
+syn keyword EbuildDistutilsKeyword distutils_enable_tests
+syn keyword EbuildDistutilsKeyword distutils_enable_sphinx
+
 " distutils-r1 sub-phases
 syn keyword EbuildDistutilsFunction python_prepare python_prepare_all
 syn keyword EbuildDistutilsFunction python_configure python_configure_all
 syn keyword EbuildDistutilsFunction python_compile python_compile_all
+syn keyword EbuildDistutilsFunction python_compile_all sphinx_compile_all
 syn keyword EbuildDistutilsFunction python_test python_test_all
 syn keyword EbuildDistutilsFunction python_install python_install_all
 
