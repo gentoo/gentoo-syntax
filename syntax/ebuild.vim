@@ -257,7 +257,8 @@ syn keyword EbuildLinuxInfoKeyword set_arch_to_kernel set_arch_to_portage
 syn keyword EbuildUnpackerKeyword unpack_pdv unpack_makeself
 
 " user
-syn keyword EbuildUserKeyword egetent enewuser enewgroup
+syn keyword EbuildDeprecatedKeyword enewuser enewgroup
+syn keyword EbuildUserKeyword egetent
 
 " EXPORT_FUNCTIONS
 syn match EbuildExportFunctions /EXPORT_FUNCTIONS/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
