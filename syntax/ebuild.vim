@@ -189,6 +189,7 @@ syn keyword EbuildPythonKeyword python_gen_usedep python_gen_useflags python_gen
 syn keyword EbuildPythonKeyword python_gen_impl_dep python_copy_sources python_foreach_impl
 syn keyword EbuildPythonKeyword python_setup python_replicate_script python_gen_any_dep
 syn keyword EbuildPythonKeyword python-single-r1_pkg_setup python-any-r1_pkg_setup
+syn keyword EbuildPythonKeyword python_check_deps
 
 " deprecated functions
 syn keyword EbuildDeprecatedKeyword python_parallel_foreach_impl python_export_best
