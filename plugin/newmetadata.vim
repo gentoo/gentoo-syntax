@@ -85,8 +85,6 @@ fun! <SID>MakeNewMetadata()
             put ='<name>' . l:name . '</name>'
         endif
         put ='</maintainer>'
-        put ='<longdescription lang=\"en\">'
-        put ='</longdescription>'
         put ='</pkgmetadata>'
         exec "normal gg=G"
         " }}}
