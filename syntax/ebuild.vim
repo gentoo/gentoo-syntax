@@ -211,6 +211,7 @@ syn keyword EbuildDistutilsKeyword distutils-r1_python_prepare_all
 syn keyword EbuildDistutilsKeyword distutils-r1_python_compile
 syn keyword EbuildDistutilsKeyword distutils-r1_python_install
 syn keyword EbuildDistutilsKeyword distutils-r1_python_install_all
+syn keyword EbuildDistutilsKeyword sphinx_compile_all
 syn match EbuildDistutilsKeyword "esetup\.py"
 
 " distutils-r1 global helpers
