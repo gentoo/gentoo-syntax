@@ -221,7 +221,6 @@ syn keyword EbuildDistutilsKeyword distutils_enable_sphinx
 syn keyword EbuildDistutilsFunction python_prepare python_prepare_all
 syn keyword EbuildDistutilsFunction python_configure python_configure_all
 syn keyword EbuildDistutilsFunction python_compile python_compile_all
-syn keyword EbuildDistutilsFunction python_compile_all sphinx_compile_all
 syn keyword EbuildDistutilsFunction python_test python_test_all
 syn keyword EbuildDistutilsFunction python_install python_install_all
 
