@@ -57,19 +57,14 @@ fun! GentooGetPythonTargets()
     if exists("g:gentoopythontargets") && g:gentoopythontargets != ""
         return g:gentoopythontargets
     else
-        let l:py2 = system("eselect python show --python2")
-        let l:py2 = substitute(l:py2, "\n", "", "g")
         let l:py3 = system("eselect python show --python3")
         let l:py3 = substitute(l:py3, "\n", "", "g")
 
-        if l:py2 == ""
-            let l:py2 = "python2.7"
-        endif
         if l:py3 == ""
-            let l:py3 = "python3.4"
+            let l:py3 = "python3.8"
         endif
 
-        let l:pythons = substitute(l:py2 . " " . l:py3, "[.]", "_", "g")
+        let l:pythons = substitute(l:py3, "[.]", "_", "g")
 
         let g:gentoopythontargets = l:pythons
         return g:gentoopythontargets
