@@ -13,10 +13,9 @@ let g:loaded_gentoo_common=1
 fun! GentooGetUser()
     let l:result = expand("\$ECHANGELOG_USER")
     if l:result ==# "\$ECHANGELOG_USER"
-        let l:result = expand("\$USER")
-    endif
-    if l:result ==# "\$USER"
-        let l:result = ""
+        let l:email = system('git config --global user.email')
+        let l:name = system('git config --global user.name')
+        let l:result = l:name . ' <' . l:email . '>'
     endif
     return l:result
 endfun
@@ -71,4 +70,4 @@ fun! GentooGetPythonTargets()
     endif
 endfun
 
-" vim: set et foldmethod=marker : "
+" vim: set et foldmethod=marker sw=4 ts=4 : "
