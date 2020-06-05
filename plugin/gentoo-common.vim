@@ -13,8 +13,8 @@ let g:loaded_gentoo_common=1
 fun! GentooGetUser()
     let l:result = expand("\$ECHANGELOG_USER")
     if l:result ==# "\$ECHANGELOG_USER"
-        let l:email = system('git config --global user.email')
-        let l:name = system('git config --global user.name')
+        let l:email = executable('git') ? system('git config --global user.email') : expand('$HOST')
+        let l:name = executable('git') ? system('git config --global user.name') : expand('$USER')
         let l:result = l:name . ' <' . l:email . '>'
     endif
     return l:result
