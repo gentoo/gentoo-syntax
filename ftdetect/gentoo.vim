@@ -59,7 +59,7 @@ au BufNewFile,BufRead {*/package.{accept_,}keywords,*/portage/package.{accept_,}
     \     set filetype=gentoo-package-keywords
 
 " package.use
-au BufNewFile,BufRead {*/package.use,*/portage/package.use/*}
+au BufNewFile,BufRead {*/package.use,*/portage/package.use/*,*/package.env,*/portage/package.env/*}
     \     set filetype=gentoo-package-use
 
 " package.license
