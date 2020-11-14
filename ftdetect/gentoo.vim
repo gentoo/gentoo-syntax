@@ -86,6 +86,10 @@ au BufNewFile,BufRead use.{local.,}desc
 au BufNewFile,BufRead metadata.xml
     \     set filetype=gentoo-metadata
 
+" repos.conf
+au BufNewFile,BufRead {*/portage/repos.conf,*/portage/repos.conf/*.conf}
+    \     set filetype=dosini
+
 " guidexml
 au BufNewFile,BufRead *.xml
     \     if getline(1) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
