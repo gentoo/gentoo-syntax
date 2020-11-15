@@ -90,6 +90,10 @@ au BufNewFile,BufRead metadata.xml
 au BufNewFile,BufRead {*/portage/repos.conf,*/portage/repos.conf/*.conf}
     \     set filetype=dosini
 
+" portage/env/*
+au BufNewFile,BufRead */portage/{env/*,bashrc}
+    \     set filetype=ebuild
+
 " guidexml
 au BufNewFile,BufRead *.xml
     \     if getline(1) =~ "<!DOCTYPE \\(guide\\|news\\|mainpage\\|book\\|sections\\|dynamic\\|inserts\\) " ||
