@@ -58,8 +58,8 @@ syn match   GentooMakeConfEUseIX /\\.\|\$\({[^}]\+}\|[a-zA-Z0-9\-\_]\+\)/ contai
 
 hi def link GentooMakeConfEUse       Identifier
 hi def link GentooMakeConfEUseV      String
-hi def      GentooMakeConfEUseID     ctermfg=Red
-hi def      GentooMakeConfEUseIE     ctermfg=DarkGreen
+hi def link GentooMakeConfEUseID     Keyword
+hi def link GentooMakeConfEUseIE     Special
 hi def link GentooMakeConfEUseIG     Preproc
 hi def link GentooMakeConfEUseIB     Error
 hi def link GentooMakeConfEUseIX     Preproc

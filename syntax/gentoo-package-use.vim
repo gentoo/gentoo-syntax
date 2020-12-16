@@ -33,8 +33,8 @@ syn match  GentooPackageUseExpand contained
 syn cluster GentooPackagePostAtom contains=GentooPackageUseUse,
     \ GentooPackageUseUnuse,GentooPackageUseExpand
 
-hi def      GentooPackageUseUse              ctermfg=DarkGreen
-hi def      GentooPackageUseUnuse            ctermfg=Red
+hi def link GentooPackageUseUse              Special
+hi def link GentooPackageUseUnuse            Keyword
 hi def link GentooPackageUseExpand           Type
 
 let b:current_syntax = "gentoo-package-use"
