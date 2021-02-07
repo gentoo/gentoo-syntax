@@ -1,17 +1,15 @@
 certificate version 0.1
-pusher DF84256885283521 1608125553 +0100
-pushee git.gentoo.org:proj/gentoo-syntax
-nonce 1608125553-aa6f131474de0244a949a725eb5ac3ea87d860ac
+pusher mva@gentoo.org 1612657739 +0700
+pushee git.gentoo.org:proj/gentoo-syntax.git
+nonce 1612657739-b7fc2e679aa8d66e63696b1e4598e5ec3c8f36c1
 
-3d90ee5686e54fb1c3242f10e644a789579a4372 4cc031a5d3384ee9cc3225ff038a633be6b7125f refs/heads/master
+4cc031a5d3384ee9cc3225ff038a633be6b7125f 762f31ff620eb822ae4ca43c5dc2a62ca621f5fe refs/heads/master
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEEx2qEUJQJjSjMiybFY5ra4jKeJA4FAl/aDHEACgkQY5ra4jKe
-JA5RTwf/S6nVIfa8jXRotAfm5nw/K8/PLXBUaJNTKxnrhgko+q0ajy9lCqCYcQIV
-2JjPky2hV7gqnpkpw47pa8fiio8AR9Y5NCiBsPOoI9t7Ejc0oHiWTb7WUdJO36Vz
-w72FSN+CSOhwxLGNTEFJplFLwd6KrATA7GqduBeM+0D5QySFyHrCq+fEkXx2Ag42
-dCbbcxli6SE8lRUir8tv8o37w3nE0SvsJ+MzW0W5aVsCU0kO5OrniPTQxoGdoFcB
-o6YDoNwWVFrDKDwrwxf2JMt/+8wCtSgFtg4aQn/ql/e9H+keS4jjWE5QwxdKifcJ
-uW50kvM6jo0Tv4Njrsitb6ttmYTK5Q==
-=67e+
+iOUEABYKAI0WIQQoxRjgXYBWtXJOpb/NsmC0G8NikgUCYB80S18UgAAAAAAuAChp
+c3N1ZXItZnByQG5vdGF0aW9ucy5vcGVucGdwLmZpZnRoaG9yc2VtYW4ubmV0MjhD
+NTE4RTA1RDgwNTZCNTcyNEVBNUJGQ0RCMjYwQjQxQkMzNjI5Mg8cbXZhQGdlbnRv
+by5vcmcACgkQzbJgtBvDYpLkMAEApcSdWUGTlAt+kvORaOAitg9zRvNLbWWPWy5f
+0PDA3IIA/1/aIblUXzoacN906ii5dT0o4fbDiOV9+dg9FUX1CfkH
+=3qnN
 -----END PGP SIGNATURE-----
