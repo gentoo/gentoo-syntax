@@ -1,6 +1,3 @@
-# Copyright 2021 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
-
 # EBUILD SYNTAX TEST FILE
 # NOT A VALID EBUILD
 

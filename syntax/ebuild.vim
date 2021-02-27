@@ -39,6 +39,9 @@ syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.s
 syn keyword EbuildCoreKeyword hasv usev usex elog eapply eapply_user
 syn keyword EbuildCoreKeyword einstalldocs in_iuse get_libdir
 syn keyword EbuildCoreKeyword assert nonfatal docompress dostrip einfon eqawarn
+" Using a keyword match on 'dolib dolib.a dolib.so' only highlighted the 'dolib' portion and left the
+" .a and .so portions unhighlighted
+" A keyword match on 'newlib.a newlib.so' did not highlight anything
 syn match EbuildCoreKeyword "\<dolib\(\.a\|\.so\)\?\_s"
 syn match EbuildCoreKeyword "\<newlib\(\.a\|\.so\)\_s"
 
