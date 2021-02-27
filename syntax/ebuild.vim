@@ -31,13 +31,16 @@ syn match bkshFunction	"^\s*\<\h[0-9a-zA-Z_\-\.]*\>\s*()"	skipwhite skipnl conta
 syn keyword EbuildCoreKeyword use has_version best_version use_with use_enable
 syn keyword EbuildCoreKeyword keepdir econf die einstall einfo ewarn eerror diropts
 syn keyword EbuildCoreKeyword dobin docinto dodoc doexe doheader doinfo doins
-syn keyword EbuildCoreKeyword dolib dolib.a dolib.so doman dosbin dosym emake exeinto
+syn keyword EbuildCoreKeyword doman dosbin dosym emake exeinto
 syn keyword EbuildCoreKeyword exeopts fowners fperms insinto insopts into libopts newbin
 syn keyword EbuildCoreKeyword newexe newheader newins newman newsbin has unpack into
 syn keyword EbuildCoreKeyword doinitd doconfd doenvd domo dodir ebegin eend
 syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.so
 syn keyword EbuildCoreKeyword hasv usev usex elog eapply eapply_user
 syn keyword EbuildCoreKeyword einstalldocs in_iuse get_libdir
+syn keyword EbuildCoreKeyword assert nonfatal docompress dostrip einfon eqawarn
+syn match EbuildCoreKeyword "\<dolib\(\.a\|\.so\)\?\_s"
+syn match EbuildCoreKeyword "\<newlib\(\.a\|\.so\)\_s"
 
 " Deprecated and banned functions
 syn keyword EbuildDeprecatedKeyword check_KV dohard dohtml prepall prepalldocs
