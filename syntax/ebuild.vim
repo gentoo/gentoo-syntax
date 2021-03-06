@@ -1,8 +1,10 @@
 " Vim syntax file
-" Language:	Gentoo Ebuilds/Eclasses
-" Author:	Ciaran McCreesh <ciaranm@gentoo.org>
-" Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
-" Licence:	You may redistribute this under the same terms as Vim itself
+" Language: Gentoo Ebuilds/Eclasses
+" Authors:  Ciaran McCreesh <ciaranm@gentoo.org>
+"           Oskari Pirhonen <xxc3ncoredxx@gmail.com>
+" Copyright:    Copyright (c) 2004-2005 Ciaran McCreesh
+"               Copyright (c) 2021 Oskari Pirhonen
+" Licence:  You may redistribute this under the same terms as Vim itself
 "
 " Syntax highlighting for ebuilds and eclasses. Inherits from sh.vim and adds
 " in Gentoo-specific highlights for certain keywords and functions. Requires
@@ -27,14 +29,28 @@ runtime syntax/gentoo-common.vim
 " this. See Gentoo bug 72469.
 syn match bkshFunction	"^\s*\<\h[0-9a-zA-Z_\-\.]*\>\s*()"	skipwhite skipnl contains=bkshFunctionParen
 
+" Match paths (including split across multiple lines)
+syn match MatchPath contains=@shDblQuoteList,shComment "\f*"
+syn match MatchPath contains=@shDblQuoteList,shComment "\\\_s"
+
+" Match the start of a path-y keyword
+syn region EbuildPathKeyword start="^\s*\k\+\s\@=" end="\>" contains=EbuildPathKeywordList
+" Match the path portion
+syn region EbuildPath start="\>\s\@=" skip="\\$" end="$" contains=MatchPath
+
+" Path-y keywords
+syn keyword EbuildPathKeywordList contained unpack dodir into keepdir dobin dosbin doinitd doconfd doenvd
+syn keyword EbuildPathKeywordList contained dolib dolib.a dolib.so doinfo domo insinto exeinto doexe
+syn keyword EbuildPathKeywordList contained docinto
+
 " Default keywords
 syn keyword EbuildCoreKeyword use has_version best_version use_with use_enable
-syn keyword EbuildCoreKeyword keepdir econf die einstall einfo ewarn eerror diropts
-syn keyword EbuildCoreKeyword dobin docinto dodoc doexe doheader doinfo doins
-syn keyword EbuildCoreKeyword dolib dolib.a dolib.so doman dosbin dosym emake exeinto
-syn keyword EbuildCoreKeyword exeopts fowners fperms insinto insopts into libopts newbin
-syn keyword EbuildCoreKeyword newexe newheader newins newman newsbin has unpack into
-syn keyword EbuildCoreKeyword doinitd doconfd doenvd domo dodir ebegin eend
+syn keyword EbuildCoreKeyword econf die einstall einfo ewarn eerror diropts
+syn keyword EbuildCoreKeyword dodoc doheader doins
+syn keyword EbuildCoreKeyword doman dosym emake
+syn keyword EbuildCoreKeyword exeopts fowners fperms insopts libopts newbin
+syn keyword EbuildCoreKeyword newexe newheader newins newman newsbin has
+syn keyword EbuildCoreKeyword ebegin eend
 syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.so
 syn keyword EbuildCoreKeyword hasv usev usex elog eapply eapply_user
 syn keyword EbuildCoreKeyword einstalldocs in_iuse get_libdir
@@ -338,6 +354,9 @@ hi def link EbuildCoreKeyword                Keyword
 hi def link EbuildDeprecatedKeyword          Error
 hi def link EbuildFunctions                  Special
 hi def link EbuildInherit                    Include
+
+hi def link MatchPath                        String
+hi def link EbuildPathKeywordList            Keyword
 
 hi def link EbuildEutilsKeyword              Identifier
 hi def link EbuildFlagoKeyword               Identifier
