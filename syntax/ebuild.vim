@@ -183,6 +183,7 @@ syn keyword EbuildPythonKeyword python_newexe python_doscript python_newscript
 syn keyword EbuildPythonKeyword python_moduleinto python_domodule python_doheader
 syn keyword EbuildPythonKeyword python_wrapper_setup python_is_python3 python_is_installed
 syn keyword EbuildPythonKeyword python_fix_shebang python_export_utf8_locale build_sphinx
+syn keyword EbuildPythonKeyword epytest eunittest
 
 " python-r1, python-single-r1 and python-any-r1
 syn keyword EbuildPythonKeyword python_gen_usedep python_gen_useflags python_gen_cond_dep
