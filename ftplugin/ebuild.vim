@@ -16,7 +16,8 @@ endif
 runtime! ftplugin/sh.vim
 
 " Include - in keyword characters (for strip-flags etc)
-exec "setlocal iskeyword=" . &iskeyword . ",45"
+" Include . in keyword characters (for dolib.* newlib.*)
+setlocal iskeyword+=-,.
 
 " Required whitespace settings
 setlocal tabstop=4
