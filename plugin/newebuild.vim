@@ -56,7 +56,7 @@ fun! <SID>MakeNewEbuild()
         nohls
         " }}}
     else
-        put ='EAPI=7'
+        put ='EAPI=8'
         put =''
         if l:category ==# "acct-group"
             " {{{ acct-group special setup
