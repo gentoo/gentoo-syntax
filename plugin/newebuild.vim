@@ -53,7 +53,7 @@ fun! <SID>MakeNewEbuild()
         put =''
         put ='case ${EAPI} in'
         put ='	8) ;;'
-        put ='	*) die \"EAPI ${EAPI} unsupported.\"'
+        put ='	*) die \"${ECLASS}: EAPI ${EAPI} unsupported.\"'
         put ='esac'
         put =''
         put ='_' . l:eclass_ident . '=1'
