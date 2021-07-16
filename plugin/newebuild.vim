@@ -44,9 +44,20 @@ fun! <SID>MakeNewEbuild()
         put ='# ' . GentooGetUser()
         put ='# @AUTHOR:'
         put ='# ' . GentooGetUser()
+        put ='# @SUPPORTED_EAPIS: 8'
         put ='# @BLURB: '
         put ='# @DESCRIPTION:'
         put =''
+        let l:eclass_ident = substitute(toupper(l:eclass), "[^A-Z0-9]", "_", "g")
+        put ='if [[ ! ${_' . l:eclass_ident . '} ]]; then'
+        put =''
+        put ='case ${EAPI} in'
+        put ='	8) ;;'
+        put ='	*) die \"EAPI ${EAPI} unsupported.\"'
+        put ='esac'
+        put =''
+        put ='_' . l:eclass_ident . '=1'
+        put ='fi'
         " }}}
 
         " {{{ go to the first thing to edit
