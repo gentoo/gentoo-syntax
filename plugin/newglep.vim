@@ -63,9 +63,9 @@ fun! <SID>MakeNewGLEP()
         endif
     endfor
     " copyright
-    put ='This work is licensed under the Creative Commons Attribution-ShareAlike 3.0'
-    put ='Unported License. To view a copy of this license, visit'
-    put ='https://creativecommons.org/licenses/by-sa/3.0/.'
+    put ='This work is licensed under the Creative Commons Attribution-ShareAlike 4.0'
+    put ='International License.  To view a copy of this license, visit'
+    put ='https://creativecommons.org/licenses/by-sa/4.0/.'
     " }}}
 
     " {{{ go to the first thing to edit
