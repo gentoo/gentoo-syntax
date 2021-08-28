@@ -56,8 +56,8 @@ fun! <SID>MakeNewGLEP()
         put =''
         put =l:section
         put =repeat('=', l:sectlen)
+        put =''
         if l:section != 'Copyright'
-            put =''
             put =''
             put =''
         endif
