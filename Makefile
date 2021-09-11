@@ -40,7 +40,7 @@ uninstall-file-%: $(subst _,/,$*)
 	[ ! -f "$(PREFIX)/$(subst _,/,$*)" ] || rm "$(PREFIX)/$(subst _,/,$*)"
 
 tag:
-	git tag $(distpkg)
+	git tag -s $(distpkg)
 	@echo "tag created, remember to push it"
 
 clean:
