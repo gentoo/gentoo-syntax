@@ -38,7 +38,7 @@ fun! <SID>MakeNewMetadata()
     if l:iscatmetadata
         " {{{ content
         0 put ='<?xml version=\"1.0\" encoding=\"UTF-8\"?>'
-        put ='<!DOCTYPE catmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\">'
+        put ='<!DOCTYPE catmetadata SYSTEM \"https://www.gentoo.org/dtd/metadata.dtd\">'
         put ='<catmetadata>'
         put ='<longdescription lang=\"en\">'
         put ='</longdescription>'
@@ -72,7 +72,7 @@ fun! <SID>MakeNewMetadata()
 
         " {{{ content
         0 put ='<?xml version=\"1.0\" encoding=\"UTF-8\"?>'
-        put ='<!DOCTYPE pkgmetadata SYSTEM \"http://www.gentoo.org/dtd/metadata.dtd\">'
+        put ='<!DOCTYPE pkgmetadata SYSTEM \"https://www.gentoo.org/dtd/metadata.dtd\">'
         put ='<pkgmetadata>'
         if l:project != ""
             put ='<maintainer type=\"project\">'
