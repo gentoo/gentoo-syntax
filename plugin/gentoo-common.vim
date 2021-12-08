@@ -56,12 +56,8 @@ fun! GentooGetPythonTargets()
     if exists("g:gentoopythontargets") && g:gentoopythontargets != ""
         return g:gentoopythontargets
     else
-        let l:py3 = system("eselect python show --python3")
+        let l:py3 = system("python -c 'import epython; print(epython.EPYTHON)'")
         let l:py3 = substitute(l:py3, "\n", "", "g")
-
-        if l:py3 == ""
-            let l:py3 = "python3.8"
-        endif
 
         let l:pythons = substitute(l:py3, "[.]", "_", "g")
 
