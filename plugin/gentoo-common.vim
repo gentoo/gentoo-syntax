@@ -56,8 +56,32 @@ fun! GentooGetPythonTargets()
     if exists("g:gentoopythontargets") && g:gentoopythontargets != ""
         return g:gentoopythontargets
     else
-        let l:py3 = system("python -c 'import epython; print(epython.EPYTHON)'")
-        let l:py3 = substitute(l:py3, "\n", "", "g")
+        let l:pyexec_path = "/etc/python-exec/python-exec.conf"
+
+        if filereadable(l:pyexec_path)
+            let l:pys = readfile(l:pyexec_path)->filter("v:val =~ '^[^#-]'")->sort()
+            let l:py3s = []
+            let l:others = []
+            for l:py in l:pys
+                let l:m = l:py->matchstr("^python3.*")->matchstr("\\d*$")
+                if !empty(l:m)
+                    eval l:py3s->add(l:m)
+                    continue
+                else
+                    eval l:others->add(l:py)
+                endif
+            endfor
+            let l:impls = []
+            if len(l:py3s) ==# 1
+                let l:impls = l:impls->add("python3.".l:py3s->join())
+            elseif len(l:py3s) > 1
+                let l:impls = l:impls->add("python3.{".l:py3s->sort('N')->join(",")."}")
+            endif
+            let l:py3 = flatten(l:impls->add(l:others))->join()
+        endif
+        if empty(l:py3)
+            let l:py3 = system("python -c 'import epython; print(epython.EPYTHON)'")->substitute("\n","","g")
+        endif
 
         let l:pythons = substitute(l:py3, "[.]", "_", "g")
 
