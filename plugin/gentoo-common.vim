@@ -13,9 +13,15 @@ let g:loaded_gentoo_common=1
 fun! GentooGetUser()
     let l:result = expand("\$ECHANGELOG_USER")
     if l:result ==# "\$ECHANGELOG_USER"
-        let l:email = executable('git') ? trim(system('git config --global user.email')) : expand('$HOST')
-        let l:name = executable('git') ? trim(system('git config --global user.name')) : expand('$USER')
-        let l:result = l:name . ' <' . l:email . '>'
+        let l:gitcfg = "git config --global "
+        if executable(git)
+            let l:email = trim(system(l:gitcfg . "user.email"))
+            let l:name = trim(system(l:gitcfg . "user.name"))
+        else
+            let l:email = expand("$HOST")
+            let l:name = expand("$USER")
+        endif
+        let l:result = l:name . " <" . l:email . ">"
     endif
     return l:result
 endfun
@@ -59,7 +65,8 @@ fun! GentooGetPythonTargets()
         let l:pyexec_path = "/etc/python-exec/python-exec.conf"
 
         if filereadable(l:pyexec_path)
-            let l:pys = readfile(l:pyexec_path)->filter("v:val =~ '^[^#-]'")->sort()
+            let l:pys = readfile(l:pyexec_path)->filter("v:val =~ '^[^#-]'")
+                                             \ ->sort()
             let l:py3s = []
             let l:others = []
             for l:py in l:pys
@@ -75,12 +82,15 @@ fun! GentooGetPythonTargets()
             if len(l:py3s) ==# 1
                 let l:impls = l:impls->add("python3.".l:py3s->join())
             elseif len(l:py3s) > 1
-                let l:impls = l:impls->add("python3.{".l:py3s->sort('N')->join(",")."}")
+                let l:impls = l:impls->add("python3.{".l:py3s->sort('N')
+                                   \ ->join(",")."}")
             endif
             let l:py3 = flatten(l:impls->add(l:others))->join()
         endif
         if empty(l:py3)
-            let l:py3 = system("python -c 'import epython; print(epython.EPYTHON)'")->substitute("\n","","g")
+            let l:py3 =
+                \ system("python -c 'import epython; print(epython.EPYTHON)'")
+                \ ->substitute("\n", "", "g")
         endif
 
         let l:pythons = substitute(l:py3, "[.]", "_", "g")
