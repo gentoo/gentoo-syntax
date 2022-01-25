@@ -27,6 +27,8 @@ fun! <SID>MakeNewMetadata()
     else
         let l:category = substitute(l:filename,
                     \ "^.*/\\([^/]\\+\\)/[^/]\\+/metadata\\.xml", "\\1", "g")
+        let l:package = substitute(l:filename,
+                    \ "^.*/\\([^/]\\+\\)/metadata\\.xml", "\\1", "g")
         let l:iscatmetadata = 0
         let l:user = GentooGetUser()
         let l:email = matchstr(l:user, "\\(<\\)\\@<=[^>]\\+\\(>\\)\\@=")
@@ -83,6 +85,11 @@ fun! <SID>MakeNewMetadata()
             put ='<name>' . l:name . '</name>'
         endif
         put ='</maintainer>'
+        if l:category ==# "dev-python"
+            put ='<upstream>'
+            put ='<remote-id type=\"pypi\">' . l:package . '</remote-id>'
+            put ='</upstream>'
+        endif
         put ='</pkgmetadata>'
         exec "normal gg=G"
         " }}}
