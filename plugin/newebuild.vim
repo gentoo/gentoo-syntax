@@ -21,6 +21,8 @@ fun! <SID>MakeNewEbuild()
     let l:filename = expand("%:p")
     let l:category = substitute(l:filename,
                 \ "^.*/\\([^/]\\+\\)/[^/]\\+/[^/]\\+\\.ebuild", "\\1", "g")
+    let l:package = substitute(l:filename,
+                \ "^.*/\\([^/]\\+\\)/[^/]\\+\\.ebuild", "\\1", "g")
 
     " use empty keywords for live ebuilds
     if l:filename =~# "-9999\\+.ebuild\$"
@@ -155,6 +157,7 @@ fun! <SID>MakeNewEbuild()
             " {{{ standard default setup
             " {{{ extra inherits for some categories
             if l:category ==# "dev-python"
+                put ='DISTUTILS_USE_PEP517=setuptools'
                 put ='PYTHON_COMPAT=( ' . GentooGetPythonTargets() . ' )'
                 put ='inherit distutils-r1'
                 put =''
@@ -162,7 +165,9 @@ fun! <SID>MakeNewEbuild()
             " }}}
 
             put ='DESCRIPTION=\"\"'
-            put ='HOMEPAGE=\"\"'
+            put ='HOMEPAGE=\"'
+            put ='	https://pypi.org/project/' . l:package . '/'
+            put ='\"'
             put ='SRC_URI=\"\"'
             put =''
             put ='LICENSE=\"\"'
@@ -171,9 +176,19 @@ fun! <SID>MakeNewEbuild()
             put =''
 
             " {{{ extra deps for some categories
-            put ='DEPEND=\"\"'
-            put ='RDEPEND=\"${DEPEND}\"'
-            put ='BDEPEND=\"\"'
+            if l:category ==# "dev-python"
+                put ='RDEPEND=\"\"'
+                put ='BDEPEND=\"'
+                put ='	test? ('
+                put ='	)'
+                put ='\"'
+                put =''
+                put ='distutils_enable_tests pytest'
+            else
+                put ='DEPEND=\"\"'
+                put ='RDEPEND=\"${DEPEND}\"'
+                put ='BDEPEND=\"\"'
+            endif
             " }}}
         endif
 
