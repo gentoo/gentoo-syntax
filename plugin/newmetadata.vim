@@ -59,8 +59,6 @@ fun! <SID>MakeNewMetadata()
             let l:project = "perl"
         elseif l:category ==# "dev-php"
             let l:project = "php-bugs"
-        elseif l:category ==# "dev-python"
-            let l:project = "python"
         elseif l:category ==# "dev-ruby"
             let l:project = "ruby"
         elseif l:category ==# "dev-tex"
