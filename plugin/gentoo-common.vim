@@ -80,22 +80,40 @@ fun! GentooGetPythonTargets()
             endfor
             let l:impls = []
             if len(l:py3s) ==# 1
-                let l:impls = l:impls->add("python3.".l:py3s->join())
+                let l:impls = l:impls->add("python3_".l:py3s->join())
             elseif len(l:py3s) > 1
-                let l:impls = l:impls->add("python3.{".l:py3s->sort('N')
-                                   \ ->join(",")."}")
+                let l:min = ""
+                let l:max = ""
+                let l:py3s = l:py3s->sort('N')
+                for l:py in l:py3s
+                    if l:min ==# ""
+                        let l:min = l:py
+                        let l:max = l:py
+                    elseif l:py ==# l:max + 1
+                        let l:max = l:py
+                    else
+                        let l:max = ""
+                        break
+                    endif
+                endfor
+
+                if l:max !=# ""
+                    let l:impls = l:impls->add("python3_{".l:min.".."
+                                             \ .l:max."}")
+                else
+                    let l:impls = l:impls->add("python3_{".l:py3s
+                                       \ ->join(",")."}")
+                endif
             endif
             let l:py3 = flatten(l:impls->add(l:others))->join()
         endif
         if empty(l:py3)
             let l:py3 =
                 \ system("python -c 'import epython; print(epython.EPYTHON)'")
-                \ ->substitute("\n", "", "g")
+                \ ->substitute("\n", "", "g")->substitute("[.]", "_", "g")
         endif
 
-        let l:pythons = substitute(l:py3, "[.]", "_", "g")
-
-        let g:gentoopythontargets = l:pythons
+        let g:gentoopythontargets = l:py3
         return g:gentoopythontargets
     endif
 endfun
