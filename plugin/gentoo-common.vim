@@ -78,11 +78,11 @@ fun! GentooGetPythonTargets()
                 endif
             endfor
             if len(l:py3s) ==# 1
-                let l:impls = l:impls->add("python3_".l:py3s->join())
+                eval l:impls->add("python3_".l:py3s->join())
             elseif len(l:py3s) > 1
                 let l:min = ""
                 let l:max = ""
-                let l:py3s = l:py3s->sort('N')
+                eval l:py3s->sort('N')
                 for l:py in l:py3s
                     if l:min ==# ""
                         let l:min = l:py
@@ -96,11 +96,9 @@ fun! GentooGetPythonTargets()
                 endfor
 
                 if l:max !=# ""
-                    let l:impls = l:impls->add("python3_{".l:min.".."
-                                             \ .l:max."}")
+                    eval l:impls->add("python3_{".l:min."..".l:max."}")
                 else
-                    let l:impls = l:impls->add("python3_{".l:py3s
-                                       \ ->join(",")."}")
+                    eval l:impls->add("python3_{".l:py3s->join(",")."}")
                 endif
             endif
             let l:py3 = flatten(l:impls)->join()
