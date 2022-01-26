@@ -67,17 +67,16 @@ fun! GentooGetPythonTargets()
         if filereadable(l:pyexec_path)
             let l:pys = readfile(l:pyexec_path)->filter("v:val =~ '^[^#-]'")
                                              \ ->sort()
+            let l:impls = []
             let l:py3s = []
-            let l:others = []
             for l:py in l:pys
                 let l:m = l:py->matchstr("^python3.*")->matchstr("\\d*$")
                 if !empty(l:m)
                     eval l:py3s->add(l:m)
                 else
-                    eval l:others->add(l:py)
+                    eval l:impls->add(l:py)
                 endif
             endfor
-            let l:impls = []
             if len(l:py3s) ==# 1
                 let l:impls = l:impls->add("python3_".l:py3s->join())
             elseif len(l:py3s) > 1
@@ -104,7 +103,7 @@ fun! GentooGetPythonTargets()
                                        \ ->join(",")."}")
                 endif
             endif
-            let l:py3 = flatten(l:impls->add(l:others))->join()
+            let l:py3 = flatten(l:impls)->join()
         endif
         if empty(l:py3)
             let l:py3 =
