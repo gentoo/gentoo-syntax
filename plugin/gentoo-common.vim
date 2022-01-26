@@ -73,7 +73,6 @@ fun! GentooGetPythonTargets()
                 let l:m = l:py->matchstr("^python3.*")->matchstr("\\d*$")
                 if !empty(l:m)
                     eval l:py3s->add(l:m)
-                    continue
                 else
                     eval l:others->add(l:py)
                 endif
