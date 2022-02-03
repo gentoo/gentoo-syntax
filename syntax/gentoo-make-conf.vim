@@ -71,8 +71,8 @@ syn match   GentooMakeConfEAKE /=/ contained nextgroup=GentooMakeConfEAKV skipwh
 syn cluster GentooMakeConfEAKIC add=GentooMakeConfEAKIS,GentooMakeConfEAKIU,GentooMakeConfEAKIB,GentooMakeConfEAKIX
 syn region  GentooMakeConfEAKV contained start=/"/ end=/"/ contains=@GentooMakeConfEAKIC
 " do not change keyword order!
-syn match   GentooMakeConfEAKIS /alpha\|amd64\|amd64-fbsd\|amd64-linux\|arm\|arm64\|arm64-linux\|arm-linux\|hppa\|ia64\|m68k\|m68k-mint\|mips\|ppc\|ppc64\|ppc64-linux\|ppc-aix\|ppc-macos\|riscv\|s390\|sh\|sparc\|sparc64-solaris\|sparc-solaris\|x64-cygwin\|x64-macos\|x64-solaris\|x86\|x86-cygwin\|x86-fbsd\|x86-linux\|x86-macos\|x86-solaris\|x86-winnt/ contained
-syn match   GentooMakeConfEAKIU /\~\(alpha\|amd64\|amd64-fbsd\|amd64-linux\|arm\|arm64\|arm64-linux\|arm-linux\|hppa\|ia64\|m68k\|m68k-mint\|mips\|ppc\|ppc64\|ppc64-linux\|ppc-aix\|ppc-macos\|riscv\|s390\|sh\|sparc\|sparc64-solaris\|sparc-solaris\|x64-cygwin\|x64-macos\|x64-solaris\|x86\|x86-cygwin\|x86-fbsd\|x86-linux\|x86-macos\|x86-solaris\|x86-winnt\)/ contained
+syn match   GentooMakeConfEAKIS /alpha\|amd64\|amd64-fbsd\|amd64-linux\|arm\|arm64\|arm64-linux\|arm-linux\|hppa\|ia64\|loong\|m68k\|m68k-mint\|mips\|ppc\|ppc64\|ppc64-linux\|ppc-aix\|ppc-macos\|riscv\|s390\|sh\|sparc\|sparc64-solaris\|sparc-solaris\|x64-cygwin\|x64-macos\|x64-solaris\|x86\|x86-cygwin\|x86-fbsd\|x86-linux\|x86-macos\|x86-solaris\|x86-winnt/ contained
+syn match   GentooMakeConfEAKIU /\~\(alpha\|amd64\|amd64-fbsd\|amd64-linux\|arm\|arm64\|arm64-linux\|arm-linux\|hppa\|ia64\|loong\|m68k\|m68k-mint\|mips\|ppc\|ppc64\|ppc64-linux\|ppc-aix\|ppc-macos\|riscv\|s390\|sh\|sparc\|sparc64-solaris\|sparc-solaris\|x64-cygwin\|x64-macos\|x64-solaris\|x86\|x86-cygwin\|x86-fbsd\|x86-linux\|x86-macos\|x86-solaris\|x86-winnt\)/ contained
 syn match   GentooMakeConfEAKIB /-[a-zA-Z0-9\-\_]\+/ contained
 syn match   GentooMakeConfEAKIX /\\.\|\$\({[^}]\+}\|[a-zA-Z0-9\-\_]\+\)/ contained
 
