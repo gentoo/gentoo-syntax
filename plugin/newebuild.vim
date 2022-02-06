@@ -165,9 +165,15 @@ fun! <SID>MakeNewEbuild()
             " }}}
 
             put ='DESCRIPTION=\"\"'
-            put ='HOMEPAGE=\"'
-            put ='	https://pypi.org/project/' . l:package . '/'
-            put ='\"'
+
+            if l:category ==# "dev-python"
+                put ='HOMEPAGE=\"'
+                put ='	https://pypi.org/project/' . l:package . '/'
+                put ='\"'
+            else
+                put ='HOMEPAGE=\"\"'
+            endif
+
             put ='SRC_URI=\"\"'
             put =''
             put ='LICENSE=\"\"'
