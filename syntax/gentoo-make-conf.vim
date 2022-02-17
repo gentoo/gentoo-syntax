@@ -17,7 +17,7 @@ endif
 
 runtime syntax/gentoo-common.vim
 
-syn cluster GentooMakeConfEC add=GentooMakeConfEUse,GentooMakeConfEAK,GentooMakeConfEAL,GentooMakeConfEAP,GentooMakeConfECFLAGS,GentooMakeConfELDFLAGS,GentooMakeConfEMAKEOPTS,GentooMakeConfECHOST,GentooMakeConfEFEATURES,GentooMakeConfEMISC,GentooMakeConfEMISCK,GentooMakeConfEMISCKE,GentooMakeConfEMISCN
+syn cluster GentooMakeConfEC add=GentooMakeConfEUse,GentooMakeConfEAK,GentooMakeConfEAL,GentooMakeConfEAP,GentooMakeConfEAT,GentooMakeConfECFLAGS,GentooMakeConfELDFLAGS,GentooMakeConfEMAKEOPTS,GentooMakeConfECHOST,GentooMakeConfEFEATURES,GentooMakeConfEMISC,GentooMakeConfEMISCK,GentooMakeConfEMISCKE,GentooMakeConfEMISCN
 syn region  GentooMakeConfE start=/^/ end=/$/ contains=@GentooMakeConfEC,GentooMakeConfComment
 
 " MISC {{{
@@ -116,6 +116,20 @@ hi def link GentooMakeConfEAPV      String
 hi def link GentooMakeConfEAPIP     Keyword
 hi def link GentooMakeConfEAPIN     Error
 hi def link GentooMakeConfEAPIX     Preproc
+" }}}
+
+" ALLOW_TEST {{{
+syn match   GentooMakeConfEAT /ALLOW_TEST/ contained nextgroup=GentooMakeConfEATE
+syn match   GentooMakeConfEATE /=/ contained nextgroup=GentooMakeConfEATV skipwhite
+syn cluster GentooMakeConfEATIC add=GentooMakeConfEATIP,GentooMakeConfEATIX
+syn region  GentooMakeConfEATV contained start=/"/ end=/"/ contains=@GentooMakeConfEATIC
+syn match   GentooMakeConfEATIP /\s*\(network\|all\)\s*/ contained
+syn match   GentooMakeConfEATIX /\\.\|\$\({[^}]\+}\|[a-zA-Z0-9\-\_]\+\)/ contained
+
+hi def link GentooMakeConfEAT       Identifier
+hi def link GentooMakeConfEATV      String
+hi def link GentooMakeConfEATIP     Keyword
+hi def link GentooMakeConfEATIX     Preproc
 " }}}
 
 " C*FLAGS and F*FLAGS {{{
