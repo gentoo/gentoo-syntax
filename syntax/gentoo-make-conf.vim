@@ -21,7 +21,7 @@ syn cluster GentooMakeConfEC add=GentooMakeConfEUse,GentooMakeConfEAK,GentooMake
 syn region  GentooMakeConfE start=/^/ end=/$/ contains=@GentooMakeConfEC,GentooMakeConfComment
 
 " MISC {{{
-syn match   GentooMakeConfEMISC /[a-zA-Z0-9\-\_]\+\([^a-zA-Z0-9\-\_]\)\@=/ contained nextgroup=GentooMakeConfEMISCE skipwhite
+syn match   GentooMakeConfEMISC /[a-zA-Z0-9\-\_]\+\([^a-zA-Z0-9\-\_]\)\@=/ contained nextgroup=GentooMakeConfEMISCE
 
 syn match   GentooMakeConfEMISCE /=/ contained nextgroup=GentooMakeConfEMISCV,GentooMakeConfEMISCVNoQ skipwhite
 syn region  GentooMakeConfEMISCV contained start=/"/ end=/"/ contains=GentooMakeConfEMISCIX
@@ -29,11 +29,11 @@ syn region  GentooMakeConfEMISCVNoQ contained start=/[^ "]/ end=/\s\|$/ contains
 syn match   GentooMakeConfEMISCIX /\\.\|\$\({[^}]\+}\|[a-zA-Z0-9\-\_]\+\)/ contained
 
 " naughty
-syn match   GentooMakeConfEMISCN /LDFLAGS\|ASFLAGS\|ARCH\|ELIBC\|KERNEL\|USERLAND/ contained nextgroup=GentooMakeConfEMISCE skipwhite
+syn match   GentooMakeConfEMISCN /LDFLAGS\|ASFLAGS\|ARCH\|ELIBC\|KERNEL\|USERLAND/ contained nextgroup=GentooMakeConfEMISCE
 " known but not handled specially
-syn match   GentooMakeConfEMISCK /GENTOO_MIRRORS\|SYNC\|PORTAGE_NICENESS\|PORTDIR_OVERLAY\|PORTAGE_GPG_DIR\|PORTAGE_GPG_KEY\|SIGNED_OFF_BY\|CONFIG_PROTECT_MASK\|CONFIG_PROTECT\|FETCHCOMMAND\|RESUMECOMMAND\|AUTOCLEAN\|BUILD_PREFIX\|CBUILD\|CLEAN_DELAY\|COLLISION_IGNORE\|DISTDIR\|DOC_SYMLINKS_DIR\|EMERGE_DEFAULT_OPTS\|HTTP_PROXY\|FTP_PROXY\|NOCOLOR\|PKGDIR\|PORT_LOGDIR\|PORT_LOGDIR_CLEAN\|PORTAGE_BINHOST\|PORTAGE_BINHOST_HEADER_URI\|PORTAGE_BINPKG_FORMAT\|PORTAGE_BINPKG_TAR_OPTS\|PORTAGE_COMPRESS\|PORTAGE_COMPRESS_FLAGS\|PORTAGE_ELOG_CLASSES\|PORTAGE_ELOG_COMMAND\|PORTAGE_ELOG_MAILFROM\|PORTAGE_ELOG_MAILURI\|PORTAGE_ELOG_SYSTEM\|PORTAGE_FETCH_CHECKSUM_TRY_MIRRORS\|PORTAGE_FETCH_RESUME_MIN_SIZE\|PORTAGE_LOGDIR\|PORTAGE_LOGDIR_CLEAN\|PORTAGE_RSYNC_EXTRA_OPTS\|PORTAGE_RSYNC_OPTS\|PORTAGE_RSYNC_INITIAL_TIMEOUT\|PORTAGE_RSYNC_RETRIES\|PORTAGE_TMPDIR\|PORTAGE_WORKDIR_MODE\|PORTDIR\|ROOT\|RSYNC_EXCLUDEFROM\|RSYNC_RETRIES\|RSYNC_TIMEOUT\|RPMDIR\|USE_ORDER\|LINGUAS\|EXTRA_ECONF\|PORTAGE_TMPFS\|INSTALL_MASK\|QA_STRICT_EXECSTACK\|QA_STRICT_WX_LOAD\|QA_STRICT_TEXTRELS\|PORTAGE_IONICE_COMMAND\|PORTAGE_LOG_FILTER_FILE_CMD/ contained nextgroup=GentooMakeConfEMISCE skipwhite
+syn match   GentooMakeConfEMISCK /GENTOO_MIRRORS\|SYNC\|PORTAGE_NICENESS\|PORTDIR_OVERLAY\|PORTAGE_GPG_DIR\|PORTAGE_GPG_KEY\|SIGNED_OFF_BY\|CONFIG_PROTECT_MASK\|CONFIG_PROTECT\|FETCHCOMMAND\|RESUMECOMMAND\|AUTOCLEAN\|BUILD_PREFIX\|CBUILD\|CLEAN_DELAY\|COLLISION_IGNORE\|DISTDIR\|DOC_SYMLINKS_DIR\|EMERGE_DEFAULT_OPTS\|HTTP_PROXY\|FTP_PROXY\|NOCOLOR\|PKGDIR\|PORT_LOGDIR\|PORT_LOGDIR_CLEAN\|PORTAGE_BINHOST\|PORTAGE_BINHOST_HEADER_URI\|PORTAGE_BINPKG_FORMAT\|PORTAGE_BINPKG_TAR_OPTS\|PORTAGE_COMPRESS\|PORTAGE_COMPRESS_FLAGS\|PORTAGE_ELOG_CLASSES\|PORTAGE_ELOG_COMMAND\|PORTAGE_ELOG_MAILFROM\|PORTAGE_ELOG_MAILURI\|PORTAGE_ELOG_SYSTEM\|PORTAGE_FETCH_CHECKSUM_TRY_MIRRORS\|PORTAGE_FETCH_RESUME_MIN_SIZE\|PORTAGE_LOGDIR\|PORTAGE_LOGDIR_CLEAN\|PORTAGE_RSYNC_EXTRA_OPTS\|PORTAGE_RSYNC_OPTS\|PORTAGE_RSYNC_INITIAL_TIMEOUT\|PORTAGE_RSYNC_RETRIES\|PORTAGE_TMPDIR\|PORTAGE_WORKDIR_MODE\|PORTDIR\|ROOT\|RSYNC_EXCLUDEFROM\|RSYNC_RETRIES\|RSYNC_TIMEOUT\|RPMDIR\|USE_ORDER\|LINGUAS\|EXTRA_ECONF\|PORTAGE_TMPFS\|INSTALL_MASK\|QA_STRICT_EXECSTACK\|QA_STRICT_WX_LOAD\|QA_STRICT_TEXTRELS\|PORTAGE_IONICE_COMMAND\|PORTAGE_LOG_FILTER_FILE_CMD/ contained nextgroup=GentooMakeConfEMISCE
 " common eclass stuff
-syn match GentooMakeConfEMISCKE /EBEEP_IGNORE\|EPAUSE_IGNORE\|CHECKREQS_DONOTHING\|BREAKME\|ECHANGELOG_USER\|CCACHE_SIZE\|CCACHE_DIR\|CCACHE_SLOPPINESS\|DISTCC_DIR/ contained nextgroup=GentooMakeConfEMISCE skipwhite
+syn match GentooMakeConfEMISCKE /EBEEP_IGNORE\|EPAUSE_IGNORE\|CHECKREQS_DONOTHING\|BREAKME\|ECHANGELOG_USER\|CCACHE_SIZE\|CCACHE_DIR\|CCACHE_SLOPPINESS\|DISTCC_DIR/ contained nextgroup=GentooMakeConfEMISCE
 
 hi def link GentooMakeConfEMISC       Keyword
 hi def link GentooMakeConfEMISCK      Identifier
@@ -46,7 +46,7 @@ hi def link GentooMakeConfEMISCIX     Preproc
 " }}}
 
 " USE {{{
-syn keyword GentooMakeConfEUse USE contained nextgroup=GentooMakeConfEUseE skipwhite
+syn keyword GentooMakeConfEUse USE contained nextgroup=GentooMakeConfEUseE
 syn match   GentooMakeConfEUseE /=/ contained nextgroup=GentooMakeConfEUseV skipwhite
 syn cluster GentooMakeConfEUseIC add=GentooMakeConfEUseID,GentooMakeConfEUseIE,GentooMakeConfEUseIG,GentooMakeConfEUseIB,GentooMakeConfEUseIX
 syn region  GentooMakeConfEUseV contained start=/"/ end=/"/ contains=@GentooMakeConfEUseIC
@@ -66,7 +66,7 @@ hi def link GentooMakeConfEUseIX     Preproc
 " }}}
 
 " ACCEPT_KEYWORDS {{{
-syn match   GentooMakeConfEAK /ACCEPT_KEYWORDS/ contained nextgroup=GentooMakeConfEAKE skipwhite
+syn match   GentooMakeConfEAK /ACCEPT_KEYWORDS/ contained nextgroup=GentooMakeConfEAKE
 syn match   GentooMakeConfEAKE /=/ contained nextgroup=GentooMakeConfEAKV skipwhite
 syn cluster GentooMakeConfEAKIC add=GentooMakeConfEAKIS,GentooMakeConfEAKIU,GentooMakeConfEAKIB,GentooMakeConfEAKIX
 syn region  GentooMakeConfEAKV contained start=/"/ end=/"/ contains=@GentooMakeConfEAKIC
@@ -85,7 +85,7 @@ hi def link GentooMakeConfEAKIX     Preproc
 " }}}
 
 " ACCEPT_LICENSE {{{
-syn match   GentooMakeConfEAL /ACCEPT_LICENSE/ contained nextgroup=GentooMakeConfEALE skipwhite
+syn match   GentooMakeConfEAL /ACCEPT_LICENSE/ contained nextgroup=GentooMakeConfEALE
 syn match   GentooMakeConfEALE /=/ contained nextgroup=GentooMakeConfEALV skipwhite
 syn cluster GentooMakeConfEALIC add=GentooMakeConfEALIP,GentooMakeConfEALIS,GentooMakeConfEALIN,GentooMakeConfEALIX
 syn region  GentooMakeConfEALV contained start=/"/ end=/"/ contains=@GentooMakeConfEALIC
@@ -103,7 +103,7 @@ hi def link GentooMakeConfEALIX     Preproc
 " }}}
 
 " ACCEPT_PROPERTIES {{{
-syn match   GentooMakeConfEAP /ACCEPT_PROPERTIES/ contained nextgroup=GentooMakeConfEAPE skipwhite
+syn match   GentooMakeConfEAP /ACCEPT_PROPERTIES/ contained nextgroup=GentooMakeConfEAPE
 syn match   GentooMakeConfEAPE /=/ contained nextgroup=GentooMakeConfEAPV skipwhite
 syn cluster GentooMakeConfEAPIC add=GentooMakeConfEAPIP,GentooMakeConfEAPIN,GentooMakeConfEAPIX
 syn region  GentooMakeConfEAPV contained start=/"/ end=/"/ contains=@GentooMakeConfEAPIC
@@ -119,8 +119,8 @@ hi def link GentooMakeConfEAPIX     Preproc
 " }}}
 
 " C*FLAGS and F*FLAGS {{{
-syn match   GentooMakeConfECFLAGS /C\(XX\)\?FLAGS/ contained nextgroup=GentooMakeConfECFLAGSE skipwhite
-syn match   GentooMakeConfECFLAGS /FC\?FLAGS/ contained nextgroup=GentooMakeConfECFLAGSE skipwhite
+syn match   GentooMakeConfECFLAGS /C\(XX\)\?FLAGS/ contained nextgroup=GentooMakeConfECFLAGSE
+syn match   GentooMakeConfECFLAGS /FC\?FLAGS/ contained nextgroup=GentooMakeConfECFLAGSE
 syn match   GentooMakeConfECFLAGSE /=/ contained nextgroup=GentooMakeConfECFLAGSV,GentooMakeConfECFLAGSVNoQ skipwhite
 syn cluster GentooMakeConfECFLAGSIC add=GentooMakeConfECFLAGSIB1,GentooMakeConfECFLAGSIB2,GentooMakeConfECFLAGSIB3,GentooMakeConfECFLAGSIX
 syn region  GentooMakeConfECFLAGSV contained start=/"/ end=/"/ contains=@GentooMakeConfECFLAGSIC
@@ -140,7 +140,7 @@ hi def link GentooMakeConfECFLAGSIX     Preproc
 " }}}
 
 " LDFLAGS {{{
-syn match   GentooMakeConfELDFLAGS /LDFLAGS/ contained nextgroup=GentooMakeConfELDFLAGSE skipwhite
+syn match   GentooMakeConfELDFLAGS /LDFLAGS/ contained nextgroup=GentooMakeConfELDFLAGSE
 syn match   GentooMakeConfELDFLAGSE /=/ contained nextgroup=GentooMakeConfELDFLAGSV,GentooMakeConfELDFLAGSVNoQ skipwhite
 syn cluster GentooMakeConfELDFLAGSIC add=GentooMakeConfELDFLAGSIB1,GentooMakeConfELDFLAGSIB2,GentooMakeConfELDFLAGSIB3,GentooMakeConfELDFLAGSIX
 syn region  GentooMakeConfELDFLAGSV contained start=/"/ end=/"/ contains=@GentooMakeConfELDFLAGSIC
@@ -154,7 +154,7 @@ hi def link GentooMakeConfELDFLAGSIX     Preproc
 " }}}
 
 " MAKEOPTS {{{
-syn match   GentooMakeConfEMAKEOPTS /MAKEOPTS/ contained nextgroup=GentooMakeConfEMAKEOPTSE skipwhite
+syn match   GentooMakeConfEMAKEOPTS /MAKEOPTS/ contained nextgroup=GentooMakeConfEMAKEOPTSE
 syn match   GentooMakeConfEMAKEOPTSE /=/ contained nextgroup=GentooMakeConfEMAKEOPTSV skipwhite
 syn cluster GentooMakeConfEMAKEOPTSIC add=GentooMakeConfEMAKEOPTSIB
 syn region  GentooMakeConfEMAKEOPTSV contained start=/"/ end=/"/ contains=@GentooMakeConfEMAKEOPTSIC
@@ -166,7 +166,7 @@ hi def link GentooMakeConfEMAKEOPTSIB     Error
 " }}}
 
 " CHOST {{{
-syn match   GentooMakeConfECHOST /CHOST/ contained nextgroup=GentooMakeConfECHOSTE skipwhite
+syn match   GentooMakeConfECHOST /CHOST/ contained nextgroup=GentooMakeConfECHOSTE
 syn match   GentooMakeConfECHOSTE /=/ contained nextgroup=GentooMakeConfECHOSTV,GentooMakeConfECHOSTVNoQ skipwhite
 syn cluster GentooMakeConfECHOSTIC add=GentooMakeConfECHOSTIB
 syn region  GentooMakeConfECHOSTV contained start=/"/ end=/"/ contains=@GentooMakeConfECHOSTIC
@@ -180,7 +180,7 @@ hi def link GentooMakeConfECHOSTIB     Error
 " }}}
 
 " FEATURES {{{
-syn keyword GentooMakeConfEFEATURES FEATURES contained nextgroup=GentooMakeConfEFEATURESE skipwhite
+syn keyword GentooMakeConfEFEATURES FEATURES contained nextgroup=GentooMakeConfEFEATURESE
 syn match   GentooMakeConfEFEATURESE /=/ contained nextgroup=GentooMakeConfEFEATURESV skipwhite
 syn cluster GentooMakeConfEFEATURESIC add=GentooMakeConfEFEATURESID,GentooMakeConfEFEATURESIE,GentooMakeConfEFEATURESIB,GentooMakeConfEFEATURESIX
 syn region  GentooMakeConfEFEATURESV contained start=/"/ end=/"/ contains=@GentooMakeConfEFEATURESIC
