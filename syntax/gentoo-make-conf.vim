@@ -118,8 +118,9 @@ hi def link GentooMakeConfEAPIN     Error
 hi def link GentooMakeConfEAPIX     Preproc
 " }}}
 
-" C*FLAGS {{{
+" C*FLAGS and F*FLAGS {{{
 syn match   GentooMakeConfECFLAGS /C\(XX\)\?FLAGS/ contained nextgroup=GentooMakeConfECFLAGSE skipwhite
+syn match   GentooMakeConfECFLAGS /FC\?FLAGS/ contained nextgroup=GentooMakeConfECFLAGSE skipwhite
 syn match   GentooMakeConfECFLAGSE /=/ contained nextgroup=GentooMakeConfECFLAGSV,GentooMakeConfECFLAGSVNoQ skipwhite
 syn cluster GentooMakeConfECFLAGSIC add=GentooMakeConfECFLAGSIB1,GentooMakeConfECFLAGSIB2,GentooMakeConfECFLAGSIB3,GentooMakeConfECFLAGSIX
 syn region  GentooMakeConfECFLAGSV contained start=/"/ end=/"/ contains=@GentooMakeConfECFLAGSIC
