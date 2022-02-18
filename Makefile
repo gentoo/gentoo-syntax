@@ -13,6 +13,7 @@ files = $(wildcard \
 	indent/* \
 	plugin/* \
 	syntax/* \
+	syntax_checkers/* \
 )
 
 scripts: ${files}
