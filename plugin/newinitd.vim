@@ -37,12 +37,12 @@ fun! <SID>MakeNewInitd()
     0
 endfun
 
-com! -nargs=0 NewInitd call <SID>MakeNewInitd() | set filetype=gentoo-init-d
+com! -nargs=0 NewInitd call <SID>MakeNewInitd() | set filetype=gentoo-init-d.sh
 
 augroup NewInitd
     au!
     autocmd BufNewFile {/*/files/*.{rc*,init*},/etc/init.d/*}
-        \ call <SID>MakeNewInitd() | set filetype=gentoo-init-d
+        \ call <SID>MakeNewInitd() | set filetype=gentoo-init-d.sh
 augroup END
 
 " vim: set et foldmethod=marker : "

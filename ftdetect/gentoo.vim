@@ -31,20 +31,20 @@ au BufNewFile,BufRead ChangeLog*
 
 " /etc/init.d/ scripts
 au BufNewFile,BufRead /etc/init.d/*
-    \     set filetype=gentoo-init-d |
+    \     set filetype=gentoo-init-d.sh |
 
 au BufNewFile,BufRead *
     \ if (getline(1) =~? "#!/sbin/\\(runscript\\|openrc-run\\)") |
-    \     set filetype=gentoo-init-d |
+    \     set filetype=gentoo-init-d.sh |
     \ endif
 
 " /etc/conf.d/ scripts
 au BufNewFile,BufRead /etc/conf.d/*
-    \     set filetype=gentoo-conf-d
+    \     set filetype=gentoo-conf-d.sh
 
 " /etc/env.d/ scripts
 au BufNewFile,BufRead /etc/env.d/*
-    \     set filetype=gentoo-env-d
+    \     set filetype=gentoo-env-d.sh
 
 " /etc/cron.d/ scripts
 au BufNewFile,BufRead /etc/cron.d/*
