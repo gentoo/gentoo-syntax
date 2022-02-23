@@ -1,9 +1,5 @@
 # Makefile for gentoo-syntax
 
-distapp = gentoo-syntax
-distver := $(shell date -u +%Y%m%d)
-distpkg := $(distapp)-$(distver)
-
 PREFIX = ${HOME}/.vim/
 
 files = $(wildcard \
@@ -39,10 +35,6 @@ uninstall-files: $(foreach a, $(sort $(files)), \
 
 uninstall-file-%: $(subst _,/,$*)
 	[ ! -f "$(PREFIX)/$(subst _,/,$*)" ] || rm "$(PREFIX)/$(subst _,/,$*)"
-
-tag:
-	git tag -s $(distpkg)
-	@echo "tag created, remember to push it"
 
 clean:
 	find . -name '*~' | xargs rm || true
