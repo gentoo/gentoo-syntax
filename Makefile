@@ -28,6 +28,9 @@ install-dir-%:
 install-file-%: $(subst _,/,$*)
 	cp "$(subst _,/,$*)" "$(PREFIX)/$(subst _,/,$*)"
 
+tag:
+	git tag -s v$$(( $$(git tag -l --sort=-creatordate | sed -n -e 's:^v::p') + 1 ))
+
 uninstall : uninstall-files
 
 uninstall-files: $(foreach a, $(sort $(files)), \
