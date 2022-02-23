@@ -17,3 +17,8 @@ Bugs
 Please file issues or submit pull requests on github_.
 
 .. _github: https://github.com/gentoo/gentoo-syntax
+
+License
+=======
+
+You may redistribute this package under the same terms as Vim itself.
