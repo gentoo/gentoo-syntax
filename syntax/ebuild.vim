@@ -267,10 +267,12 @@ syn match EbuildExportFunctionsFunc contained /\S\+\(\s\|$\)\@=/ skipwhite nextg
 syn match EbuildExportFunctionsFuncE contained /\S\+\(\s\|$\)\@=\(\${\S\+}\|pkg_pretend\|pkg_nofetch\|pkg_setup\|src_unpack\|src_prepare\|src_configure\|src_compile\|src_test\|src_install\|pkg_preinst\|pkg_postinst\|pkg_prerm\|pkg_postrm\|pkg_config\|pkg_info\)\@<!/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 
 " Eclass documentation
-syn match EclassDocumentation /@\(AUTHOR\|BLURB\|BUGREPORTS\|CODE\|DEAD\|DEPRECATED\|DESCRIPTION\|DEFAULT_UNSET\|ECLASS-VARIABLE\|ECLASS\|EXAMPLE\|FUNCTION\|INCLUDES_EPREFIX\|INTERNAL\|MAINTAINER\|OUTPUT_VARIABLE\|PRE_INHERIT\|PROVIDES\|RETURN\|REQUIRED\|SUBSECTION\|SUPPORTED_EAPIS\|USAGE\|USER_VARIABLE\|VARIABLE\|VCSURL\):/ contained
+syn match   EclassDocumentationTag /@\(DEAD\|DEFAULT_UNSET\|INCLUDES_EPREFIX\|INTERNAL\|OUTPUT_VARIABLE\|PRE_INHERIT\|REQUIRED\|USER_VARIABLE\)$/ contained
+syn match   EclassDocumentationTagAndColon /@\(AUTHOR\|BLURB\|BUGREPORTS\|CODE\|DEPRECATED\|DESCRIPTION\|ECLASS_VARIABLE\|ECLASS\|EXAMPLE\|FUNCTION\|MAINTAINER\|PROVIDES\|RETURN\|SUBSECTION\|SUPPORTED_EAPIS\|USAGE\|VARIABLE\|VCSURL\):/ contained
+syn cluster EclassDocumentation contains=EclassDocumentationTag,EclassDocumentationTagAndColon
 " use shComment (sh.vim), make it compatible with other comment highlights
-syn match      shComment        "^\s*\zs#.*$"   contains=EclassDocumentation
-syn match      shComment        "\s\zs#.*$"     contains=EclassDocumentation
+syn match      shComment        "^\s*\zs#.*$"   contains=@EclassDocumentation
+syn match      shComment        "\s\zs#.*$"     contains=@EclassDocumentation
 
 " mistakes: misspelling
 syn keyword EbuildError LICENCE
@@ -371,7 +373,8 @@ hi def link EbuildUnpackerKeyword            Identifier
 hi def link EbuildUserKeyword                Identifier
 hi def link EbuildDistutilsFunction          Special
 
-hi def link EclassDocumentation              Identifier
+hi def link EclassDocumentationTag           Identifier
+hi def link EclassDocumentationTagAndColon   Identifier
 
 hi def link EbuildHomePageError              Error
 hi def link EbuildError                      Error
