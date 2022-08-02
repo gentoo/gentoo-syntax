@@ -135,10 +135,10 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='CP_DEPEND=\"\"'
             put =''
-            put ='RDEPEND=\">=virtual/jre-1.8'
-            put ='  ${CP_DEPEND}\"'
-            put ='DEPEND=\">=virtual/jdk-1.8'
-            put ='  ${CP_DEPEND}\"'
+            put ='RDEPEND=\">=virtual/jre-1.8:*'
+            put ='	${CP_DEPEND}\"'
+            put ='DEPEND=\">=virtual/jdk-1.8:*'
+            put ='	${CP_DEPEND}\"'
         elseif l:category ==# "dev-perl" || l:category ==# "perl-core"
             " {{{ perl modules default setup
             put ='DIST_AUTHOR=\"\"'
