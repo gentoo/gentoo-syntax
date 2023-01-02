@@ -49,7 +49,7 @@ fun! <SID>MakeNewEbuild()
         put =''
         put ='case ${EAPI} in'
         put ='	8) ;;'
-        put ='	*) die \"${ECLASS}: EAPI ${EAPI} unsupported.\"'
+        put ='	*) die \"${ECLASS}: EAPI ${EAPI:-0} not supported\" ;;'
         put ='esac'
         put =''
         let l:eclass_ident = substitute(toupper(l:eclass), "[^A-Z0-9]", "_", "g")
