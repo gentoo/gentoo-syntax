@@ -11,8 +11,11 @@ Installing
 * Gentoo users: ``emerge app-vim/gentoo-syntax``
 * Everyone else: ``make PREFIX=~/.vim/ install``
 
-This plugin also provides a syntax checker for ebuilds and eclasses. To enable
-it, you need to install Syntastic_ and pkgcheck_ first::
+Syntastic
+---------
+
+This plugin provides a syntax checker for ebuilds and eclasses. To enable it,
+you need to install Syntastic_ and pkgcheck_ first::
 
     # emerge app-vim/syntastic dev-util/pkgcheck
 
@@ -28,6 +31,14 @@ and enable it for filetype "sh"::
 
 .. _Syntastic: https://github.com/vim-syntastic/syntastic
 .. _pkgcheck:  https://github.com/pkgcore/pkgcheck
+
+Asynchronous Lint Engine
+------------------------
+
+A pkgcheck-based linter for ALE_ is also installed. It will be enabled
+automatically if pkgcheck_ is installed, no manual action is required.
+
+.. _ALE: https://github.com/dense-analysis/ale
 
 Bugs
 ====

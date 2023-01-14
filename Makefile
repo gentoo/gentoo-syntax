@@ -3,6 +3,7 @@
 PREFIX = ${HOME}/.vim/
 
 files = $(wildcard \
+	ale_linters/* \
 	doc/* \
 	ftdetect/* \
 	ftplugin/* \
