@@ -121,14 +121,17 @@ fun! <SID>MakeNewEbuild()
             " }}}
         elseif l:category ==# "dev-java"
             " {{{ dev-java generation-2 default java-pkg-simple ebuild
-            put ='JAVA_PKG_IUSE=\"doc source\"'
+            put ='JAVA_PKG_IUSE=\"doc source test\"'
             put ='MAVEN_ID=\"\"'
+            put ='MAVEN_PROVIDES=\"\"'
+            put ='JAVA_TESTING_FRAMEWORKS=\"junit-4\"'
             put =''
             put ='inherit java-pkg-2 java-pkg-simple'
             put =''
             put ='DESCRIPTION=\"\"'
             put ='HOMEPAGE=\"\"'
             put ='SRC_URI=\"\"'
+            put ='S=\"${WORKDIR}/${P}\"'
             put =''
             put ='LICENSE=\"\"'
             put ='SLOT=\"0\"'
