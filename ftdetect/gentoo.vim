@@ -75,7 +75,7 @@ au BufNewFile,BufRead {*/thirdpartymirrors,*/portage/mirrors}
     \     set filetype=gentoo-mirrors
 
 " make.conf
-au BufNewFile,BufRead make.{conf,globals}
+au BufNewFile,BufRead {*/make.{conf,globals},*/portage/make.conf/*}
     \     set filetype=gentoo-make-conf
 
 " use.desc
