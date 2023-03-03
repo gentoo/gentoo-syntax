@@ -271,6 +271,10 @@ syn keyword EbuildCMakeKeyword cmake_src_test cmake_src_install
 " tmpfiles
 syn keyword EbuildTmpfilesKeyword dotmpfiles newtmpfiles tmpfiles_process
 
+" udev
+syn keyword EbuildUdevKeyword get_udevdir udev_dorules udev_newrules udev_reload
+syn keyword EbuildDeprecatedKeyword udev_get_udevdir
+
 " EXPORT_FUNCTIONS
 syn match EbuildExportFunctions /EXPORT_FUNCTIONS/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 syn match EbuildExportFunctionsFunc contained /\S\+\(\s\|$\)\@=/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
@@ -340,7 +344,7 @@ syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword
 syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
 syn cluster EbuildThings add=EbuildDeprecatedKeyword,EbuildUnpackerKeyword,EbuildUserKeyword
 syn cluster EbuildThings add=EbuildCDROMKeyword,EbuildLinuxInfoKeyword,EbuildDistutilsFunction
-syn cluster EbuildThings add=EbuildCMakeKeyword,EbuildTmpfilesKeyword
+syn cluster EbuildThings add=EbuildCMakeKeyword,EbuildTmpfilesKeyword,EbuildUdevKeyword
 
 syn cluster shCommandSubList add=@EbuildThings
 syn cluster shCommentGroup add=GentooBug
@@ -384,6 +388,7 @@ hi def link EbuildUnpackerKeyword            Identifier
 hi def link EbuildUserKeyword                Identifier
 hi def link EbuildCMakeKeyword               Identifier
 hi def link EbuildTmpfilesKeyword            Identifier
+hi def link EbuildUdevKeyword                Identifier
 hi def link EbuildDistutilsFunction          Special
 
 hi def link EclassDocumentationTag           Identifier
