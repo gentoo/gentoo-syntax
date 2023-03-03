@@ -262,6 +262,12 @@ syn keyword EbuildUnpackerKeyword unpack_pdv unpack_makeself
 syn keyword EbuildDeprecatedKeyword enewuser enewgroup
 syn keyword EbuildUserKeyword egetent
 
+" cmake
+syn keyword EbuildCMakeKeyword cmake_run_in cmake_comment_add_subdirectory cmake_use_find_package
+syn keyword EbuildCMakeKeyword cmake_build mycmakeargs MYCMAKEARGS
+syn keyword EbuildCMakeKeyword cmake_src_prepare cmake_src_configure cmake_src_compile
+syn keyword EbuildCMakeKeyword cmake_src_test cmake_src_install
+
 " EXPORT_FUNCTIONS
 syn match EbuildExportFunctions /EXPORT_FUNCTIONS/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
 syn match EbuildExportFunctionsFunc contained /\S\+\(\s\|$\)\@=/ skipwhite nextgroup=EbuildExportFunctionsFunc,EbuildExportFunctionsFuncE
@@ -331,6 +337,7 @@ syn cluster EbuildThings add=EbuildDependApacheKeyword,EbuildApacheModuleKeyword
 syn cluster EbuildThings add=EbuildVirtualXKeyword,EbuildGnome2Keyword,EbuildAutoKeyword
 syn cluster EbuildThings add=EbuildDeprecatedKeyword,EbuildUnpackerKeyword,EbuildUserKeyword
 syn cluster EbuildThings add=EbuildCDROMKeyword,EbuildLinuxInfoKeyword,EbuildDistutilsFunction
+syn cluster EbuildThings add=EbuildCMakeKeyword
 
 syn cluster shCommandSubList add=@EbuildThings
 syn cluster shCommentGroup add=GentooBug
@@ -372,6 +379,7 @@ hi def link EbuildCDROMKeyword               Identifier
 hi def link EbuildLinuxInfoKeyword           Identifier
 hi def link EbuildUnpackerKeyword            Identifier
 hi def link EbuildUserKeyword                Identifier
+hi def link EbuildCMakeKeyword               Identifier
 hi def link EbuildDistutilsFunction          Special
 
 hi def link EclassDocumentationTag           Identifier
