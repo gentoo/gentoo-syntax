@@ -38,6 +38,7 @@ syn keyword EbuildCoreKeyword doinitd doconfd doenvd domo dodir ebegin eend
 syn keyword EbuildCoreKeyword newconfd newdoc newenvd newinitd newlib.a newlib.so
 syn keyword EbuildCoreKeyword hasv usev usex elog eapply eapply_user
 syn keyword EbuildCoreKeyword einstalldocs in_iuse get_libdir
+syn keyword EbuildCoreKeyword dostrip ver_cut ver_rs ver_test
 
 " Deprecated and banned functions
 syn keyword EbuildDeprecatedKeyword check_KV dohard dohtml prepall prepalldocs
