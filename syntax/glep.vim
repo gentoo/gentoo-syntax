@@ -36,7 +36,7 @@ syn region glepHeaders start=/\%^\(.*:\)\@=/ end=/^$/ contains=glepHeaderKey
 syn region glepTripleDash start=/\%^---$/ end=/^---$/ contains=glepHeaderKey
 syn region glepHeaderKey contained start=/^[A-Za-z0-9]/ end=/:/ nextgroup=glepHeaderValue skipwhite
 syn region glepHeaderValue contained start=/\S/ end=/^\S\|^$/me=e-1 contains=glepHeaderEmail,glepHeaderCVSVar
-syn match  glepHeaderEmail contained /<[-a-zA-Z0-9\_\.]\+@[-a-zA-Z0-9\_\.]\+>/
+syn match  glepHeaderEmail contained /<[^<>@[:space:]]\+@[^<>@.[:space:]]\+\.[^<>@[:space:]]\+>/
 syn region glepHeaderCVSVar contained start=/\$\S\+:/ end=/\$/
 syn keyword glepTODO TODO FIXME
 
