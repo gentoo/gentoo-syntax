@@ -18,7 +18,6 @@ Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
 	    Common Syntax Rules                     |gentoo-common-syntax|
 	    Ebuild and Eclass Files                 |gentoo-ebuild-syntax|
 	    GLEP Files                                |gentoo-glep-syntax|
-	    ChangeLogs                           |gentoo-changelog-syntax|
 	    conf.d Files                            |gentoo-conf.d-syntax|
 	    cron.d Files                            |gentoo-cron.d-syntax|
 	    env.d Files                              |gentoo-env.d-syntax|
@@ -43,8 +42,8 @@ Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
 
 	The gentoo-syntax package provides a collection of syntax, ftdetect,
 	ftplugin and indent files to help Gentoo developers and users work
-	with ebuilds, eclasses, GLEPs, Gentoo style ChangeLogs, init.d /
-	conf.d / env.d / cron.d entries, /etc/portage/ files and so on.
+	with ebuilds, eclasses, GLEPs, init.d / conf.d / env.d / cron.d entries,
+	/etc/portage/ files and so on.
 
     Detection Specifics				     *gentoo-syntax-detection*
 
@@ -55,9 +54,6 @@ Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
 	GLEP files are detected by a 'txt' extension, followed by a check that
 	the first line of the file starts with "GLEP: ". They are assigned the
 	'glep' filetype.
-
-	Gentoo ChangeLogs are detected by the 'ChangeLog' filename and a
-	copyright header on the second line.
 
 	init.d scripts are detected by being in /etc/init.d/ . They are also
 	detected if they are under a files/ directory and include a
@@ -79,8 +75,8 @@ Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
 
     Highlighting Specifics			  *gentoo-syntax-highlighting*
 
-	Syntax highlighting is provided for ebuild/eclass, GLEP files,
-	Gentoo ChangeLogs and init.d / conf.d / env.d / cron.d scripts.
+	Syntax highlighting is provided for ebuild/eclass, GLEP files and
+	init.d / conf.d / env.d / cron.d scripts.
 
 							*gentoo-common-syntax*
 
@@ -105,11 +101,6 @@ Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
 	Syntax highlighting for GLEP files is based upon the vim-provided rst
 	syntax file. Additional highlighting is available for the headers at
 	the top of the file and for heading sections.
-
-						     *gentoo-changelog-syntax*
-
-	Syntax highlighting for Gentoo ChangeLogs is implemented from scratch
-	(some rules come from |gentoo-common-syntax|).
 
 							*gentoo-conf.d-syntax*
 
@@ -183,8 +174,7 @@ Authors:  Ciaran McCreesh <ciaranm   at gentoo dot org>
 	the hyphen character is added as a valid keyword character
 	(|'iskeyword'|).
 
-	For ebuilds, eclasses and ChangeLogs, UTF-8 is used for fileencoding
-	as per GLEP 31.
+	For ebuilds, eclasses, UTF-8 is used for fileencoding as per GLEP 31.
 
     Indent Specifics				      *gentoo-indent-settings*
 

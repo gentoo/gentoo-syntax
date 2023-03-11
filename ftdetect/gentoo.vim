@@ -4,8 +4,8 @@
 " Copyright:	Copyright (c) 2004-2005 Ciaran McCreesh
 " Licence:	You may redistribute this under the same terms as Vim itself
 "
-" This sets up syntax highlighting for Gentoo ebuilds, eclasses, GLEPs and
-" Gentoo style ChangeLogs.
+" This sets up syntax highlighting for Gentoo ebuilds, eclasses, GLEPs, init.d /
+" conf.d / env.d / cron.d entries,  /etc/portage/ files and so on.
 "
 
 if &compatible || v:version < 603
@@ -21,12 +21,6 @@ au BufNewFile,BufRead *.e{build,class}
 au BufNewFile,BufRead *.txt,*.rst
     \ if (getline(1) =~? "^GLEP: " || getline(2) =~? "^GLEP: ") |
     \     set filetype=glep |
-    \ endif
-
-" ChangeLogs
-au BufNewFile,BufRead ChangeLog*
-    \ if (getline(2) =~? "^# Copyright \\d\\+-\\d\\+ Gentoo Foundation") |
-    \     set filetype=gentoo-changelog |
     \ endif
 
 " /etc/init.d/ scripts
