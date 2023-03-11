@@ -13,7 +13,7 @@ runtime syntax/gentoo-common.vim
 syn region GentooPackageComment start=/#/ end=/$/
     \ contains=GentooPackageEmail,GentooPackageDate,GentooBug
 
-syn match  GentooPackageEmail contained /<[a-zA-Z0-9\-\_]\+@[a-zA-Z0-9\-\_\.]\+>/
+syn match  GentooPackageEmail contained /<[^<>@[:space:]]\+@[^<>@.[:space:]]\+\.[^<>@[:space:]]\+>/
 syn match  GentooPackageDate  contained /(\(\d\d\?\s\w\+\|\w\+\s\d\d\?\)\s\d\{4\})/
 
 syn match  GentooPackageAtom /^[\ \t]*[^ \t\n#]\+\S*\/\S\+/
