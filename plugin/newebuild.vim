@@ -122,6 +122,7 @@ fun! <SID>MakeNewEbuild()
         elseif l:category ==# "dev-java"
             " {{{ dev-java generation-2 default java-pkg-simple ebuild
             put ='JAVA_PKG_IUSE=\"doc source\"'
+            put ='MAVEN_ID=\"\"'
             put =''
             put ='inherit java-pkg-2 java-pkg-simple'
             put =''
