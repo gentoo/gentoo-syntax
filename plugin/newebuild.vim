@@ -128,7 +128,7 @@ fun! <SID>MakeNewEbuild()
             put =''
             put ='DESCRIPTION=\"\"'
             put ='HOMEPAGE=\"\"'
-            put ='SRC_URI=\"${P}.zip\"'
+            put ='SRC_URI=\"\"'
             put =''
             put ='LICENSE=\"\"'
             put ='SLOT=\"0\"'
