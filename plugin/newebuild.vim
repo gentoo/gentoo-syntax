@@ -163,7 +163,7 @@ fun! <SID>MakeNewEbuild()
             if l:category ==# "dev-python"
                 put ='DISTUTILS_USE_PEP517=setuptools'
                 put ='PYTHON_COMPAT=( ' . GentooGetPythonTargets() . ' )'
-                put ='inherit distutils-r1'
+                put ='inherit distutils-r1 pypi'
                 put =''
             endif
             " }}}
@@ -176,9 +176,9 @@ fun! <SID>MakeNewEbuild()
                 put ='\"'
             else
                 put ='HOMEPAGE=\"\"'
+                put ='SRC_URI=\"\"'
             endif
 
-            put ='SRC_URI=\"\"'
             put =''
             put ='LICENSE=\"\"'
             put ='SLOT=\"0\"'
