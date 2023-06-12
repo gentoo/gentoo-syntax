@@ -187,7 +187,8 @@ fun! <SID>MakeNewEbuild()
 
             " {{{ extra deps for some categories
             if l:category ==# "dev-python"
-                put ='RDEPEND=\"\"'
+                put ='RDEPEND=\"'
+                put ='\"'
                 put ='BDEPEND=\"'
                 put ='	test? ('
                 put ='	)'
