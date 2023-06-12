@@ -91,6 +91,7 @@ fun! <SID>MakeNewMetadata()
         endif
         put ='</maintainer>'
         if l:category ==# "dev-python"
+            put ='<stabilize-allarches/>'
             put ='<upstream>'
             put ='<remote-id type=\"pypi\">' . l:package . '</remote-id>'
             put ='</upstream>'
