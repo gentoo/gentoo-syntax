@@ -163,6 +163,7 @@ fun! <SID>MakeNewEbuild()
             if l:category ==# "dev-python"
                 put ='DISTUTILS_USE_PEP517=setuptools'
                 put ='PYTHON_COMPAT=( ' . GentooGetPythonTargets() . ' )'
+                put =''
                 put ='inherit distutils-r1 pypi'
                 put =''
             endif
