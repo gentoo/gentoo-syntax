@@ -61,6 +61,8 @@ fun! <SID>MakeNewMetadata()
             let l:project = "perl"
         elseif l:category ==# "dev-php"
             let l:project = "php-bugs"
+        elseif l:category ==# "dev-python"
+            let l:project = "python"
         elseif l:category ==# "dev-ruby"
             let l:project = "ruby"
         elseif l:category ==# "dev-tex"
@@ -75,6 +77,9 @@ fun! <SID>MakeNewMetadata()
         put ='<!DOCTYPE pkgmetadata SYSTEM \"https://www.gentoo.org/dtd/metadata.dtd\">'
         put ='<pkgmetadata>'
         if l:project != ""
+            if l:project == "python"
+                put ='<!-- please remove python@ if tests do not work -->'
+            endif
             put ='<maintainer type=\"project\">'
             put ='<email>' . l:project . '@gentoo.org</email>'
             put ='</maintainer>'
