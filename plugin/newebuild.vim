@@ -161,7 +161,7 @@ fun! <SID>MakeNewEbuild()
             " {{{ standard default setup
             " {{{ extra inherits for some categories
             if l:category ==# "dev-python"
-                put ='DISTUTILS_USE_PEP517=setuptools'
+                put ='DISTUTILS_USE_PEP517=hatchling'
                 put ='PYTHON_COMPAT=( ' . GentooGetPythonTargets() . ' )'
                 put =''
                 put ='inherit distutils-r1 pypi'
