@@ -29,7 +29,7 @@ syn match bkshFunction	"^\s*\<\h[0-9a-zA-Z_\-\.]*\>\s*()"	skipwhite skipnl conta
 
 " Default keywords
 syn keyword EbuildCoreKeyword use has_version best_version use_with use_enable
-syn keyword EbuildCoreKeyword keepdir econf die einstall einfo ewarn eerror diropts
+syn keyword EbuildCoreKeyword keepdir econf die einstall einfo ewarn eqawarn eerror diropts
 syn keyword EbuildCoreKeyword dobin docinto dodoc doexe doheader doinfo doins
 syn keyword EbuildCoreKeyword dolib dolib.a dolib.so doman dosbin dosym emake exeinto
 syn keyword EbuildCoreKeyword exeopts fowners fperms insinto insopts into libopts newbin
