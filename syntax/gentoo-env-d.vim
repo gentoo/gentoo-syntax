@@ -19,7 +19,7 @@ endif
 
 let is_bash=1
 runtime! syntax/sh.vim
-unlet b:current_syntax
+unlet! b:current_syntax
 
 runtime syntax/gentoo-common.vim
 syn cluster shCommentGroup add=GentooBug

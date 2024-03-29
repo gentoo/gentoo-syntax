@@ -16,7 +16,7 @@ if exists("b:current_syntax")
 endif
 
 runtime! syntax/xml.vim
-unlet b:current_syntax
+unlet! b:current_syntax
 
 syn cluster xmlTagHook add=guidexmlElement
 syn keyword guidexmlElement contained mainpage guide news title subtitle
