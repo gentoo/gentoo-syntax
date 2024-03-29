@@ -17,7 +17,7 @@ if exists("b:current_syntax")
 endif
 
 runtime! syntax/rst.vim
-unlet b:current_syntax
+unlet! b:current_syntax
 
 " Headings in GLEPs (rst doesn't highlight these)
 syn match  glepHeading1 /^\(\(-\{2,\}\|=\{2,\}\|'\{2,\}\)\n\)\S.\+\n\(-\{2,\}\|=\{2,\}\|'\{2,\}\)$/
