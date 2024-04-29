@@ -27,6 +27,7 @@ syn match metadataElement contained 'email'
 syn match metadataElement contained 'name'
 syn match metadataElement contained 'description'
 syn match metadataElement contained 'longdescription'
+syn match metadataElement contained 'stabilize-allarches'
 
 " upstream metadata info
 syn cluster xmlTagHook add=upstreamMetadata
