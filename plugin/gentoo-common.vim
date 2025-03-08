@@ -74,7 +74,7 @@ fun! GentooGetPythonTargets()
                 if !empty(l:m)
                     eval l:py3s->add(l:m)
                 else
-                    eval l:impls->add(l:py)
+                    eval l:impls->add(l:py->substitute("[.]", "_", "g"))
                 endif
             endfor
             if len(l:py3s) ==# 1
