@@ -27,6 +27,7 @@ syn match metadataElement contained 'email'
 syn match metadataElement contained 'name'
 syn match metadataElement contained 'description'
 syn match metadataElement contained 'longdescription'
+syn match metadataElement contained 'stabilize-allarches'
 
 " upstream metadata info
 syn cluster xmlTagHook add=upstreamMetadata
@@ -49,5 +50,8 @@ syn match metadataElement contained 'pkgmetadata'
 
 hi def link metadataElement Keyword
 hi def link upstreamMetadata Keyword
+
+" Highlight unknown tags as errors.
+hi! def link xmlTagName Error
 
 let b:current_syntax = "gentoo-metadata"
