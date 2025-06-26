@@ -195,6 +195,7 @@ fun! <SID>MakeNewEbuild()
                 put ='	)'
                 put ='\"'
                 put =''
+                put ='EPYTEST_PLUGINS=()'
                 put ='distutils_enable_tests pytest'
             else
                 put ='DEPEND=\"\"'
