@@ -117,9 +117,11 @@ syn keyword EbuildCVSKeyword cvs_fetch cvs_src_unpack
 " bash-completion (removed)
 syn keyword EbuildDeprecatedKeyword dobashcompletion bash-completion_pkg_postinst
 
-" bash-completion-r1
+" shell-completion
 syn keyword EbuildBashCompKeyword dobashcomp newbashcomp get_bashcompdir
 syn keyword EbuildBashCompKeyword get_bashhelpersdir bashcomp_alias
+syn keyword EbuildBashCompKeyword get_fishcompdir dofishcomp newfishcomp
+syn keyword EbuildBashCompKeyword get_zshcompdir dozshcomp newzshcomp
 
 " vim-plugin
 syn keyword EbuildVimPluginKeyword vim-plugin_src_install vim-plugin_pkg_postinst vim-plugin_pkg_postrm
